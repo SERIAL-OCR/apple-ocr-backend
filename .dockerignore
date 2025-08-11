@@ -1,0 +1,31 @@
+# VCS
+.git
+.gitignore
+
+# Python build artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+
+# Local environments
+.venv/
+venv/
+.env
+
+# Logs
+*.log
+
+# Large or local-only content
+context/
+samples/
+
+# Runtime data (mounted as volumes via compose)
+data/
+exports/
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
