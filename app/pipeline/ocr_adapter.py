@@ -1,12 +1,13 @@
 from __future__ import annotations
 
-from typing import Optional, Tuple, List
+from typing import Optional, Tuple, List, Iterable, Set
 
 import cv2
 import numpy as np
 import easyocr
 
 from app.utils.validation import is_valid_apple_serial
+from app.config import OCR_SETTINGS
 
 
 _reader: Optional[easyocr.Reader] = None
@@ -15,54 +16,273 @@ _reader: Optional[easyocr.Reader] = None
 def _get_reader() -> easyocr.Reader:
     global _reader
     if _reader is None:
-        # Initialize English only for speed in MVP
-        _reader = easyocr.Reader(["en"], gpu=False)
+        use_gpu = OCR_SETTINGS["use_gpu"]
+        languages = OCR_SETTINGS["languages"]
+        # Simple init log to help verify GPU path in logs
+        try:
+            import torch  # type: ignore
+            gpu_info = f"cuda={torch.version.cuda}, available={torch.cuda.is_available()}"
+        except Exception:
+            gpu_info = "torch_unavailable"
+        print(f"[EasyOCR] Initializing Reader(langs={languages}, gpu={use_gpu}) [{gpu_info}]")
+        _reader = easyocr.Reader(languages, gpu=use_gpu)
     return _reader
 
 
-def preprocess_image(image_bytes: bytes) -> np.ndarray:
+def _morphological_refine(binary_img: np.ndarray, k: int = 2) -> np.ndarray:
+    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (k, k))
+    closed = cv2.morphologyEx(binary_img, cv2.MORPH_CLOSE, kernel, iterations=1)
+    opened = cv2.morphologyEx(closed, cv2.MORPH_OPEN, kernel, iterations=1)
+    return opened
+
+
+def _reduce_glare(image: np.ndarray, method: str = "tophat") -> np.ndarray:
+    """Reduce glare and improve illumination uniformity.
+    
+    Args:
+        image: Grayscale image
+        method: "tophat" for morphological top-hat, "division" for background division
+    
+    Returns:
+        Image with reduced glare
+    """
+    if method == "tophat":
+        # Morphological top-hat to remove bright regions
+        kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (50, 50))
+        tophat = cv2.morphologyEx(image, cv2.MORPH_TOPHAT, kernel)
+        # Enhance the result
+        result = cv2.add(image, tophat)
+        result = np.clip(result, 0, 255).astype(np.uint8)
+    elif method == "division":
+        # Background estimation and division
+        # Estimate background using large Gaussian blur
+        background = cv2.GaussianBlur(image, (51, 51), 0)
+        # Divide original by background to normalize illumination
+        result = cv2.divide(image, background, scale=255)
+    else:
+        result = image
+    
+    return result
+
+
+def preprocess_image(
+    image_bytes: bytes,
+    clip_limit: float = 2.0,
+    tile_grid: int = 8,
+    bilateral_d: int = 7,
+    bilateral_sigma_color: int = 75,
+    bilateral_sigma_space: int = 75,
+    thresh_block_size: int = 35,
+    thresh_C: int = 11,
+    morph_kernel: int = 2,
+    upscale_scale: float = 2.0,
+    mode: str = "binary",  # "binary" or "gray"
+    glare_reduction: Optional[str] = None,  # None, "tophat", or "division"
+    debug_save_path: Optional[str] = None,
+) -> np.ndarray:
     file_array = np.frombuffer(image_bytes, dtype=np.uint8)
     img = cv2.imdecode(file_array, cv2.IMREAD_COLOR)
     if img is None:
         raise ValueError("Invalid image data")
 
-    # Grayscale
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    
+    # Apply glare reduction if requested
+    if glare_reduction:
+        gray = _reduce_glare(gray, method=glare_reduction)
 
-    # CLAHE for reflective surfaces
-    clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
+    clahe = cv2.createCLAHE(clipLimit=clip_limit, tileGridSize=(tile_grid, tile_grid))
     enhanced = clahe.apply(gray)
 
-    # Bilateral filter to preserve edges
-    filtered = cv2.bilateralFilter(enhanced, d=7, sigmaColor=75, sigmaSpace=75)
-
-    # Adaptive threshold to help OCR
-    th = cv2.adaptiveThreshold(
-        filtered, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 35, 11
+    filtered = cv2.bilateralFilter(
+        enhanced, d=bilateral_d, sigmaColor=bilateral_sigma_color, sigmaSpace=bilateral_sigma_space
     )
 
-    return th
+    if mode == "gray":
+        out = filtered
+    else:
+        th = cv2.adaptiveThreshold(
+            filtered, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, thresh_block_size, thresh_C
+        )
+        out = _morphological_refine(th, k=morph_kernel)
+
+    if upscale_scale and upscale_scale != 1.0:
+        out = cv2.resize(out, None, fx=upscale_scale, fy=upscale_scale, interpolation=cv2.INTER_CUBIC)
+
+    if debug_save_path:
+        cv2.imwrite(debug_save_path, out)
+
+    return out
 
 
-def extract_serials(image_bytes: bytes) -> List[Tuple[str, float]]:
-    processed = preprocess_image(image_bytes)
+_AMBIGUOUS_MAP: dict[str, str] = {
+    "O": "0",
+    "I": "1",
+    "L": "1",
+    "Z": "2",
+    "S": "5",
+    "B": "8",
+    "Q": "0",
+    "G": "6",
+}
+
+
+def _expand_ambiguous(text: str) -> Set[str]:
+    variants: Set[str] = {text}
+    for idx, ch in enumerate(text):
+        rep = _AMBIGUOUS_MAP.get(ch)
+        if rep:
+            for v in list(variants):
+                variants.add(v[:idx] + rep + v[idx + 1 :])
+    return variants
+
+
+def _normalize_ambiguous(text: str) -> str:
+    up = text.strip().upper()
+    return "".join(_AMBIGUOUS_MAP.get(ch, ch) for ch in up)
+
+
+def _rotate_image(img: np.ndarray, angle: int) -> np.ndarray:
+    if angle % 360 == 0:
+        return img
+    if angle % 180 == 0:
+        return cv2.rotate(img, cv2.ROTATE_180)
+    if angle % 270 == 0:
+        return cv2.rotate(img, cv2.ROTATE_90_COUNTERCLOCKWISE)
+    if angle % 90 == 0:
+        return cv2.rotate(img, cv2.ROTATE_90_CLOCKWISE)
+    h, w = img.shape[:2]
+    M = cv2.getRotationMatrix2D((w // 2, h // 2), angle, 1.0)
+    return cv2.warpAffine(img, M, (w, h), flags=cv2.INTER_LINEAR)
+
+
+_ALLOWED = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+
+
+def _read_serials_from_image(
+    img: np.ndarray,
+    min_confidence: float,
+    low_text: float = 0.3,
+    text_threshold: float = 0.6,
+) -> List[Tuple[str, float]]:
     reader = _get_reader()
-
-    # EasyOCR expects an image array (RGB). Convert binary to BGR already; convert to RGB.
-    rgb = cv2.cvtColor(processed, cv2.COLOR_GRAY2RGB)
-
-    results = reader.readtext(rgb, detail=1, paragraph=False)
-
+    results = reader.readtext(
+        img,
+        detail=1,
+        paragraph=False,
+        allowlist=_ALLOWED,
+        low_text=low_text,
+        text_threshold=text_threshold,
+    )
     serials: List[Tuple[str, float]] = []
     for bbox, text, confidence in results:
-        candidate = text.strip().upper().replace(" ", "")
-        if is_valid_apple_serial(candidate):
-            serials.append((candidate, float(confidence)))
+        base = text.strip().upper().replace(" ", "")
+        candidates = _expand_ambiguous(base)
+        for c in candidates:
+            if is_valid_apple_serial(c) and float(confidence) >= min_confidence:
+                serials.append((c, float(confidence)))
+    return serials
 
-    # Deduplicate by serial, keep highest confidence
-    best: dict[str, float] = {}
-    for s, c in serials:
-        if s not in best or c > best[s]:
-            best[s] = c
 
-    return [(s, best[s]) for s in best]
+def _find_rois_by_projection(img_gray_or_bin: np.ndarray, top_k: int = 2, pad: int = 8) -> List[Tuple[int, int]]:
+    # Expect single channel image
+    img = img_gray_or_bin
+    if img.ndim == 3:
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    h, w = img.shape[:2]
+
+    # Compute ink density per row
+    if img.dtype != np.uint8:
+        img = img.astype(np.uint8)
+    ink = 255 - img  # brighter means more strokes
+    proj = ink.sum(axis=1).astype(np.float32)
+    # Smooth projection
+    proj = cv2.GaussianBlur(proj.reshape(-1, 1), (1, 9), 0).reshape(-1)
+
+    thr = max(1.0, 0.4 * proj.max())
+    mask = (proj >= thr).astype(np.uint8)
+
+    rois: List[Tuple[int, int]] = []
+    start = None
+    for i, v in enumerate(mask):
+        if v and start is None:
+            start = i
+        if (not v or i == len(mask) - 1) and start is not None:
+            end = i if not v else i
+            # Filter tiny bands
+            if end - start > max(8, h // 20):
+                y0 = max(0, start - pad)
+                y1 = min(h, end + pad)
+                rois.append((y0, y1))
+            start = None
+
+    # Sort by projected energy
+    rois = sorted(rois, key=lambda yy: proj[yy[0]:yy[1]].sum(), reverse=True)
+    return rois[:top_k]
+
+
+def extract_serials(
+    image_bytes: bytes,
+    min_confidence: float = 0.0,
+    debug_save_path: Optional[str] = None,
+    try_rotations: Iterable[int] = (0, 90, 180, 270),
+    low_text: float = 0.3,
+    text_threshold: float = 0.6,
+    roi: bool = False,
+    roi_top_k: int = 2,
+    roi_pad: int = 8,
+    **preprocess_kwargs,
+) -> List[Tuple[str, float]]:
+    processed = preprocess_image(image_bytes, debug_save_path=debug_save_path, **preprocess_kwargs)
+
+    # Build working images (RGB and inverse)
+    if processed.ndim == 2:
+        rgb_full = cv2.cvtColor(processed, cv2.COLOR_GRAY2RGB)
+        rgb_full_inv = cv2.cvtColor(255 - processed, cv2.COLOR_GRAY2RGB)
+        band_source = processed
+    else:
+        rgb_full = processed
+        rgb_full_inv = 255 - processed
+        band_source = cv2.cvtColor(processed, cv2.COLOR_BGR2GRAY)
+
+    imgs_to_scan: List[np.ndarray] = []
+    inv_to_scan: List[np.ndarray] = []
+
+    if roi:
+        for (y0, y1) in _find_rois_by_projection(band_source, top_k=roi_top_k, pad=roi_pad):
+            imgs_to_scan.append(rgb_full[y0:y1, :])
+            inv_to_scan.append(rgb_full_inv[y0:y1, :])
+        # Fallback to full frame if no ROI found
+        if not imgs_to_scan:
+            imgs_to_scan = [rgb_full]
+            inv_to_scan = [rgb_full_inv]
+    else:
+        imgs_to_scan = [rgb_full]
+        inv_to_scan = [rgb_full_inv]
+
+    all_serials: List[Tuple[str, float]] = []
+    for rgb, rgb_inv in zip(imgs_to_scan, inv_to_scan):
+        for ang in try_rotations:
+            rimg = _rotate_image(rgb, ang)
+            all_serials.extend(
+                _read_serials_from_image(rimg, min_confidence=min_confidence, low_text=low_text, text_threshold=text_threshold)
+            )
+            rimg_inv = _rotate_image(rgb_inv, ang)
+            all_serials.extend(
+                _read_serials_from_image(rimg_inv, min_confidence=min_confidence, low_text=low_text, text_threshold=text_threshold)
+            )
+
+    # Aggregate by normalized (ambiguous collapsed) key
+    score_by_norm: dict[str, float] = {}
+    best_variant_by_norm: dict[str, Tuple[str, float]] = {}
+    for s, c in all_serials:
+        norm = _normalize_ambiguous(s)
+        score_by_norm[norm] = score_by_norm.get(norm, 0.0) + c
+        if norm not in best_variant_by_norm or c > best_variant_by_norm[norm][1]:
+            best_variant_by_norm[norm] = (s, c)
+
+    # Return best variants ordered by aggregated score
+    ordered_norms = sorted(score_by_norm.items(), key=lambda kv: kv[1], reverse=True)
+    merged: List[Tuple[str, float]] = [(best_variant_by_norm[n][0], best_variant_by_norm[n][1]) for n, _ in ordered_norms]
+
+    return merged
