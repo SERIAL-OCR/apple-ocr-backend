@@ -79,7 +79,8 @@ def run_sweep(
     images_dir: str,
     labels_file: str,
     output_file: str,
-    param_grid: Dict[str, List[any]]
+    param_grid: Dict[str, List[any]],
+    timeout_s: int,
 ):
     """Run parameter sweep across all images and parameter combinations."""
     
@@ -121,7 +122,7 @@ def run_sweep(
             true_serial = labels.get(filename)
             
             match, confidence, detected = test_parameters(
-                api_url, str(image_path), params, true_serial, timeout_s=args.timeout
+                api_url, str(image_path), params, true_serial, timeout_s=timeout_s
             )
             
             if match:
@@ -175,8 +176,8 @@ def run_sweep(
 def main():
     parser = argparse.ArgumentParser(description='Parameter sweep for OCR tuning')
     parser.add_argument('--api-url', default='http://localhost:8000', help='API base URL')
-    parser.add_argument('--images', default='samples', help='Directory containing test images')
-    parser.add_argument('--labels', default='samples/labels.csv', help='CSV file with ground truth')
+    parser.add_argument('--images', default='exported-assets', help='Directory containing test images')
+    parser.add_argument('--labels', default='exported-assets/labels.csv', help='CSV file with ground truth')
     parser.add_argument('--output', default='exports/param_sweep_results.csv', help='Output CSV file')
     parser.add_argument('--timeout', type=int, default=45, help='HTTP timeout seconds per image')
     parser.add_argument('--rotations', default='0,180', help="Angles to try to speed up API (e.g. '0,180' or '0,90,180,270')")
@@ -230,7 +231,8 @@ def main():
         args.images,
         args.labels,
         args.output,
-        param_grid
+        param_grid,
+        args.timeout,
     )
 
 

@@ -1,185 +1,65 @@
-# Frontend ROI Cropping Guide
+# Frontend ROI Crop Integration Guide
+
+This guide outlines how to integrate the backend's Region of Interest (ROI) cropping capabilities with the iOS frontend.
 
 ## Overview
-To maximize OCR accuracy, the iOS frontend should implement intelligent Region of Interest (ROI) cropping before sending images to the backend. This reduces noise, glare, and processing time while improving detection rates.
 
-## Requirements
+Our OCR backend includes sophisticated ROI detection to isolate text regions, but providing a pre-cropped image from the frontend can further improve accuracy and reduce processing time.
 
-### 1. User Interface Guidelines
+## Implementation Steps
 
-#### Capture Overlay
-- Display a rectangular guide overlay on the camera preview
-- Guide dimensions: ~70% of screen width, ~20% of screen height
-- Center the guide horizontally, position at 40% from top
-- Semi-transparent border with corner markers
-- Text prompt: "Align serial number within frame"
+### 1. Manual ROI Selection
 
-#### Visual Feedback
-- Real-time edge detection highlighting (optional)
-- Green border when text is detected in frame
-- Red border when image is too blurry or dark
-- Haptic feedback on successful capture
+- Add a rectangular selection overlay on the camera preview
+- Allow users to adjust the rectangle to frame the serial number
+- Crop the image to the selected ROI before sending
+- Maintain a reasonable margin around the text (approximately 10-20% padding)
 
-### 2. Image Preprocessing (iOS Side)
+### 2. Device Type Selection
 
-#### Automatic Cropping
-```swift
-// Recommended crop padding
-let padding = CGFloat(50) // pixels
-let cropRect = CGRect(
-    x: max(0, detectedTextRegion.minX - padding),
-    y: max(0, detectedTextRegion.minY - padding),
-    width: min(image.width, detectedTextRegion.width + padding * 2),
-    height: min(image.height, detectedTextRegion.height + padding * 2)
-)
-```
+- Add a UI for users to select the device type (MacBook, iPhone, iPad, etc.)
+- Map device types to appropriate presets:
+  - `etched`: For MacBook, Mac Mini, iMac (metal etched serials)
+  - `sticker`: For accessories, boxes (printed labels)
+  - `screen`: For on-screen display of serials (Settings app)
+  - `default`: General purpose preset
 
-#### Quality Checks Before Upload
-1. **Blur Detection**: Laplacian variance > 100
-2. **Brightness Check**: Mean pixel value between 50-200
-3. **Minimum Resolution**: Cropped region >= 300x100 pixels
-4. **Aspect Ratio**: Between 2:1 and 10:1 (typical for serial numbers)
+### 3. API Integration
 
-### 3. VisionKit Integration
+When sending the image to the backend, include these parameters:
 
-Use iOS VisionKit for initial text detection:
+- `preset`: The processing preset to use (`etched`, `sticker`, `screen`, `default`)
+- `device_type`: The type of device being scanned (for logging/analytics)
 
-```swift
-import Vision
-
-func detectTextRegion(in image: UIImage, completion: @escaping (CGRect?) -> Void) {
-    guard let cgImage = image.cgImage else { 
-        completion(nil)
-        return 
-    }
-    
-    let request = VNDetectTextRectanglesRequest { request, error in
-        guard let observations = request.results as? [VNTextObservation],
-              let textBox = observations.first?.boundingBox else {
-            completion(nil)
-            return
-        }
-        
-        // Convert Vision coordinates to UIKit coordinates
-        let imageSize = CGSize(width: cgImage.width, height: cgImage.height)
-        let rect = VNImageRectForNormalizedRect(textBox, 
-                                                Int(imageSize.width), 
-                                                Int(imageSize.height))
-        completion(rect)
-    }
-    
-    request.reportCharacterBoxes = false
-    let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
-    try? handler.perform([request])
-}
-```
-
-### 4. API Integration
-
-#### Request Format
-```json
-{
-  "image": "base64_encoded_cropped_image",
-  "metadata": {
-    "original_dimensions": [2048, 1536],
-    "crop_region": [512, 384, 1024, 256],
-    "device_model": "iPhone14,2",
-    "capture_mode": "auto",
-    "preprocessing": {
-      "blur_score": 156.2,
-      "brightness": 128,
-      "has_flash": false
-    }
-  }
-}
-```
-
-#### Recommended Headers
-```
-X-Device-Type: iPhone
-X-Image-Preprocessed: true
-X-ROI-Applied: true
-```
-
-### 5. Device-Specific Optimizations
-
-#### For Etched Serials (MacBooks, Metal Devices)
-- Increase exposure slightly (+0.5 EV)
-- Disable flash (causes glare on metal)
-- Use `preset=etched` in API call
-
-#### For Sticker Labels
-- Enable auto-flash in low light
-- Normal exposure
-- Use `preset=sticker` in API call
-
-#### For Screen Display
-- Reduce exposure (-0.5 EV) to prevent overexposure
-- Disable flash
-- Use `preset=screen` in API call
-
-### 6. Error Handling
-
-#### Retry Logic
-1. If no text detected: Prompt user to adjust angle/lighting
-2. If blur detected: Show "Hold steady" message
-3. If too dark: Suggest better lighting or enable torch
-4. After 3 failed attempts: Offer manual full-frame capture
-
-#### Fallback Mode
-If ROI detection fails consistently:
-- Send full image with `roi=false` parameter
-- Let backend handle the complete processing
-- Log failure for debugging
-
-### 7. Performance Considerations
-
-#### Image Compression
-- Use JPEG with 85% quality for cropped regions
-- Maximum upload size: 2MB
-- Resize if needed while maintaining aspect ratio
-
-#### Caching
-- Cache successful detection parameters per device type
-- Reuse optimal settings for subsequent captures
-
-### 8. Testing Checklist
-
-- [ ] Test with various lighting conditions
-- [ ] Test with different angles (0°, 15°, 30°, 45°)
-- [ ] Test with worn/faded serials
-- [ ] Test with reflective surfaces
-- [ ] Test with different font sizes
-- [ ] Verify crop padding is sufficient
-- [ ] Ensure metadata is correctly attached
-- [ ] Validate retry mechanism works
-
-## Sample Implementation Flow
+## Example Request
 
 ```
-1. User opens camera
-2. Display ROI guide overlay
-3. Run continuous text detection (throttled to 2 FPS)
-4. When text detected in guide area:
-   a. Check image quality
-   b. Crop with padding
-   c. Apply device-specific preprocessing
-   d. Upload to backend with metadata
-5. Display result or retry prompt
+POST /process-serial
+Content-Type: multipart/form-data
+
+- image: [binary image data]
+- preset: etched
+- device_type: MacBook Pro
 ```
 
-## Backend Coordination
+## Best Practices
 
-The backend will:
-- Accept pre-cropped images with metadata
-- Apply additional preprocessing based on device type
-- Return confidence scores and detected serials
-- Log failed detections for improvement
+1. **Provide clear user guidance**:
+   - Show an example of a properly framed serial number
+   - Use visual guides to help users position the ROI correctly
 
-## Benefits of Frontend ROI
+2. **Handle different orientations**:
+   - Support both landscape and portrait orientations
+   - Adjust the ROI aspect ratio based on typical serial number dimensions
 
-1. **Reduced Bandwidth**: ~70% smaller uploads
-2. **Faster Processing**: 2-3x faster OCR
-3. **Better Accuracy**: 15-20% improvement
-4. **Lower Server Load**: Less preprocessing needed
-5. **Better UX**: Immediate feedback to user
+3. **Error handling**:
+   - Provide feedback if the selected area is too small
+   - Allow users to retake/recrop if OCR fails
+
+## Backend API Parameters
+
+| Parameter | Description | Example Values |
+|-----------|-------------|----------------|
+| `preset` | Predefined settings for device type | `"etched"`, `"sticker"`, `"screen"`, `"default"` |
+| `device_type` | Type of device being scanned | `"MacBook"`, `"iPhone"`, `"iPad"` |
+| `min_confidence` | Minimum confidence threshold | `0.5` (range: 0.0-1.0) |

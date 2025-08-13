@@ -1,8 +1,11 @@
-from fastapi import FastAPI
+import time
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from starlette.middleware.base import BaseHTTPMiddleware
 
 from app.db import initialize_storage
 from app.routers.serials import router as serials_router
+from app.utils.logging import log_api_request
 
 app = FastAPI(title="Apple Serial OCR Backend", version="0.1.0")
 
@@ -14,6 +17,41 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+# API request logging middleware
+class LoggingMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request: Request, call_next):
+        start_time = time.time()
+        
+        # Get client IP
+        client_ip = request.client.host if request.client else None
+        
+        # Process the request
+        response = await call_next(request)
+        
+        # Calculate response time
+        response_time = time.time() - start_time
+        
+        # Extract query parameters
+        query_params = {}
+        for key, value in request.query_params.items():
+            query_params[key] = value
+        
+        # Log the request
+        log_api_request(
+            endpoint=str(request.url.path),
+            method=request.method,
+            params=query_params,
+            status_code=response.status_code,
+            response_time=response_time,
+            client_ip=client_ip,
+        )
+        
+        return response
+
+
+app.add_middleware(LoggingMiddleware)
 
 
 @app.on_event("startup")

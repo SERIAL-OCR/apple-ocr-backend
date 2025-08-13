@@ -286,7 +286,7 @@ def generate_dataset(
             try:
                 if isinstance(font, ImageFont.FreeTypeFont):
                     font = ImageFont.truetype(font.path, font_size)
-            except Exception:
+    except Exception:
                 pass
 
             invert = random.random() < cfg.invert_prob
