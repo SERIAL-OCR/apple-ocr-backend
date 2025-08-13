@@ -1,0 +1,11 @@
+{
+  "dataset": "Apple serial",
+  "total": 25,
+  "detected": 0,
+  "hits": 0,
+  "detection_rate_pct": 0.0,
+  "accuracy_pct_overall": 0.0,
+  "accuracy_pct_on_detected": 0.0,
+  "csv_path": "exports\\reports\\eval_Apple serial_20250813_210356.csv",
+  "summary_path": "exports\\reports\\eval_Apple serial_20250813_210356.json"
+}

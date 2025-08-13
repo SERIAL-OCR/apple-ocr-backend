@@ -1,0 +1,13 @@
+{
+  "params": {
+    "upscale_scale": 3.0,
+    "mode": "gray",
+    "low_text": 0.2,
+    "text_threshold": 0.4,
+    "roi": true,
+    "roi_pad": 10,
+    "rotations": "0,180",
+    "persist": "false"
+  },
+  "accuracy": 0.42
+}
