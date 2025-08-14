@@ -15,12 +15,12 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(
 
 # Constants
 API_URL = "http://localhost:8000"
-SAMPLE_IMAGE = "samples/serial_1.jpeg"  # Update with a valid sample image path
+SAMPLE_IMAGE = "Apple serial/IMG-20250813-WA0024.jpg"  # Update with a valid sample image path
 
 
 def test_health_endpoint():
     """Test the /health endpoint."""
-    print("\n=== Testing /health endpoint ===")
+    print("\n=== Testing /health endpoint ===")s
     
     response = requests.get(f"{API_URL}/health")
     
