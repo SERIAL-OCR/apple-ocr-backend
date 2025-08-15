@@ -26,12 +26,7 @@ venv/
 Thumbs.db
 
 # Local data & exports
-/data/
-/exports/
 !/data/.gitkeep
 !/exports/.gitkeep
 
-/context/
 /private/
-
-/exported-assets/
