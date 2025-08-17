@@ -6,7 +6,7 @@ opencv-python==4.10.0.84
 numpy>=1.24.0,<2.0.0
 pydantic==2.8.2
 easyocr==1.7.1
-requests==2.32.3
+requests==2.32.4
 pytesseract==0.3.10
 ultralytics>=8.0.0
 onnxruntime>=1.17.0
