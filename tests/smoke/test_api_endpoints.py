@@ -20,7 +20,7 @@ SAMPLE_IMAGE = "Apple serial/IMG-20250813-WA0024.jpg"  # Update with a valid sam
 
 def test_health_endpoint():
     """Test the /health endpoint."""
-    print("\n=== Testing /health endpoint ===")s
+    print("\n=== Testing /health endpoint ===")
     
     response = requests.get(f"{API_URL}/health")
     

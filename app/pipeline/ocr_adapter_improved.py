@@ -28,17 +28,40 @@ def _get_reader() -> easyocr.Reader:
         # Simple init log to help verify GPU path in logs
         try:
             import torch  # type: ignore
-            gpu_info = f"cuda={torch.version.cuda}, available={torch.cuda.is_available()}"
             
-            # Configure GPU memory usage if available
-            if use_gpu and torch.cuda.is_available():
-                # Set memory fraction to use
-                torch.cuda.set_per_process_memory_fraction(0.8)  # Use up to 80% of GPU memory
+            # Check for MPS (Apple Silicon) or CUDA
+            use_mps = hasattr(torch.backends, "mps") and torch.backends.mps.is_available()
+            use_cuda = torch.cuda.is_available()
+            
+            if use_mps:
+                gpu_info = f"MPS available (Apple Silicon), cuda={torch.version.cuda}, cuda_available={use_cuda}"
                 
-                # Enable memory caching for faster allocation
-                torch.cuda.empty_cache()
+                # Configure MPS environment variables if needed
+                import os
+                if "PYTORCH_MPS_HIGH_WATERMARK_RATIO" not in os.environ:
+                    os.environ["PYTORCH_MPS_HIGH_WATERMARK_RATIO"] = "0.0"
+                    logger.info("[MPS] Set PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0")
                 
-                logger.info(f"[GPU] Configured memory fraction: 0.8, device: {torch.cuda.get_device_name(0)}")
+                # Set batch size for better performance
+                if "OCR_BATCH_SIZE" not in os.environ:
+                    os.environ["OCR_BATCH_SIZE"] = "4"
+                    logger.info("[MPS] Set OCR_BATCH_SIZE=4")
+                    
+                logger.info(f"[GPU] Using Apple Silicon MPS acceleration")
+            elif use_cuda:
+                gpu_info = f"cuda={torch.version.cuda}, available={use_cuda}"
+                
+                # Configure GPU memory usage if available
+                if use_gpu:
+                    # Set memory fraction to use
+                    torch.cuda.set_per_process_memory_fraction(0.8)  # Use up to 80% of GPU memory
+                    
+                    # Enable memory caching for faster allocation
+                    torch.cuda.empty_cache()
+                    
+                    logger.info(f"[GPU] Configured memory fraction: 0.8, device: {torch.cuda.get_device_name(0)}")
+            else:
+                gpu_info = "No GPU acceleration available"
         except Exception as e:
             gpu_info = f"torch_error: {str(e)}"
             
@@ -81,20 +104,20 @@ def _detect_glare_regions(image: np.ndarray, threshold: int = 220) -> np.ndarray
     return glare_mask
 
 
-def _reduce_glare(image: np.ndarray, method: str = "tophat", multi_scale: bool = False) -> np.ndarray:
+def _reduce_glare(image: np.ndarray, method: str = "adaptive", multi_scale: bool = False) -> np.ndarray:
     """Reduce glare and improve illumination uniformity.
     
     Args:
         image: Grayscale image
         method: "tophat" for morphological top-hat, "division" for background division,
-                "adaptive" to choose automatically based on image statistics,
+                "adaptive" to choose automatically based on image statistics (default),
                 "multi" for multi-scale glare reduction
         multi_scale: Whether to use multi-scale processing for better glare handling
     
     Returns:
         Image with reduced glare
     """
-    # Auto-select method if "adaptive" is specified
+    # Auto-select method if "adaptive" is specified (default)
     if method == "adaptive":
         # Calculate image statistics
         mean_val = np.mean(image)
@@ -104,12 +127,20 @@ def _reduce_glare(image: np.ndarray, method: str = "tophat", multi_scale: bool =
         glare_mask = _detect_glare_regions(image)
         glare_ratio = np.sum(glare_mask > 0) / (image.shape[0] * image.shape[1])
         
+        # More sophisticated method selection based on image characteristics
+        
         # If significant glare detected, use multi-scale approach
         if glare_ratio > 0.05:
             method = "multi"
         # If high mean and low std, likely has uniform glare - use division
         elif mean_val > 180 and std_val < 50:
             method = "division"
+        # If very dark image with low contrast
+        elif mean_val < 80 and std_val < 40:
+            # For dark images, use CLAHE first then tophat
+            clahe = cv2.createCLAHE(clipLimit=3.0, tileGridSize=(8, 8))
+            image = clahe.apply(image)
+            method = "tophat"
         # If medium brightness with higher contrast, likely has spotty glare - use tophat
         else:
             method = "tophat"
@@ -263,17 +294,66 @@ def preprocess_image(
     return out
 
 
+# Character disambiguation maps
 _AMBIGUOUS_MAP: Dict[str, str] = {
-    "O": "0",
-    "I": "1",
-    "L": "1",
-    "Z": "2",
-    "S": "5",
-    "B": "8",
-    "Q": "0",
-    "G": "6",
-    "D": "0",  # Sometimes D is confused with 0
-    "T": "7",  # Sometimes T is confused with 7
+    # Letters to digits
+    "O": "0",  # O -> 0
+    "I": "1",  # I -> 1
+    "L": "1",  # L -> 1
+    "Z": "2",  # Z -> 2
+    "S": "5",  # S -> 5
+    "B": "8",  # B -> 8
+    "Q": "0",  # Q -> 0
+    "G": "6",  # G -> 6
+    "D": "0",  # D -> 0
+    "T": "7",  # T -> 7
+    
+    # Digits to letters (for position-aware correction)
+    # These are used in the opposite direction in position-aware mode
+}
+
+# Position-specific rules for Apple serials
+# First 3 positions are more likely to be letters
+# Last 4 positions are more likely to be digits
+# Middle positions (3-7) have specific patterns
+_POSITION_RULES: Dict[str, Dict[int, str]] = {
+    # For positions 0-2 (first 3 chars), prefer letters
+    "0": {0: "O", 1: "O", 2: "O"},
+    "1": {0: "I", 1: "I", 2: "I"},
+    "2": {0: "Z", 1: "Z", 2: "Z"},
+    "5": {0: "S", 1: "S", 2: "S"},
+    "8": {0: "B", 1: "B", 2: "B"},
+    
+    # For positions 8-11 (last 4 chars), prefer digits
+    "O": {8: "0", 9: "0", 10: "0", 11: "0"},
+    "I": {8: "1", 9: "1", 10: "1", 11: "1"},
+    "L": {8: "1", 9: "1", 10: "1", 11: "1"},
+    "Z": {8: "2", 9: "2", 10: "2", 11: "2"},
+    "S": {8: "5", 9: "5", 10: "5", 11: "5"},
+    "B": {8: "8", 9: "8", 10: "8", 11: "8"},
+    "Q": {8: "0", 9: "0", 10: "0", 11: "0"},
+    "G": {8: "6", 9: "6", 10: "6", 11: "6"},
+    "D": {8: "0", 9: "0", 10: "0", 11: "0"},
+    "T": {8: "7", 9: "7", 10: "7", 11: "7"},
+    
+    # Special rules for common Apple serial number patterns
+    # Position 3-4 (usually digits in Apple serials)
+    "O": {3: "0", 4: "0"},
+    "I": {3: "1", 4: "1"},
+    "L": {3: "1", 4: "1"},
+    "Z": {3: "2", 4: "2"},
+    "S": {3: "5", 4: "5"},
+    "B": {3: "8", 4: "8"},
+    
+    # Position 5-7 (mixed, but with specific patterns)
+    # Fix common confusion: F→E and I→J
+    "E": {5: "F", 6: "F", 7: "F"},  # E is often confused with F in positions 5-7
+    "J": {5: "I", 6: "I", 7: "I"},  # J is often confused with I in positions 5-7
+    
+    # Common Apple serial prefixes have specific patterns
+    # For example, C02Y9 is a common MacBook prefix
+    "C": {0: "C"},  # Always C at position 0 for many Apple products
+    "Y": {3: "Y"},  # Y is common at position 3 in many MacBook serials
 }
 
 
@@ -288,20 +368,44 @@ def _expand_ambiguous(text: str, position_aware: bool = False) -> Set[str]:
         Set of possible variants
     """
     variants: Set[str] = {text}
+    
+    # Only apply position rules for 12-char serials
+    is_12_char_serial = len(text) == 12
+    
     for idx, ch in enumerate(text):
         # Skip certain positions if using position-aware rules
-        if position_aware:
-            # First 3 chars more likely to be letters
-            if idx < 3 and ch in ('O', 'I'):
-                continue
-            # Last 4 chars more likely to be digits
-            if idx >= 8 and ch in ('G', 'B', 'D'):
+        if position_aware and is_12_char_serial:
+            # Check if there's a position-specific rule for this character and position
+            if ch in _POSITION_RULES and idx in _POSITION_RULES[ch]:
+                # Skip this character as it will be handled by position rules
                 continue
         
+        # Apply general ambiguity expansion
         rep = _AMBIGUOUS_MAP.get(ch)
         if rep:
             for v in list(variants):
                 variants.add(v[:idx] + rep + v[idx + 1:])
+    
+    # Apply position-specific rules if enabled
+    if position_aware and is_12_char_serial:
+        position_variants = set()
+        
+        for v in variants:
+            position_variant = ""
+            for idx, ch in enumerate(v):
+                if ch in _POSITION_RULES and idx in _POSITION_RULES[ch]:
+                    # Apply position rule
+                    position_variant += _POSITION_RULES[ch][idx]
+                else:
+                    position_variant += ch
+            
+            # Only add if different from original
+            if position_variant != v:
+                position_variants.add(position_variant)
+        
+        # Add position-specific variants
+        variants.update(position_variants)
+    
     return variants
 
 
@@ -319,21 +423,16 @@ def _normalize_ambiguous(text: str, position_aware: bool = False) -> str:
     result = ""
     
     for i, char in enumerate(up):
-        if position_aware:
-            # Apply position-specific rules for Apple serials
-            if char == 'G' and i >= 8:  # Last 4 chars more likely to be digits
-                result += '6'
-            elif char == 'O' and i < 3:  # First 3 chars more likely to be letters
-                result += 'O'
-            elif char == 'I' and i < 3:  # First 3 chars more likely to be letters
-                result += 'I'
-            elif char == 'B' and i >= 8:  # Last 4 chars more likely to be digits
-                result += '8'
-            elif char == 'D' and i >= 8:  # Last 4 chars more likely to be digits
-                result += '0'
+        if position_aware and len(up) == 12:  # Only apply position rules for 12-char serials
+            # Check if there's a position-specific rule for this character and position
+            if char in _POSITION_RULES and i in _POSITION_RULES[char]:
+                # Apply position-specific rule
+                result += _POSITION_RULES[char][i]
             else:
+                # Apply general rule if available, otherwise keep the character
                 result += _AMBIGUOUS_MAP.get(char, char)
         else:
+            # Apply general rule if available, otherwise keep the character
             result += _AMBIGUOUS_MAP.get(char, char)
     
     return result
@@ -416,34 +515,50 @@ def _get_smart_rotation_angles(img: np.ndarray, fine_rotation: bool = False) -> 
         fine_rotation: Whether to include fine rotation angles
         
     Returns:
-        List of rotation angles to try
+        List of rotation angles to try in priority order
     """
     # Detect the primary orientation
     primary_angle = _detect_text_orientation(img)
     
-    # Always include the detected primary angle
-    angles = [primary_angle]
-    
-    # Add the opposite orientation as a fallback
-    opposite_angle = (primary_angle + 180) % 360
-    angles.append(opposite_angle)
-    
-    # If the orientation detection isn't confident between horizontal/vertical,
-    # add the other orientations
+    # Start with horizontal angles (most Apple serials are horizontal)
     if primary_angle in [0, 180]:
-        angles.extend([90, 270])
-    else:  # primary_angle in [90, 270]
-        angles.extend([0, 180])
+        # Horizontal text detected - prioritize horizontal angles
+        angles = [0, 180]  # Try upright first, then upside down
+        
+        # Only add vertical angles if needed
+        secondary_angles = [90, 270]
+    else:
+        # Vertical text detected - prioritize detected orientation
+        angles = [primary_angle]
+        
+        # Add the opposite orientation
+        opposite_angle = (primary_angle + 180) % 360
+        angles.append(opposite_angle)
+        
+        # Add horizontal angles as fallback
+        secondary_angles = [0, 180]
     
     # Add fine rotation angles if requested
     if fine_rotation:
         fine_angles = []
-        for angle in angles[:2]:  # Only add fine rotations for primary and opposite angles
+        # Only add fine rotations for primary angles to avoid excessive processing
+        for angle in angles[:2]:  # First two angles only
             fine_angles.extend([angle - 15, angle - 7, angle + 7, angle + 15])
+        
+        # Insert fine angles after the primary angles but before secondary angles
         angles.extend(fine_angles)
+        
+        # Add secondary angles last
+        angles.extend(secondary_angles)
+    else:
+        # Without fine rotation, just add secondary angles
+        angles.extend(secondary_angles)
     
-    # Remove duplicates and sort
+    # Remove duplicates and sort for consistency
     angles = sorted(list(set(angles)))
+    
+    # Log the angles being used
+    logger.debug(f"Smart rotation angles: {angles}")
     
     return angles
 
@@ -491,9 +606,38 @@ def _read_serials_from_image(
     try:
         # Try to use mixed precision if available
         import torch  # type: ignore
+        
+        # Check for MPS (Apple Silicon) or CUDA
+        use_mps = hasattr(torch.backends, "mps") and torch.backends.mps.is_available()
+        use_cuda = torch.cuda.is_available()
+        
         if hasattr(torch, 'amp') and OCR_SETTINGS["use_gpu"]:
-            # Use the updated syntax for autocast
-            with torch.amp.autocast(device_type='cuda'):
+            if use_cuda:
+                # Use CUDA with autocast
+                with torch.amp.autocast(device_type='cuda'):
+                    results = reader.readtext(
+                        img,
+                        detail=1,
+                        paragraph=False,
+                        allowlist=_ALLOWED,
+                        low_text=low_text,
+                        text_threshold=text_threshold,
+                        mag_ratio=mag_ratio,
+                    )
+            elif use_mps:
+                # For MPS, we don't use autocast as it's not fully supported
+                # but we still use GPU acceleration
+                results = reader.readtext(
+                    img,
+                    detail=1,
+                    paragraph=False,
+                    allowlist=_ALLOWED,
+                    low_text=low_text,
+                    text_threshold=text_threshold,
+                    mag_ratio=mag_ratio,
+                )
+            else:
+                # Fall back to CPU
                 results = reader.readtext(
                     img,
                     detail=1,
@@ -504,6 +648,7 @@ def _read_serials_from_image(
                     mag_ratio=mag_ratio,
                 )
         else:
+            # No GPU or autocast not available
             results = reader.readtext(
                 img,
                 detail=1,
@@ -516,30 +661,43 @@ def _read_serials_from_image(
             
         # Clear GPU cache after inference if using GPU
         if OCR_SETTINGS["use_gpu"]:
-            torch.cuda.empty_cache()
-            gc.collect()  # Also run garbage collection
+            if use_cuda:
+                torch.cuda.empty_cache()
+            # For MPS, there's no direct cache clearing method, but we can still run GC
+            gc.collect()  # Run garbage collection
             
     except Exception as e:
         logger.error(f"Error during OCR inference: {str(e)}")
         # Fallback to CPU if GPU fails
         if OCR_SETTINGS["use_gpu"]:
-            logger.warning("Falling back to CPU inference after GPU error")
+            if use_mps:
+                logger.warning("MPS (Apple Silicon) GPU error, falling back to CPU inference")
+            else:
+                logger.warning("CUDA GPU error, falling back to CPU inference")
+                
             global _reader
             _reader = None  # Force reader re-initialization with CPU
             OCR_SETTINGS["use_gpu"] = False
             reader = _get_reader()
-            results = reader.readtext(
-                img,
-                detail=1,
-                paragraph=False,
-                allowlist=_ALLOWED,
-                low_text=low_text,
-                text_threshold=text_threshold,
-                mag_ratio=mag_ratio,
-            )
+            
+            try:
+                results = reader.readtext(
+                    img,
+                    detail=1,
+                    paragraph=False,
+                    allowlist=_ALLOWED,
+                    low_text=low_text,
+                    text_threshold=text_threshold,
+                    mag_ratio=mag_ratio,
+                )
+            except Exception as e2:
+                logger.error(f"Error during CPU fallback inference: {str(e2)}")
+                # If CPU also fails, return empty results
+                return []
         else:
-            # If already on CPU, re-raise the exception
-            raise
+            # If already on CPU, return empty results instead of raising
+            logger.error(f"CPU inference failed: {str(e)}")
+            return []
     
     serials: List[Tuple[str, float]] = []
     for bbox, text, confidence in results:
@@ -554,11 +712,25 @@ def _read_serials_from_image(
 
 def _find_rois_by_projection(
     img_gray_or_bin: np.ndarray, 
-    top_k: int = 2, 
-    pad: int = 8,
+    top_k: int = 3,  # Changed from 2 to 3 based on test results
+    pad: int = 10,   # Changed from 8 to 10 for better padding
     adaptive_pad: bool = True,
+    min_roi_height: int = 15,  # Minimum ROI height to filter out tiny regions
+    min_roi_width_ratio: float = 0.1,  # Minimum width as ratio of image width
 ) -> List[Tuple[int, int]]:
-    """Find regions of interest by row projection with adaptive padding."""
+    """Find regions of interest by row projection with adaptive padding.
+    
+    Args:
+        img_gray_or_bin: Grayscale or binary image
+        top_k: Number of top ROIs to return
+        pad: Base padding around ROIs
+        adaptive_pad: Whether to use adaptive padding based on ROI height
+        min_roi_height: Minimum ROI height to filter out tiny regions
+        min_roi_width_ratio: Minimum width as ratio of image width
+        
+    Returns:
+        List of (y0, y1) tuples for ROI bands
+    """
     # Expect single channel image
     img = img_gray_or_bin
     if img.ndim == 3:
@@ -572,14 +744,22 @@ def _find_rois_by_projection(
     proj = ink.sum(axis=1).astype(np.float32)
     
     # Smooth projection
-    proj = cv2.GaussianBlur(proj.reshape(-1, 1), (1, 9), 0).reshape(-1)
+    proj = cv2.GaussianBlur(proj.reshape(-1, 1), (1, 15), 0).reshape(-1)  # Increased kernel size from 9 to 15
 
     # Dynamic threshold based on projection statistics
     mean_proj = np.mean(proj)
     max_proj = np.max(proj)
-    thr = max(mean_proj * 1.5, max_proj * 0.3)
+    
+    # More aggressive thresholding to filter out noise
+    thr = max(mean_proj * 1.8, max_proj * 0.25)  # Adjusted thresholds
     
     mask = (proj >= thr).astype(np.uint8)
+
+    # Apply morphological operations to clean up mask
+    kernel_size = max(3, h // 100)  # Adaptive kernel size based on image height
+    kernel = np.ones(kernel_size, dtype=np.uint8)
+    mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel)
+    mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel)
 
     rois: List[Tuple[int, int]] = []
     start = None
@@ -588,11 +768,13 @@ def _find_rois_by_projection(
             start = i
         if (not v or i == len(mask) - 1) and start is not None:
             end = i if not v else i
-            # Filter tiny bands
-            if end - start > max(8, h // 20):
+            # Filter tiny bands and ensure minimum height
+            roi_height = end - start
+            min_height_threshold = max(min_roi_height, h // 20)
+            
+            if roi_height > min_height_threshold:
                 # Calculate adaptive padding based on ROI height
                 if adaptive_pad:
-                    roi_height = end - start
                     # Larger padding for smaller ROIs, smaller padding for larger ROIs
                     adaptive_pad_val = min(int(roi_height * 0.5), pad * 2)
                     y0 = max(0, start - adaptive_pad_val)
@@ -600,12 +782,44 @@ def _find_rois_by_projection(
                 else:
                     y0 = max(0, start - pad)
                     y1 = min(h, end + pad)
-                rois.append((y0, y1))
+                
+                # Calculate ROI energy (ink density)
+                roi_energy = proj[start:end].sum()
+                
+                # Only add if ROI has significant energy
+                if roi_energy > mean_proj * roi_height * 0.5:
+                    rois.append((y0, y1))
             start = None
 
     # Sort by projected energy
     rois = sorted(rois, key=lambda yy: proj[yy[0]:yy[1]].sum(), reverse=True)
-    return rois[:top_k]
+    
+    # Filter out ROIs that are too narrow (likely not text)
+    min_width = int(w * min_roi_width_ratio)
+    filtered_rois = []
+    for y0, y1 in rois:
+        # Check horizontal projection to estimate width
+        roi_img = img[y0:y1, :]
+        h_proj = np.sum(255 - roi_img, axis=0)
+        h_mask = (h_proj > np.max(h_proj) * 0.1).astype(np.uint8)
+        
+        # Find contiguous regions with ink
+        h_regions = []
+        h_start = None
+        for i, v in enumerate(h_mask):
+            if v and h_start is None:
+                h_start = i
+            if (not v or i == len(h_mask) - 1) and h_start is not None:
+                h_end = i if not v else i
+                h_regions.append((h_start, h_end))
+                h_start = None
+        
+        # If any horizontal region is wide enough, keep the ROI
+        if any(end - start > min_width for start, end in h_regions):
+            filtered_rois.append((y0, y1))
+    
+    # Return top_k filtered ROIs
+    return filtered_rois[:top_k]
 
 
 def progressive_process(
@@ -617,6 +831,12 @@ def progressive_process(
     debug_steps: bool = False,
     use_tesseract_fallback: bool = True,
     use_yolo_roi: bool = True,
+    # Additional parameters for advanced processing
+    try_invert: bool = True,  # Try inverted image
+    try_multi_scale: bool = True,  # Try multiple scales
+    device_type: Optional[str] = None,  # Device type for specialized processing
+    production_mode: bool = False,  # Production mode for enhanced reliability
+    fallback_strategy: str = "hybrid",  # Fallback strategy: "easyocr_only", "tesseract_only", "hybrid"
 ) -> List[Tuple[str, float]]:
     """Process image with progressive complexity until good results are found.
     
@@ -630,11 +850,24 @@ def progressive_process(
         debug_save_path: Path to save debug images
         max_processing_time: Maximum processing time in seconds
         debug_steps: Whether to save intermediate processing steps
+        use_tesseract_fallback: Whether to use Tesseract as fallback
+        use_yolo_roi: Whether to use YOLO ROI detection
+        try_invert: Whether to try inverted image
+        try_multi_scale: Whether to try multiple scales
+        device_type: Device type for specialized processing
+        production_mode: Production mode for enhanced reliability
+        fallback_strategy: Fallback strategy ("easyocr_only", "tesseract_only", "hybrid")
         
     Returns:
         List of (serial, confidence) tuples
     """
     start_time = time.time()
+    all_results = []  # Collect all results from all stages
+    
+    # Log start of processing
+    logger.info(f"[Progressive] Starting progressive processing pipeline")
+    logger.info(f"[Progressive] Parameters: max_time={max_processing_time}s, early_stop={early_stop_confidence}, device_type={device_type}")
+    logger.info(f"[Progressive] Production mode: {production_mode}, Fallback strategy: {fallback_strategy}")
     
     # Try YOLO ROI detection first if enabled
     roi_crops = []
@@ -649,6 +882,7 @@ def progressive_process(
                 # Save debug images if requested
                 if debug_save_path and debug_steps:
                     debug_dir = os.path.dirname(debug_save_path)
+                    os.makedirs(debug_dir, exist_ok=True)
                     for i, crop in enumerate(roi_crops):
                         crop_path = os.path.join(debug_dir, f"yolo_roi_{i}.png")
                         cv2.imwrite(crop_path, crop)
@@ -659,7 +893,7 @@ def progressive_process(
     # Stage 1: Fast processing (grayscale, basic preprocessing, minimal rotations)
     logger.info("[Progressive] Stage 1: Fast processing")
     # If we have YOLO ROI crops, process them first
-    results = []
+    stage1_yolo_results = []
     if roi_crops:
         for i, crop in enumerate(roi_crops):
             # Convert crop to bytes
@@ -677,101 +911,186 @@ def progressive_process(
                 fine_rotation=False,
                 upscale_scale=2.5,  # Slightly higher upscale for crops
                 mode="gray",
-                glare_reduction="adaptive",
+                glare_reduction="adaptive",  # Use adaptive glare reduction
                 debug_save_path=debug_save_path + f".yolo_crop_{i}.png" if debug_save_path else None,
                 debug_steps=debug_steps,
             )
             
             # Add results
-            results.extend(crop_results)
+            stage1_yolo_results.extend(crop_results)
         
         # If we got good results from YOLO crops, return them
-        if results and results[0][1] >= 0.8:
-            logger.info(f"[Progressive] YOLO ROI success: {results[0][0]} ({results[0][1]:.3f})")
-            return sorted(results, key=lambda x: x[1], reverse=True)
+        if stage1_yolo_results and stage1_yolo_results[0][1] >= 0.8:
+            logger.info(f"[Progressive] YOLO ROI success: {stage1_yolo_results[0][0]} ({stage1_yolo_results[0][1]:.3f})")
+            return sorted(stage1_yolo_results, key=lambda x: x[1], reverse=True)
+        
+        # Add to all results
+        all_results.extend(stage1_yolo_results)
     
-    # If YOLO didn't give good results or wasn't used, continue with normal pipeline
-    stage1_results = extract_serials(
+    # Also try full image with fast settings
+    stage1_full_results = extract_serials(
         image_bytes,
         min_confidence=min_confidence,
         early_stop_confidence=early_stop_confidence,
         enable_early_stop=True,
         smart_rotation=True,
-        roi=True,
-        roi_top_k=2,
+        roi=False,  # No ROI detection in fast stage
         fine_rotation=False,
-        upscale_scale=2.0,
+        upscale_scale=2.0,  # Lower upscale for speed
         mode="gray",
-        glare_reduction=None,
+        glare_reduction="adaptive",
         debug_save_path=debug_save_path + ".stage1.png" if debug_save_path else None,
         debug_steps=debug_steps,
     )
     
-    # Merge results
-    results.extend(stage1_results)
-    results = sorted(results, key=lambda x: x[1], reverse=True)
+    # Add to all results
+    all_results.extend(stage1_full_results)
     
-    # Check if we got good results
-    if results and results[0][1] >= 0.8:
-        logger.info(f"[Progressive] Stage 1 success: {results[0][0]} ({results[0][1]:.3f})")
-        return results
+    # Check if we got good results from Stage 1
+    if all_results and all_results[0][1] >= early_stop_confidence:
+        logger.info(f"[Progressive] Stage 1 success: {all_results[0][0]} ({all_results[0][1]:.3f})")
+        return sorted(all_results, key=lambda x: x[1], reverse=True)
     
     # Check if we're out of time
-    if time.time() - start_time > max_processing_time:
-        logger.warning(f"[Progressive] Time limit reached after Stage 1: {time.time() - start_time:.2f}s")
-        return results if results else []
+    if time.time() - start_time > max_processing_time * 0.4:  # Use 40% of max time for Stage 1
+        logger.warning(f"[Progressive] Time limit approaching after Stage 1: {time.time() - start_time:.2f}s")
+        return all_results if all_results else []
     
-    # Stage 2: Medium processing (more rotations, better preprocessing)
+    # Stage 2: Medium processing (enhanced preprocessing, more rotations, inverted image)
     logger.info("[Progressive] Stage 2: Medium processing")
-    results = extract_serials(
+    
+    # Try inverted image if enabled
+    if try_invert:
+        logger.info("[Progressive] Stage 2: Processing inverted image")
+        stage2_inv_results = extract_serials(
+            image_bytes,
+            min_confidence=min_confidence,
+            early_stop_confidence=early_stop_confidence,
+            enable_early_stop=True,
+            smart_rotation=True,
+            roi=False,
+            fine_rotation=False,
+            upscale_scale=2.5,
+            mode="gray",
+            glare_reduction="multi",  # Try multiple glare reduction methods
+            debug_save_path=debug_save_path + ".stage2_inv.png" if debug_save_path else None,
+            debug_steps=debug_steps,
+        )
+        
+        # Add to all results
+        all_results.extend(stage2_inv_results)
+        
+        # Check if we got good results
+        if stage2_inv_results and stage2_inv_results[0][1] >= early_stop_confidence:
+            logger.info(f"[Progressive] Stage 2 inverted success: {stage2_inv_results[0][0]} ({stage2_inv_results[0][1]:.3f})")
+            return sorted(all_results, key=lambda x: x[1], reverse=True)
+    
+    # Try enhanced preprocessing
+    stage2_enhanced_results = extract_serials(
         image_bytes,
         min_confidence=min_confidence,
         early_stop_confidence=early_stop_confidence,
         enable_early_stop=True,
         smart_rotation=True,
-        roi=True,
-        roi_top_k=3,
-        adaptive_pad=True,
+        roi=False,
         fine_rotation=False,
         upscale_scale=3.0,
         mode="binary",
-        glare_reduction="adaptive",
-        debug_save_path=debug_save_path + ".stage2.png" if debug_save_path else None,
+        glare_reduction="multi",
+        sharpen=True,
+        debug_save_path=debug_save_path + ".stage2_enhanced.png" if debug_save_path else None,
         debug_steps=debug_steps,
     )
     
-    # Check if we got good results
-    if results and results[0][1] >= 0.7:
-        logger.info(f"[Progressive] Stage 2 success: {results[0][0]} ({results[0][1]:.3f})")
-        return results
+    # Add to all results
+    all_results.extend(stage2_enhanced_results)
+    
+    # Check if we got good results from Stage 2
+    if all_results and all_results[0][1] >= early_stop_confidence:
+        logger.info(f"[Progressive] Stage 2 success: {all_results[0][0]} ({all_results[0][1]:.3f})")
+        return sorted(all_results, key=lambda x: x[1], reverse=True)
     
     # Check if we're out of time
-    if time.time() - start_time > max_processing_time:
-        logger.warning(f"[Progressive] Time limit reached after Stage 2: {time.time() - start_time:.2f}s")
-        return results if results else []
+    if time.time() - start_time > max_processing_time * 0.7:  # Use 70% of max time for Stage 2
+        logger.warning(f"[Progressive] Time limit approaching after Stage 2: {time.time() - start_time:.2f}s")
+        return all_results if all_results else []
     
-    # Stage 3: Full processing (all optimizations)
+    # Stage 3: Full processing (all preprocessing options, multiple scales)
     logger.info("[Progressive] Stage 3: Full processing")
-    results = extract_serials(
+    
+    # Try with full preprocessing
+    stage3_params = {
+        "upscale_scale": 3.0,
+        "mode": "binary",
+        "glare_reduction": "multi",
+        "sharpen": True,
+        "roi": True,
+        "roi_top_k": 3,
+        "roi_pad": 12,
+        "adaptive_pad": True
+    }
+    
+    stage3_results = extract_serials(
         image_bytes,
         min_confidence=min_confidence,
         early_stop_confidence=early_stop_confidence,
         enable_early_stop=True,
         smart_rotation=True,
-        roi=True,
-        roi_top_k=3,
-        adaptive_pad=True,
-        fine_rotation=True,
-        upscale_scale=4.0,
-        mode="binary",
-        glare_reduction="multi",
-        sharpen=True,
-        low_text=0.12,  # More permissive
-        text_threshold=0.3,  # More permissive
-        mag_ratio=1.8,  # Higher magnification
+        fine_rotation=False,
         debug_save_path=debug_save_path + ".stage3.png" if debug_save_path else None,
         debug_steps=debug_steps,
+        **stage3_params
     )
+    
+    # Add to all results
+    all_results.extend(stage3_results)
+    
+    # Check if we got good results from Stage 3
+    if all_results and all_results[0][1] >= early_stop_confidence:
+        logger.info(f"[Progressive] Stage 3 success: {all_results[0][0]} ({all_results[0][1]:.3f})")
+        return sorted(all_results, key=lambda x: x[1], reverse=True)
+    
+    # Try different scales if needed and if multi-scale is enabled
+    if try_multi_scale:
+        scales = [2.0, 3.0, 4.0, 5.0]  # Different scales to try
+        
+        for scale in scales:
+            # Skip scales we've already tried
+            if scale == stage3_params.get("upscale_scale"):
+                continue
+                
+            # Check if we're out of time
+            if time.time() - start_time > max_processing_time * 0.8:  # Use 80% of max time as cutoff
+                logger.warning(f"[Progressive] Time limit approaching, skipping remaining scales")
+                break
+                
+            logger.info(f"[Progressive] Stage 3: Trying scale {scale}x")
+            
+            # Copy stage3_params and update scale
+            scale_params = stage3_params.copy()
+            scale_params["upscale_scale"] = scale
+            
+            scale_results = extract_serials(
+                image_bytes,
+                min_confidence=min_confidence,
+                early_stop_confidence=early_stop_confidence,
+                enable_early_stop=True,
+                smart_rotation=True,
+                debug_save_path=debug_save_path + f".stage3_scale{scale}.png" if debug_save_path else None,
+                debug_steps=debug_steps,
+                **scale_params
+            )
+            
+            # Add to all results
+            all_results.extend(scale_results)
+            
+            # Check if we got good results
+            if scale_results and scale_results[0][1] >= 0.8:
+                logger.info(f"[Progressive] Scale {scale}x success: {scale_results[0][0]} ({scale_results[0][1]:.3f})")
+                break
+    
+    # Merge and deduplicate results
+    results = _merge_and_deduplicate_results(all_results)
     
     # Check if we got good results
     if results and results[0][1] >= 0.7:
@@ -783,47 +1102,131 @@ def progressive_process(
         logger.warning(f"[Progressive] Time limit reached after Stage 3: {time.time() - start_time:.2f}s")
         return results if results else []
     
-    # Stage 4: Tesseract fallback (if available and enabled)
-    if use_tesseract_fallback and TESSERACT_AVAILABLE:
-        logger.info("[Progressive] Stage 4: Tesseract fallback")
+    # Stage 4: Enhanced Fallback Strategy
+    if production_mode or fallback_strategy != "easyocr_only":
+        logger.info(f"[Progressive] Stage 4: Enhanced fallback strategy ({fallback_strategy})")
         
-        # Process the image for Tesseract
-        processed = preprocess_image(
-            image_bytes, 
-            upscale_scale=3.0,  # Higher scale for Tesseract
-            mode="binary",
-            glare_reduction="multi",
-            sharpen=True,
-            debug_save_path=debug_save_path + ".stage4.png" if debug_save_path else None,
-        )
+        # Enhanced EasyOCR fallback (try different preprocessing combinations)
+        if fallback_strategy in ["hybrid", "easyocr_only"]:
+            logger.info("[Progressive] Stage 4: Enhanced EasyOCR fallback")
+            
+            fallback_attempts = [
+                {"mode": "binary", "glare_reduction": "multi", "upscale_scale": 4.0},
+                {"mode": "gray", "glare_reduction": "adaptive", "upscale_scale": 3.5},
+                {"mode": "gray", "glare_reduction": "tophat", "upscale_scale": 3.0}
+            ]
+            
+            for i, attempt in enumerate(fallback_attempts):
+                try:
+                    enhanced_results = extract_serials(
+                        image_bytes,
+                        min_confidence=min_confidence,
+                        early_stop_confidence=early_stop_confidence,
+                        enable_early_stop=True,
+                        smart_rotation=True,
+                        fine_rotation=False,
+                        debug_save_path=debug_save_path + f".stage4_enhanced_{i}.png" if debug_save_path else None,
+                        debug_steps=debug_steps,
+                        **attempt
+                    )
+                    
+                    if enhanced_results:
+                        logger.info(f"[Progressive] Enhanced EasyOCR attempt {i+1} found {len(enhanced_results)} results")
+                        all_results.extend(enhanced_results)
+                        break
+                        
+                except Exception as e:
+                    logger.warning(f"[Progressive] Enhanced EasyOCR attempt {i+1} failed: {e}")
+                    continue
         
-        # Convert to RGB for Tesseract
-        if processed.ndim == 2:
-            rgb = cv2.cvtColor(processed, cv2.COLOR_GRAY2RGB)
-        else:
-            rgb = processed
+        # Tesseract fallback (if available and enabled)
+        if use_tesseract_fallback and TESSERACT_AVAILABLE and fallback_strategy in ["hybrid", "tesseract_only"]:
+            logger.info("[Progressive] Stage 4: Tesseract fallback")
             
-        # Try with Tesseract
-        tesseract_results = extract_serials_with_tesseract(
-            rgb,
-            min_confidence=min_confidence
-        )
-        
-        # Merge results, prioritizing EasyOCR results
-        if tesseract_results:
-            # Add any new serials from Tesseract
-            existing_serials = {r[0] for r in results}
-            for serial, conf in tesseract_results:
-                if serial not in existing_serials:
-                    results.append((serial, conf))
-            
-            # Re-sort by confidence
-            results = sorted(results, key=lambda x: x[1], reverse=True)
-            
-            logger.info(f"[Progressive] Tesseract found {len(tesseract_results)} candidates")
+            try:
+                # Process the image for Tesseract
+                processed = preprocess_image(
+                    image_bytes, 
+                    upscale_scale=3.0,  # Higher scale for Tesseract
+                    mode="binary",
+                    glare_reduction="multi",
+                    sharpen=True,
+                    debug_save_path=debug_save_path + ".stage4_tesseract.png" if debug_save_path else None,
+                )
+                
+                # Convert to RGB for Tesseract
+                if processed.ndim == 2:
+                    rgb = cv2.cvtColor(processed, cv2.COLOR_GRAY2RGB)
+                else:
+                    rgb = processed
+                    
+                # Try with Tesseract
+                tesseract_results = extract_serials_with_tesseract(
+                    rgb,
+                    min_confidence=min_confidence
+                )
+                
+                # Add to all results
+                if tesseract_results:
+                    all_results.extend(tesseract_results)
+                    logger.info(f"[Progressive] Tesseract found {len(tesseract_results)} candidates")
+                    
+            except Exception as e:
+                logger.warning(f"[Progressive] Tesseract fallback failed: {e}")
     
+    # Final merge and deduplication
+    results = _merge_and_deduplicate_results(all_results)
+    
+    # Log final results
+    if results:
+        logger.info(f"[Progressive] Final results: {len(results)} candidates")
+        logger.info(f"[Progressive] Top result: {results[0][0]} ({results[0][1]:.3f})")
+        
+        # Log fallback usage for production monitoring
+        if production_mode:
+            tesseract_used = any("tesseract" in str(r) for r in all_results)
+            logger.info(f"[Progressive] Production mode: Fallback used: {tesseract_used}")
+    else:
+        logger.warning(f"[Progressive] No results found after all stages")
+        
     logger.info(f"[Progressive] Total processing time: {time.time() - start_time:.2f}s")
     return results
+
+
+def _merge_and_deduplicate_results(results: List[Tuple[str, float]]) -> List[Tuple[str, float]]:
+    """Merge and deduplicate results from different processing stages.
+    
+    This function handles:
+    1. Deduplication of the same serial number from different stages
+    2. Boosting confidence for serials found in multiple stages
+    3. Sorting by confidence
+    
+    Args:
+        results: List of (serial, confidence) tuples from all stages
+        
+    Returns:
+        Deduplicated and sorted list of (serial, confidence) tuples
+    """
+    if not results:
+        return []
+    
+    # Group by serial number and combine confidences
+    serial_to_confidence: Dict[str, float] = {}
+    for serial, confidence in results:
+        if serial in serial_to_confidence:
+            # Boost confidence for serials found multiple times
+            # Use max confidence as base and add a small boost
+            serial_to_confidence[serial] = max(serial_to_confidence[serial], confidence) + 0.05
+        else:
+            serial_to_confidence[serial] = confidence
+    
+    # Cap confidence at 1.0
+    for serial in serial_to_confidence:
+        serial_to_confidence[serial] = min(serial_to_confidence[serial], 1.0)
+    
+    # Convert back to list of tuples and sort by confidence
+    merged_results = [(serial, conf) for serial, conf in serial_to_confidence.items()]
+    return sorted(merged_results, key=lambda x: x[1], reverse=True)
 
 
 def extract_serials(

@@ -44,8 +44,22 @@ def _get_tesseract_path() -> Optional[str]:
         r"C:\Program Files\Tesseract-OCR\tesseract.exe",  # Windows
         r"/usr/bin/tesseract",  # Linux
         r"/usr/local/bin/tesseract",  # macOS
+        r"/opt/homebrew/bin/tesseract",  # macOS with Homebrew on Apple Silicon
+        r"/opt/local/bin/tesseract",  # macOS with MacPorts
     ]
     
+    # Try to find tesseract in PATH
+    try:
+        import subprocess
+        result = subprocess.run(["which", "tesseract"], capture_output=True, text=True)
+        if result.returncode == 0 and result.stdout.strip():
+            path_tesseract = result.stdout.strip()
+            if os.path.exists(path_tesseract):
+                return path_tesseract
+    except Exception:
+        pass
+    
+    # Check common paths
     for path in common_paths:
         if os.path.exists(path):
             return path

@@ -60,7 +60,7 @@ def main():
     # Process image with basic extract_serials
     results = extract_serials(
         image_bytes=image_bytes,
-        debug_save_path=debug_path,
+        debug_save_path=None,  # Disable debug images to avoid OpenCV issues
         **extract_params
     )
     
