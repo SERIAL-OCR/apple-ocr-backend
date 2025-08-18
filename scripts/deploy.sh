@@ -36,6 +36,13 @@ check_prerequisites() {
     # Check if Docker is installed
     if ! command -v docker &> /dev/null; then
         print_error "Docker is not installed. Please install Docker first."
+        print_error "Download from: https://www.docker.com/products/docker-desktop"
+        exit 1
+    fi
+    
+    # Check if Docker is running
+    if ! docker info &> /dev/null; then
+        print_error "Docker is not running. Please start Docker Desktop first."
         exit 1
     fi
     
@@ -45,15 +52,26 @@ check_prerequisites() {
         exit 1
     fi
     
-    # Check if we're on Apple Silicon
-    if [[ $(uname -m) != "arm64" ]]; then
-        print_warning "You're not on Apple Silicon. Performance may be suboptimal."
+    # Check if we're on Apple Silicon (macOS specific)
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        if [[ $(uname -m) != "arm64" ]]; then
+            print_warning "You're not on Apple Silicon. Performance may be suboptimal."
+        fi
+        
+        # Check available memory (macOS specific)
+        if command -v sysctl &> /dev/null; then
+            total_mem=$(sysctl -n hw.memsize 2>/dev/null | awk '{print $0/1024/1024/1024}' || echo "0")
+            if (( $(echo "$total_mem < 4" | bc -l 2>/dev/null || echo "0") )); then
+                print_warning "Less than 4GB RAM detected. Performance may be affected."
+            fi
+        fi
+    else
+        print_warning "Non-macOS system detected. Some features may not work optimally."
     fi
     
-    # Check available memory
-    total_mem=$(sysctl -n hw.memsize | awk '{print $0/1024/1024/1024}')
-    if (( $(echo "$total_mem < 4" | bc -l) )); then
-        print_warning "Less than 4GB RAM detected. Performance may be affected."
+    # Check if curl is available
+    if ! command -v curl &> /dev/null; then
+        print_warning "curl is not installed. Health checks may fail."
     fi
     
     print_success "Prerequisites check completed"
