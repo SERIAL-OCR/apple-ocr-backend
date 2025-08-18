@@ -27,16 +27,23 @@ git clone https://github.com/SERIAL-OCR/apple-ocr-backend.git
 cd apple-ocr-backend
 ```
 
-### **Step 2: Start the Application**
+### **Step 2: Test Your Setup**
 ```bash
-# Make the deployment script executable
+# Make scripts executable
 chmod +x scripts/deploy.sh
+chmod +x scripts/test_setup.sh
 
+# Test if everything is ready
+./scripts/test_setup.sh
+```
+
+### **Step 3: Start the Application**
+```bash
 # Deploy the development environment
 ./scripts/deploy.sh dev
 ```
 
-### **Step 3: Verify Installation**
+### **Step 4: Verify Installation**
 ```bash
 # Check if the service is running
 ./scripts/deploy.sh status
@@ -45,7 +52,7 @@ chmod +x scripts/deploy.sh
 curl http://localhost:8000/health
 ```
 
-### **Step 4: Access the Application**
+### **Step 5: Access the Application**
 - **API Documentation**: http://localhost:8000/docs
 - **Health Check**: http://localhost:8000/health
 
@@ -174,13 +181,23 @@ docker compose logs -f
 ### **Issue: "Docker not found"**
 **Solution**: Install Docker Desktop from [docker.com](https://www.docker.com/products/docker-desktop)
 
+### **Issue: "Docker is not running"**
+**Solution**: 
+```bash
+# Start Docker Desktop application
+# On macOS: Open Docker Desktop from Applications
+# On Windows: Start Docker Desktop from Start Menu
+```
+
 ### **Issue: "Port 8000 already in use"**
 **Solution**: 
 ```bash
 # Find what's using port 8000
 lsof -i :8000
 
-# Stop the conflicting service or use a different port
+# Stop the conflicting service
+docker compose down
+# OR kill the process using port 8000
 ```
 
 ### **Issue: "Permission denied"**
@@ -188,6 +205,7 @@ lsof -i :8000
 ```bash
 # Make scripts executable
 chmod +x scripts/deploy.sh
+chmod +x scripts/test_setup.sh
 
 # Fix storage permissions
 chmod -R 755 storage/
@@ -203,6 +221,32 @@ docker compose logs
 docker system df
 
 # Restart Docker Desktop
+```
+
+### **Issue: "Build failed"**
+**Solution**:
+```bash
+# Clean Docker cache
+docker system prune -a
+
+# Rebuild without cache
+docker compose build --no-cache
+
+# Check available disk space
+df -h
+```
+
+### **Issue: "Health check failed"**
+**Solution**:
+```bash
+# Check if service is actually running
+docker compose ps
+
+# Check detailed logs
+docker compose logs --tail=50
+
+# Wait longer for startup (first run takes time)
+# The script will retry automatically
 ```
 
 ### **Issue: "Low performance"**

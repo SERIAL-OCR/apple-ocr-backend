@@ -1,17 +1,20 @@
 # ⚡ Quick Start - Apple OCR Backend
 
-## 🚀 Get Running in 2 Minutes
+## 🚀 Get Running in 3 Minutes
 
 ```bash
 # 1. Clone and enter
 git clone https://github.com/SERIAL-OCR/apple-ocr-backend.git
 cd apple-ocr-backend
 
-# 2. Start the app
-chmod +x scripts/deploy.sh
+# 2. Test setup
+chmod +x scripts/deploy.sh scripts/test_setup.sh
+./scripts/test_setup.sh
+
+# 3. Start the app
 ./scripts/deploy.sh dev
 
-# 3. Test it works
+# 4. Test it works
 curl http://localhost:8000/health
 ```
 

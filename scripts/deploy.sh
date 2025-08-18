@@ -97,22 +97,33 @@ deploy_dev() {
     docker compose down 2>/dev/null || true
     
     # Build and start
+    print_status "Building and starting containers..."
     docker compose up --build -d
     
-    # Wait for service to be ready
+    # Wait for service to be ready with better error handling
     print_status "Waiting for service to be ready..."
-    sleep 10
+    local max_attempts=30
+    local attempt=1
     
-    # Check health
-    if curl -f http://localhost:8000/health > /dev/null 2>&1; then
-        print_success "Development environment deployed successfully"
-        print_status "API Documentation: http://localhost:8000/docs"
-        print_status "Health Check: http://localhost:8000/health"
-    else
-        print_error "Service health check failed"
-        docker compose logs
-        exit 1
-    fi
+    while [ $attempt -le $max_attempts ]; do
+        if curl -f http://localhost:8000/health > /dev/null 2>&1; then
+            print_success "Development environment deployed successfully"
+            print_status "API Documentation: http://localhost:8000/docs"
+            print_status "Health Check: http://localhost:8000/health"
+            return 0
+        fi
+        
+        print_status "Attempt $attempt/$max_attempts - Service not ready yet..."
+        sleep 2
+        attempt=$((attempt + 1))
+    done
+    
+    print_error "Service health check failed after $max_attempts attempts"
+    print_status "Checking container logs..."
+    docker compose logs --tail=50
+    print_status "Checking container status..."
+    docker compose ps
+    exit 1
 }
 
 # Function to deploy production environment
@@ -123,21 +134,32 @@ deploy_prod() {
     docker compose -f docker-compose.prod.yml down 2>/dev/null || true
     
     # Build and start
+    print_status "Building and starting production containers..."
     docker compose -f docker-compose.prod.yml up --build -d
     
-    # Wait for service to be ready
+    # Wait for service to be ready with better error handling
     print_status "Waiting for service to be ready..."
-    sleep 15
+    local max_attempts=45
+    local attempt=1
     
-    # Check health
-    if curl -f http://localhost:8000/health > /dev/null 2>&1; then
-        print_success "Production environment deployed successfully"
-        print_status "Health Check: http://localhost:8000/health"
-    else
-        print_error "Service health check failed"
-        docker compose -f docker-compose.prod.yml logs
-        exit 1
-    fi
+    while [ $attempt -le $max_attempts ]; do
+        if curl -f http://localhost:8000/health > /dev/null 2>&1; then
+            print_success "Production environment deployed successfully"
+            print_status "Health Check: http://localhost:8000/health"
+            return 0
+        fi
+        
+        print_status "Attempt $attempt/$max_attempts - Service not ready yet..."
+        sleep 2
+        attempt=$((attempt + 1))
+    done
+    
+    print_error "Service health check failed after $max_attempts attempts"
+    print_status "Checking container logs..."
+    docker compose -f docker-compose.prod.yml logs --tail=50
+    print_status "Checking container status..."
+    docker compose -f docker-compose.prod.yml ps
+    exit 1
 }
 
 # Function to stop services
@@ -169,15 +191,49 @@ show_logs() {
 # Function to show status
 show_status() {
     print_status "Development environment status:"
-    docker compose ps 2>/dev/null || echo "No development containers running"
+    if docker compose ps 2>/dev/null | grep -q "apple-ocr-backend"; then
+        docker compose ps
+        echo
+        print_status "Testing development service health..."
+        if curl -f http://localhost:8000/health > /dev/null 2>&1; then
+            print_success "Development service is healthy"
+        else
+            print_warning "Development service is running but health check failed"
+        fi
+    else
+        echo "No development containers running"
+    fi
     
     echo
     print_status "Production environment status:"
-    docker compose -f docker-compose.prod.yml ps 2>/dev/null || echo "No production containers running"
+    if docker compose -f docker-compose.prod.yml ps 2>/dev/null | grep -q "apple-ocr-backend-prod"; then
+        docker compose -f docker-compose.prod.yml ps
+        echo
+        print_status "Testing production service health..."
+        if curl -f http://localhost:8000/health > /dev/null 2>&1; then
+            print_success "Production service is healthy"
+        else
+            print_warning "Production service is running but health check failed"
+        fi
+    else
+        echo "No production containers running"
+    fi
     
     echo
     print_status "Storage usage:"
-    du -sh storage/* 2>/dev/null || echo "Storage directory not found"
+    if [ -d "storage" ]; then
+        du -sh storage/* 2>/dev/null || echo "Storage directories are empty"
+    else
+        echo "Storage directory not found"
+    fi
+    
+    echo
+    print_status "Port 8000 status:"
+    if lsof -i :8000 > /dev/null 2>&1; then
+        lsof -i :8000
+    else
+        echo "Port 8000 is not in use"
+    fi
 }
 
 # Function to run tests
