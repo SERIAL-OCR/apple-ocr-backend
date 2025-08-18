@@ -1,0 +1,30 @@
+{
+  "dataset": "Apple serial",
+  "total": 25,
+  "detected": 25,
+  "hits": 0,
+  "detection_rate_pct": 100.0,
+  "accuracy_pct_overall": 0.0,
+  "accuracy_pct_on_detected": 0.0,
+  "strict_validation_passes": 14,
+  "strict_validation_rate_pct": 56.0,
+  "high_confidence_count": 1,
+  "high_confidence_hits": 0,
+  "high_confidence_accuracy_pct": 0.0,
+  "csv_path": "exports/reports/eval_Apple serial_20250818_010525.csv",
+  "summary_path": "exports/reports/eval_Apple serial_20250818_010525.json",
+  "use_progressive": true,
+  "extract_params": {
+    "name": "iPhone (Screen)",
+    "description": "iPhone with on-screen serial number",
+    "preset": "screen",
+    "roi_aspect_ratio": 3.5,
+    "confidence_threshold": 0.7,
+    "processing_params": {
+      "upscale_scale": 3.0,
+      "glare_reduction": "multi",
+      "roi_top_k": 2,
+      "adaptive_pad": true
+    }
+  }
+}

@@ -116,3 +116,1099 @@ api_request: GET /queue/status - 200 in 0.00s
 api_request: GET /queue/status - 200 in 0.00s
 {"timestamp": "2025-08-17T23:41:14.876810", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.28, "client_ip": "127.0.0.1"}
 api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:41:28.011619", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.01s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 13.28, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.01s
+{"timestamp": "2025-08-18T02:42:42.006694", "event_type": "api_request", "message": "GET /result/ABE0295-FCBD-4EEE-AE79-6F68CEBDDB26 - 404 in 0.00s", "endpoint": "/result/ABE0295-FCBD-4EEE-AE79-6F68CEBDDB26", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.39, "client_ip": "127.0.0.1"}
+api_request: GET /result/ABE0295-FCBD-4EEE-AE79-6F68CEBDDB26 - 404 in 0.00s
+{"timestamp": "2025-08-18T02:42:47.291016", "event_type": "api_request", "message": "GET /jobs - 200 in 0.00s", "endpoint": "/jobs", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.83, "client_ip": "127.0.0.1"}
+api_request: GET /jobs - 200 in 0.00s
+{"timestamp": "2025-08-18T02:47:05.083780", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.01s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 12.53, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.01s
+{"timestamp": "2025-08-18T02:47:07.377444", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.27, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:47:07.984619", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.4, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:47:08.344555", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.31, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:47:10.029239", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.25, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:47:10.985505", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.88, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:47:13.979394", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.58, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:47:16.984356", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.26, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:47:19.979140", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.64, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:47:21.907283", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.56, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:47:22.984023", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.62, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:47:25.984505", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.33, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:48:03.097216", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.43, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:48:05.408235", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.38, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:48:06.042828", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.27, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:48:09.042883", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.35, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:48:12.043306", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 2.74, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:48:15.039501", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.46, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:48:15.214913", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 9.17, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T02:48:18.041862", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.38, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:48:21.089528", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.01s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 12.93, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.01s
+{"timestamp": "2025-08-18T02:48:24.050641", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.99, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:48:27.043464", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.3, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:48:30.042671", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.27, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:48:33.043595", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.69, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:48:36.044498", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 3.93, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:48:39.042774", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.51, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:48:42.053939", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 3.0, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:56:23.148037", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.01s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 11.52, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.01s
+{"timestamp": "2025-08-18T02:56:25.293853", "event_type": "api_request", "message": "GET /history - 200 in 0.00s", "endpoint": "/history", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.99, "client_ip": "127.0.0.1"}
+api_request: GET /history - 200 in 0.00s
+{"timestamp": "2025-08-18T02:56:25.970831", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.61, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:56:28.605161", "event_type": "api_request", "message": "GET /history - 200 in 0.00s", "endpoint": "/history", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.5, "client_ip": "127.0.0.1"}
+api_request: GET /history - 200 in 0.00s
+{"timestamp": "2025-08-18T02:56:29.020713", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.36, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:56:42.236506", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.57, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:56:45.232808", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.76, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:56:48.231711", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.42, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:56:51.227497", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.44, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:56:54.233733", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.29, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T02:56:57.232157", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.36, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:09:02.778009", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.24, "client_ip": "192.168.65.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:09:03.736076", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.51, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:09:33.866101", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.8, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:10:03.993745", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 8.87, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:10:11.026895", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.19, "client_ip": "192.168.65.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:10:34.104448", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.36, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:10:47.210867", "event_type": "api_request", "message": "GET /jobs - 200 in 0.00s", "endpoint": "/jobs", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.2, "client_ip": "192.168.65.1"}
+api_request: GET /jobs - 200 in 0.00s
+{"timestamp": "2025-08-18T03:11:04.197639", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.42, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:11:26.985429", "event_type": "api_request", "message": "GET /jobs - 200 in 0.00s", "endpoint": "/jobs", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 3.64, "client_ip": "192.168.65.1"}
+api_request: GET /jobs - 200 in 0.00s
+{"timestamp": "2025-08-18T03:11:34.292958", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.09, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:12:04.453167", "event_type": "api_request", "message": "GET /health - 200 in 0.02s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 15.45, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.02s
+{"timestamp": "2025-08-18T03:12:34.598390", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.64, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:13:04.434406", "event_type": "api_request", "message": "GET /jobs - 200 in 0.00s", "endpoint": "/jobs", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.66, "client_ip": "192.168.65.1"}
+api_request: GET /jobs - 200 in 0.00s
+{"timestamp": "2025-08-18T03:13:04.696677", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.12, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:13:34.812610", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.91, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:14:04.912468", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 3.99, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:14:35.042053", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.04, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:15:05.153417", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.35, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:15:35.282836", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.34, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:16:05.383282", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.05, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:16:35.511756", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 3.78, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:16:42.942897", "event_type": "api_request", "message": "GET /jobs - 200 in 0.01s", "endpoint": "/jobs", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.27, "client_ip": "192.168.65.1"}
+api_request: GET /jobs - 200 in 0.01s
+{"timestamp": "2025-08-18T03:17:05.580754", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.14, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:17:22.727327", "event_type": "api_request", "message": "POST /scan - 422 in 0.05s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 422, "response_time_ms": 53.12, "client_ip": "192.168.65.1"}
+api_request: POST /scan - 422 in 0.05s
+{"timestamp": "2025-08-18T03:18:40.301660", "event_type": "api_request", "message": "POST /scan - 200 in 68.62s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 68619.48, "client_ip": "192.168.65.1"}
+api_request: POST /scan - 200 in 68.62s
+{"timestamp": "2025-08-18T03:18:40.305881", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 2.79, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:18:40.306401", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 2.51, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:18:55.923620", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 3.11, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:19:25.991412", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.62, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:19:51.778353", "event_type": "api_request", "message": "GET /result/c6d3deac-c08c-480c-8d77-fe4fb5efcf95 - 200 in 0.00s", "endpoint": "/result/c6d3deac-c08c-480c-8d77-fe4fb5efcf95", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.39, "client_ip": "192.168.65.1"}
+api_request: GET /result/c6d3deac-c08c-480c-8d77-fe4fb5efcf95 - 200 in 0.00s
+{"timestamp": "2025-08-18T03:19:56.078594", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.29, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:20:26.182429", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.57, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:20:56.311009", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.37, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:21:26.417180", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.65, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:21:56.566141", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 8.25, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:22:26.697146", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.71, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:22:56.794067", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.3, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:23:26.916476", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.72, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:23:57.014193", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.56, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:24:27.144863", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.23, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:24:57.264838", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.56, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:25:27.388113", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.15, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:25:57.507813", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.55, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:26:27.647810", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.85, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:26:57.773131", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.38, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:27:27.914467", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 10.29, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:27:58.040186", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.81, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:28:28.157827", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.7, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:28:54.873629", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 3.95, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:28:55.923836", "event_type": "api_request", "message": "GET /history - 200 in 0.01s", "endpoint": "/history", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 12.17, "client_ip": "192.168.65.1"}
+api_request: GET /history - 200 in 0.01s
+{"timestamp": "2025-08-18T03:28:58.249936", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.31, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:29:26.441140", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.41, "client_ip": "192.168.65.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:29:28.335199", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.9, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:29:58.426751", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.25, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:30:07.422566", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.61, "client_ip": "192.168.65.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:30:07.442708", "event_type": "api_request", "message": "GET /jobs - 200 in 0.00s", "endpoint": "/jobs", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.44, "client_ip": "192.168.65.1"}
+api_request: GET /jobs - 200 in 0.00s
+{"timestamp": "2025-08-18T03:30:18.049787", "event_type": "api_request", "message": "GET /history - 200 in 0.01s", "endpoint": "/history", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 8.74, "client_ip": "192.168.65.1"}
+api_request: GET /history - 200 in 0.01s
+{"timestamp": "2025-08-18T03:30:28.793016", "event_type": "api_request", "message": "GET /health - 200 in 0.06s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 57.72, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.06s
+{"timestamp": "2025-08-18T03:30:58.934082", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 8.78, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:31:16.940973", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.01s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.3, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.01s
+{"timestamp": "2025-08-18T03:31:19.918611", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.74, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:31:22.930591", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.01s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.25, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.01s
+{"timestamp": "2025-08-18T03:31:26.131794", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.09s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 89.27, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.09s
+{"timestamp": "2025-08-18T03:31:28.937449", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.01s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.77, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.01s
+{"timestamp": "2025-08-18T03:31:29.161291", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.66, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:31:31.918896", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.27, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:31:34.930937", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.01s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.81, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.01s
+{"timestamp": "2025-08-18T03:31:37.932022", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.6, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:31:40.912541", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.76, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:31:43.931588", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.01s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.2, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.01s
+{"timestamp": "2025-08-18T03:31:46.930399", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.01s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.15, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.01s
+{"timestamp": "2025-08-18T03:31:47.575043", "event_type": "api_request", "message": "GET /result/B4A9F1CF-1BC0-4875-A1C7-669A4FF01F80 - 404 in 0.00s", "endpoint": "/result/B4A9F1CF-1BC0-4875-A1C7-669A4FF01F80", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.74, "client_ip": "192.168.65.1"}
+api_request: GET /result/B4A9F1CF-1BC0-4875-A1C7-669A4FF01F80 - 404 in 0.00s
+{"timestamp": "2025-08-18T03:31:49.936679", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.01s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 12.7, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.01s
+{"timestamp": "2025-08-18T03:31:52.916187", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.81, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:31:55.913246", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.73, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:31:56.364410", "event_type": "api_request", "message": "GET /jobs - 200 in 0.00s", "endpoint": "/jobs", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.43, "client_ip": "192.168.65.1"}
+api_request: GET /jobs - 200 in 0.00s
+{"timestamp": "2025-08-18T03:31:58.920819", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.95, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:31:59.252774", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.5, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:32:01.922477", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.55, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:32:04.918455", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.28, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:32:07.922280", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.94, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:32:10.919880", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.53, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:32:13.922276", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.78, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:32:16.920347", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.65, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:32:19.923793", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.79, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:32:22.923592", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 2.51, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:32:25.921112", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.9, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:32:28.923529", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 2.71, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:32:29.308292", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.72, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:32:31.918221", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.58, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:32:34.921021", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.52, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:32:37.921786", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.28, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:32:38.611115", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.56, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:32:40.921474", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.72, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:32:43.919437", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.73, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:32:46.920891", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.81, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:32:49.919503", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.57, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:32:52.920286", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.54, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:32:55.919555", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.55, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:32:58.919480", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.73, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:32:59.362141", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.44, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:33:01.931412", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 2.32, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:33:04.916802", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.94, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:33:07.919294", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.52, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:33:10.916503", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.54, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:33:13.920993", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.57, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:33:16.920226", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.6, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:33:19.921132", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.77, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:33:22.922718", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.32, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:33:25.949245", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.5, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:33:28.921862", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.7, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:33:29.469805", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 2.16, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:33:31.921904", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.58, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:33:34.919264", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.72, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:33:59.584085", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.98, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:34:02.100717", "event_type": "api_request", "message": "GET /history - 200 in 0.01s", "endpoint": "/history", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 8.47, "client_ip": "192.168.65.1"}
+api_request: GET /history - 200 in 0.01s
+{"timestamp": "2025-08-18T03:34:29.696546", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.61, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:34:56.829565", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 3.66, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:34:59.792240", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.42, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:35:29.915791", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.22, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:36:00.086944", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 8.01, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:36:23.103239", "event_type": "api_request", "message": "POST /scan - 200 in 0.02s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 20.85, "client_ip": "192.168.65.1"}
+api_request: POST /scan - 200 in 0.02s
+{"timestamp": "2025-08-18T03:37:13.387792", "event_type": "api_request", "message": "GET /result/7cfdaf50-c5cd-4456-85d5-1d0295c88674 - 200 in 0.00s", "endpoint": "/result/7cfdaf50-c5cd-4456-85d5-1d0295c88674", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.74, "client_ip": "192.168.65.1"}
+api_request: GET /result/7cfdaf50-c5cd-4456-85d5-1d0295c88674 - 200 in 0.00s
+{"timestamp": "2025-08-18T03:37:13.390707", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.22, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:37:13.391220", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 3.64, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:37:43.495264", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.93, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:38:13.606995", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.64, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:38:40.214228", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.78, "client_ip": "192.168.65.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:38:43.721717", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.61, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:38:46.811433", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.69, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:39:13.839336", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.45, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:39:43.944049", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.27, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:40:14.070493", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.48, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:40:44.186211", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.27, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:40:49.320151", "event_type": "api_request", "message": "GET /result/7cfdaf50-c5cd-4456-85d5-1d0295c88674 - 200 in 0.00s", "endpoint": "/result/7cfdaf50-c5cd-4456-85d5-1d0295c88674", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.26, "client_ip": "192.168.65.1"}
+api_request: GET /result/7cfdaf50-c5cd-4456-85d5-1d0295c88674 - 200 in 0.00s
+{"timestamp": "2025-08-18T03:41:14.299355", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.3, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:41:20.939201", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.46, "client_ip": "192.168.65.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:41:20.958983", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.38, "client_ip": "192.168.65.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-18T03:41:20.975265", "event_type": "api_request", "message": "GET /jobs - 200 in 0.00s", "endpoint": "/jobs", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.17, "client_ip": "192.168.65.1"}
+api_request: GET /jobs - 200 in 0.00s
+{"timestamp": "2025-08-18T03:41:44.434454", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.19, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:42:14.583633", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.19, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:42:44.695831", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.49, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:42:48.114919", "event_type": "api_request", "message": "GET /jobs - 200 in 0.00s", "endpoint": "/jobs", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.22, "client_ip": "192.168.65.1"}
+api_request: GET /jobs - 200 in 0.00s
+{"timestamp": "2025-08-18T03:42:55.301929", "event_type": "api_request", "message": "GET /result/c6d3deac-c08c-480c-8d77-fe4fb5efcf95 - 200 in 0.00s", "endpoint": "/result/c6d3deac-c08c-480c-8d77-fe4fb5efcf95", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.71, "client_ip": "192.168.65.1"}
+api_request: GET /result/c6d3deac-c08c-480c-8d77-fe4fb5efcf95 - 200 in 0.00s
+{"timestamp": "2025-08-18T03:42:55.338437", "event_type": "api_request", "message": "GET /result/7cfdaf50-c5cd-4456-85d5-1d0295c88674 - 200 in 0.00s", "endpoint": "/result/7cfdaf50-c5cd-4456-85d5-1d0295c88674", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.7, "client_ip": "192.168.65.1"}
+api_request: GET /result/7cfdaf50-c5cd-4456-85d5-1d0295c88674 - 200 in 0.00s
+{"timestamp": "2025-08-18T03:43:01.337406", "event_type": "api_request", "message": "GET /history - 200 in 0.02s", "endpoint": "/history", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 15.53, "client_ip": "192.168.65.1"}
+api_request: GET /history - 200 in 0.02s
+{"timestamp": "2025-08-18T03:43:08.041639", "event_type": "api_request", "message": "GET /history - 200 in 0.01s", "endpoint": "/history", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 10.2, "client_ip": "192.168.65.1"}
+api_request: GET /history - 200 in 0.01s
+{"timestamp": "2025-08-18T03:43:14.802179", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.1, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:43:44.918984", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.53, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:44:15.044453", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.48, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:44:45.207232", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.7, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:45:15.282495", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.58, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:45:16.869959", "event_type": "api_request", "message": "GET /export/excel - 404 in 0.00s", "endpoint": "/export/excel", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.61, "client_ip": "192.168.65.1"}
+api_request: GET /export/excel - 404 in 0.00s
+{"timestamp": "2025-08-18T03:45:45.382524", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.65, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:46:15.506742", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.32, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:46:45.632468", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.76, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:46:48.600179", "event_type": "api_request", "message": "GET /docs - 200 in 0.00s", "endpoint": "/docs", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.11, "client_ip": "192.168.65.1"}
+api_request: GET /docs - 200 in 0.00s
+{"timestamp": "2025-08-18T03:47:15.718422", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.71, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:47:45.746366", "event_type": "api_request", "message": "POST /scan - 200 in 0.03s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 25.93, "client_ip": "192.168.65.1"}
+api_request: POST /scan - 200 in 0.03s
+{"timestamp": "2025-08-18T03:47:45.930962", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.59, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:48:36.814741", "event_type": "api_request", "message": "GET /result/c0370dfe-2e60-4349-afb7-47e4ca5724ed - 200 in 0.00s", "endpoint": "/result/c0370dfe-2e60-4349-afb7-47e4ca5724ed", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.99, "client_ip": "192.168.65.1"}
+api_request: GET /result/c0370dfe-2e60-4349-afb7-47e4ca5724ed - 200 in 0.00s
+{"timestamp": "2025-08-18T03:48:36.816739", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 2.31, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:48:43.117990", "event_type": "api_request", "message": "POST /scan - 200 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 2.21, "client_ip": "192.168.65.1"}
+api_request: POST /scan - 200 in 0.00s
+{"timestamp": "2025-08-18T03:49:08.361835", "event_type": "api_request", "message": "GET /result/8475cad4-e9a1-4da2-95e9-5cbbcc1ce849 - 200 in 0.00s", "endpoint": "/result/8475cad4-e9a1-4da2-95e9-5cbbcc1ce849", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.72, "client_ip": "192.168.65.1"}
+api_request: GET /result/8475cad4-e9a1-4da2-95e9-5cbbcc1ce849 - 200 in 0.00s
+{"timestamp": "2025-08-18T03:49:08.363581", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 3.0, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:49:36.291934", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 8.19, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:50:06.395103", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.19, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:50:36.515090", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.85, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:51:06.625252", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.37, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:51:36.721000", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.55, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:52:06.814514", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.39, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T03:52:36.973630", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 11.8, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:53:07.190798", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 8.19, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:53:37.404627", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 8.61, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:54:07.753473", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 12.13, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:54:38.180904", "event_type": "api_request", "message": "GET /health - 200 in 0.03s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 28.39, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.03s
+{"timestamp": "2025-08-18T03:55:08.777510", "event_type": "api_request", "message": "GET /health - 200 in 0.02s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 17.43, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.02s
+{"timestamp": "2025-08-18T03:55:39.052347", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 9.99, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:56:09.445249", "event_type": "api_request", "message": "GET /health - 200 in 0.03s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 28.2, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.03s
+{"timestamp": "2025-08-18T03:56:40.333867", "event_type": "api_request", "message": "GET /health - 200 in 0.03s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 25.06, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.03s
+{"timestamp": "2025-08-18T03:57:10.688423", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 12.4, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:57:41.003617", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 10.07, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:58:11.828323", "event_type": "api_request", "message": "GET /health - 200 in 0.02s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 21.35, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.02s
+{"timestamp": "2025-08-18T03:58:42.224419", "event_type": "api_request", "message": "GET /health - 200 in 0.02s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 19.98, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.02s
+{"timestamp": "2025-08-18T03:59:12.548828", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 14.62, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T03:59:42.865104", "event_type": "api_request", "message": "GET /health - 200 in 0.02s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 18.52, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.02s
+{"timestamp": "2025-08-18T04:00:13.340844", "event_type": "api_request", "message": "GET /health - 200 in 0.03s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 29.22, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.03s
+{"timestamp": "2025-08-18T04:00:43.641790", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 9.16, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:01:13.869646", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 11.06, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:01:44.275376", "event_type": "api_request", "message": "GET /health - 200 in 0.02s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 19.25, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.02s
+{"timestamp": "2025-08-18T04:02:14.534260", "event_type": "api_request", "message": "GET /health - 200 in 0.02s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 16.66, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.02s
+{"timestamp": "2025-08-18T04:02:45.208441", "event_type": "api_request", "message": "GET /health - 200 in 0.04s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 39.11, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.04s
+{"timestamp": "2025-08-18T04:03:15.527542", "event_type": "api_request", "message": "GET /health - 200 in 0.02s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 17.52, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.02s
+{"timestamp": "2025-08-18T04:03:45.892968", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 11.52, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:04:16.156064", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 9.84, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:04:46.383499", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 9.3, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:05:16.668841", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 14.2, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:05:47.039675", "event_type": "api_request", "message": "GET /health - 200 in 0.02s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 17.06, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.02s
+{"timestamp": "2025-08-18T04:06:17.292286", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 9.59, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:06:47.534696", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 10.62, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:07:17.796949", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 13.65, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:07:48.091411", "event_type": "api_request", "message": "GET /health - 200 in 0.02s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 20.17, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.02s
+{"timestamp": "2025-08-18T04:08:18.409742", "event_type": "api_request", "message": "GET /health - 200 in 0.03s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 28.04, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.03s
+{"timestamp": "2025-08-18T04:08:48.678414", "event_type": "api_request", "message": "GET /health - 200 in 0.02s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 20.2, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.02s
+{"timestamp": "2025-08-18T04:09:19.005114", "event_type": "api_request", "message": "GET /health - 200 in 0.02s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 15.45, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.02s
+{"timestamp": "2025-08-18T04:09:49.230983", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 10.37, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:10:19.613837", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 12.7, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:10:49.956679", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 13.17, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:11:20.222644", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 13.44, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:11:50.556950", "event_type": "api_request", "message": "GET /health - 200 in 0.02s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 18.55, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.02s
+{"timestamp": "2025-08-18T04:12:20.951621", "event_type": "api_request", "message": "GET /health - 200 in 0.03s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 27.64, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.03s
+{"timestamp": "2025-08-18T04:12:51.258466", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 9.12, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:13:21.511488", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 8.07, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:13:51.678964", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.67, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:14:21.939006", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.66, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:14:52.194012", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 12.66, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:15:22.467053", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.09, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:15:52.703437", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 8.63, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:16:22.965666", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 11.67, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:16:53.174977", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 11.14, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:17:23.377426", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 11.92, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:17:53.629159", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 13.27, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:18:23.835521", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.74, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:18:54.150515", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 12.99, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:19:24.373446", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 14.59, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:19:54.603118", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.99, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:20:24.975985", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 13.42, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:20:55.172159", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 8.54, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:21:25.530744", "event_type": "api_request", "message": "GET /health - 200 in 0.04s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 39.02, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.04s
+{"timestamp": "2025-08-18T04:21:55.918150", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 13.4, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:22:26.239721", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 13.75, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:22:56.481732", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 10.43, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:23:26.681342", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 9.2, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:23:56.888346", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 11.52, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:24:27.103614", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 9.33, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:24:57.398720", "event_type": "api_request", "message": "GET /health - 200 in 0.02s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 17.92, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.02s
+{"timestamp": "2025-08-18T04:25:27.654389", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 13.35, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:25:57.854373", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.92, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:26:28.054025", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 11.34, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:26:58.234431", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.65, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:27:28.465097", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 10.23, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:27:58.584969", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.62, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:28:28.646723", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.61, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:28:58.700857", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.41, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:29:28.811867", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.03, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:29:58.870344", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.47, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:30:28.927381", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.55, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:30:58.987314", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.76, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:31:29.046387", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.52, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:31:59.138958", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.17, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:32:29.205415", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.44, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:32:59.263821", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.51, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:33:29.376526", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.25, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:33:59.443685", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.43, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:34:29.577823", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.89, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:34:59.646774", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.48, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:35:29.698161", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.49, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:35:59.792173", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.27, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:36:29.849563", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.59, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:36:59.936674", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.19, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:37:30.001940", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.68, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:38:00.063539", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.45, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:38:30.159292", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.25, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:39:00.231952", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.64, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:39:30.347578", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.58, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:40:00.463518", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.74, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:40:30.582226", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.73, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:41:00.652782", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.52, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:41:30.770716", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.61, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:42:00.847319", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.68, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:42:30.961066", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.58, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:43:01.047561", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.78, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:43:31.102315", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.47, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:44:01.201442", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.08, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:44:31.304970", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.42, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:45:01.422065", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.74, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:45:31.492557", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.5, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:46:01.586039", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.05, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:46:31.699605", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.23, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:47:01.806169", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.5, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:47:31.911857", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.9, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:48:02.011786", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.62, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:48:32.140765", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.15, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:49:02.253678", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.05, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:49:32.323753", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.5, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:50:02.437704", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.65, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:50:32.505326", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.49, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:51:02.599247", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.2, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:51:32.720205", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.82, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:52:02.791652", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.57, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:52:32.854050", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.67, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:53:02.911985", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.43, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:53:32.975797", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.53, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:54:03.132201", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 9.0, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:54:33.304242", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.5, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:55:03.418722", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.04, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:55:33.527823", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.58, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:56:03.667232", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.71, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:56:16.624172", "event_type": "api_request", "message": "HEAD /health - 405 in 0.01s", "endpoint": "/health", "method": "HEAD", "params": {}, "status_code": 405, "response_time_ms": 5.23, "client_ip": "192.168.65.1"}
+api_request: HEAD /health - 405 in 0.01s
+{"timestamp": "2025-08-18T04:56:33.792403", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.22, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:57:03.902137", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.6, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:57:34.002527", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.68, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:58:04.109185", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.41, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:58:34.240551", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.87, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T04:59:04.349173", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.96, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T04:59:34.470963", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.13, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:00:04.641807", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 8.67, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:00:34.772707", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.15, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:01:04.867276", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.62, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:01:34.981794", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.54, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:02:05.092775", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.93, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:02:35.172168", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.87, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:03:05.272450", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.79, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:03:35.390500", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.57, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:04:05.531539", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.12, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:04:35.664415", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.74, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:05:05.778580", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.91, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:05:35.896386", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.5, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:06:05.989068", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.15, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:06:36.110858", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.49, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:07:06.220220", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.4, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:07:36.348294", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.97, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:08:02.067312", "event_type": "api_request", "message": "HEAD /health - 405 in 0.00s", "endpoint": "/health", "method": "HEAD", "params": {}, "status_code": 405, "response_time_ms": 3.48, "client_ip": "192.168.65.1"}
+api_request: HEAD /health - 405 in 0.00s
+{"timestamp": "2025-08-18T05:08:06.439164", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 2.07, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:08:36.547464", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.75, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:09:06.652964", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.06, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:09:36.765320", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.08, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:10:06.859667", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.86, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:10:37.015937", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.58, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:11:07.078526", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.41, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:11:37.180980", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.21, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:12:07.261933", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.47, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:12:37.366967", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 3.86, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:13:07.450577", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.59, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:13:37.587150", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.26, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:14:07.755682", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.56, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:14:37.879544", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.6, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:15:07.984805", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.5, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:15:38.059942", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.53, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:16:08.145616", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.42, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:16:38.261084", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.74, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:17:08.390435", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 8.33, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:17:38.546364", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.69, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:18:08.667990", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.36, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:18:38.803915", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.58, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:19:08.913014", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.45, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:19:39.022374", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.04, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:20:09.148576", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.42, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:20:39.312824", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 9.73, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:21:09.456211", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 8.89, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:21:39.559446", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.19, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:22:09.652238", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.84, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:22:39.781805", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 9.32, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:23:09.927577", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.72, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:23:40.052758", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.38, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:24:10.176648", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.49, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:24:40.244611", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.71, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:25:10.325792", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.52, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:25:40.418476", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.18, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:26:10.528781", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.29, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:26:40.619916", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.93, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:27:10.699755", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.61, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:27:40.808245", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.31, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:28:10.878788", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.59, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:28:41.007479", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.17, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:29:11.077234", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.51, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:29:41.180192", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.35, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:30:11.269665", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.24, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:30:41.362753", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.65, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:31:11.490465", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 11.66, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:31:41.605877", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.91, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:32:11.689561", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.67, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:32:41.773012", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.4, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:33:11.851864", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.21, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:33:41.972742", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.38, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:34:12.076018", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.22, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:34:42.185030", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.3, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:35:12.327330", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.08, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:35:42.445088", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.68, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:36:12.516178", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.48, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:36:42.632183", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.33, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:37:12.732632", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.75, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:37:42.845256", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.6, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:38:12.989327", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.09, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:38:43.183905", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 10.15, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:39:13.297238", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.56, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:39:43.368731", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.62, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:40:13.424940", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.5, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:40:43.546606", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.1, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:41:13.648339", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.73, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:41:43.766199", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.28, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:42:13.848413", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.79, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:42:43.981275", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.32, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:43:14.093131", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.45, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T05:43:41.959310", "event_type": "api_request", "message": "HEAD /health - 405 in 0.01s", "endpoint": "/health", "method": "HEAD", "params": {}, "status_code": 405, "response_time_ms": 8.05, "client_ip": "192.168.65.1"}
+api_request: HEAD /health - 405 in 0.01s
+{"timestamp": "2025-08-18T05:43:44.282123", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.56, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:44:14.453358", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 8.54, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:44:44.733432", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 14.06, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:45:15.041725", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 14.65, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:45:45.283286", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 10.4, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:46:15.502767", "event_type": "api_request", "message": "GET /health - 200 in 0.02s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 15.87, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.02s
+{"timestamp": "2025-08-18T05:46:45.807863", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 11.21, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:47:16.051654", "event_type": "api_request", "message": "GET /health - 200 in 0.02s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 17.66, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.02s
+{"timestamp": "2025-08-18T05:47:46.266580", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.99, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:48:16.441547", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 9.71, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:48:46.596824", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 8.38, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:49:16.819706", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 8.19, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:49:47.276197", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.55, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:50:17.536096", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 8.28, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:50:47.697944", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 8.08, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:51:17.878059", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.12, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:51:48.033157", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 8.4, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T05:52:18.658548", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 11.3, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:06:33.252782", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 9.03, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:07:03.455791", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 8.82, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:07:33.624408", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 9.12, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:08:03.754928", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 11.81, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:08:33.908911", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.01, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:09:04.010822", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.7, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:09:34.223190", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 12.39, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:10:04.453341", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 11.14, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:10:34.737009", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 10.03, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:11:04.974106", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 9.03, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:11:35.172367", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.52, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:12:05.389574", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 10.24, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:12:35.635743", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 10.09, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:13:05.894282", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.94, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:13:36.085207", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 8.5, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:14:06.295542", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 10.13, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:14:36.511311", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 11.5, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:15:06.668717", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.68, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:15:36.934900", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 12.48, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:16:07.182909", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.43, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:16:37.313088", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.33, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:17:07.490201", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.22, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:17:37.675184", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.93, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:18:07.869060", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.54, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:27:16.922369", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.35, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T06:27:47.040345", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.78, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T06:28:17.105917", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.51, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T06:42:47.452398", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.54, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T06:43:17.508950", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.47, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T06:43:47.576931", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.61, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T06:44:17.647203", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.99, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T06:44:47.705784", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.54, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T06:45:17.813696", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.66, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T06:45:47.880694", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.74, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T06:46:17.939718", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.43, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T06:46:47.998232", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.52, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T06:47:18.057280", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.46, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T06:47:48.112317", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.47, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T06:48:18.195125", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 3.99, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T06:48:48.255028", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.53, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T06:49:18.315231", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.63, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T06:49:48.384404", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.43, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T06:50:18.480115", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.44, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T07:06:07.559994", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.57, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T07:27:32.326115", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.64, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T07:31:54.190450", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.28, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T07:32:24.268831", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.45, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T07:32:54.315129", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.49, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T07:35:49.878960", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 3.91, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T07:36:19.997118", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.2, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T07:36:50.070937", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.45, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T07:37:20.181394", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.28, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T07:37:50.244859", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.48, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T07:38:20.356731", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.24, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T07:38:50.474289", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.68, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T07:39:20.580492", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.57, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T07:39:50.649406", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.52, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T07:40:20.762338", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.55, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T07:40:50.874208", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.66, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T07:41:20.972697", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.09, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T07:41:51.076176", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.57, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T08:01:01.209013", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 14.51, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T08:01:31.299807", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.46, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T08:02:01.396884", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.73, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T08:02:31.468354", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.51, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T08:03:01.575373", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.33, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T08:03:49.526480", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.51, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T08:04:19.650938", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.67, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T08:04:49.726169", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.66, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T08:05:19.826858", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.48, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T08:05:49.887631", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.52, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T08:06:20.049489", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.46, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T08:17:06.598604", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.11, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T08:22:13.691785", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.03, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T08:22:43.784235", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.63, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T08:23:13.851515", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.5, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T08:23:43.938381", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.19, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T08:24:14.005249", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.52, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T08:24:44.086236", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.29, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T08:25:14.154986", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.43, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T08:25:44.262781", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.42, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T08:26:14.384644", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.76, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T08:26:44.501318", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.57, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T08:27:14.569091", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.65, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T08:27:44.653223", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.25, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T08:28:14.728179", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.55, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T08:32:43.489635", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.23, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T08:36:54.434590", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.39, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T08:37:24.504218", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.5, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T08:37:54.617826", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.95, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-18T09:00:23.747250", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.14, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T09:15:06.181256", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 5.48, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.01s
+{"timestamp": "2025-08-18T09:15:36.293111", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.52, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.00s

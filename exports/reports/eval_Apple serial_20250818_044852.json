@@ -1,0 +1,30 @@
+{
+  "dataset": "Apple serial",
+  "total": 25,
+  "detected": 24,
+  "hits": 0,
+  "detection_rate_pct": 96.0,
+  "accuracy_pct_overall": 0.0,
+  "accuracy_pct_on_detected": 0.0,
+  "strict_validation_passes": 14,
+  "strict_validation_rate_pct": 56.0,
+  "high_confidence_count": 1,
+  "high_confidence_hits": 0,
+  "high_confidence_accuracy_pct": 0.0,
+  "csv_path": "exports/reports/eval_Apple serial_20250818_044852.csv",
+  "summary_path": "exports/reports/eval_Apple serial_20250818_044852.json",
+  "use_progressive": true,
+  "extract_params": {
+    "name": "iMac (Etched)",
+    "description": "iMac with etched serial number",
+    "preset": "etched",
+    "roi_aspect_ratio": 4.5,
+    "confidence_threshold": 0.75,
+    "processing_params": {
+      "upscale_scale": 2.5,
+      "glare_reduction": "adaptive",
+      "roi_top_k": 3,
+      "adaptive_pad": true
+    }
+  }
+}
