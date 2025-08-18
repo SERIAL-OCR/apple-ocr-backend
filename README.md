@@ -33,6 +33,18 @@ iOS App → API Submission → Background Processing → Database Storage → Ex
 
 ## 🛠️ Quick Start
 
+### **New Users** 
+Start here: **[SETUP_GUIDE.md](SETUP_GUIDE.md)** - Complete setup guide for new users
+
+### **Quick Start (2 minutes)**
+```bash
+git clone https://github.com/SERIAL-OCR/apple-ocr-backend.git
+cd apple-ocr-backend
+chmod +x scripts/deploy.sh
+./scripts/deploy.sh dev
+curl http://localhost:8000/health
+```
+
 ### Prerequisites
 
 - Docker and Docker Compose
