@@ -199,11 +199,35 @@ def _reduce_glare(image: np.ndarray, method: str = "adaptive", multi_scale: bool
     return result
 
 
+def _enhance_text_visibility(image: np.ndarray) -> np.ndarray:
+    """Enhance text visibility using multiple techniques."""
+    # Apply bilateral filter to reduce noise while preserving edges
+    filtered = cv2.bilateralFilter(image, 9, 75, 75)
+    
+    # Apply unsharp masking for edge enhancement
+    blurred = cv2.GaussianBlur(filtered, (0, 0), 3)
+    sharpened = cv2.addWeighted(filtered, 1.5, blurred, -0.5, 0)
+    
+    # Apply local contrast enhancement
+    clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
+    enhanced = clahe.apply(sharpened)
+    
+    return np.clip(enhanced, 0, 255).astype(np.uint8)
+
+
 def _sharpen_image(image: np.ndarray, amount: float = 1.5) -> np.ndarray:
     """Apply sharpening to the image to enhance text edges."""
+    # Use unsharp mask for better sharpening
     blurred = cv2.GaussianBlur(image, (0, 0), 3)
     sharpened = cv2.addWeighted(image, 1.0 + amount, blurred, -amount, 0)
-    return np.clip(sharpened, 0, 255).astype(np.uint8)
+    
+    # Apply additional edge enhancement for text
+    kernel = np.array([[-1,-1,-1], [-1,9,-1], [-1,-1,-1]])
+    enhanced = cv2.filter2D(sharpened, -1, kernel)
+    
+    # Blend original sharpened with edge enhanced
+    result = cv2.addWeighted(sharpened, 0.7, enhanced, 0.3, 0)
+    return np.clip(result, 0, 255).astype(np.uint8)
 
 
 def preprocess_image(
@@ -249,6 +273,22 @@ def preprocess_image(
     # Apply CLAHE (Contrast Limited Adaptive Histogram Equalization)
     clahe = cv2.createCLAHE(clipLimit=clip_limit, tileGridSize=(tile_grid, tile_grid))
     enhanced = clahe.apply(gray)
+    
+    # Apply additional contrast enhancement for better text visibility
+    # Calculate image statistics for adaptive enhancement
+    mean_val = np.mean(enhanced)
+    std_val = np.std(enhanced)
+    
+    # If image has low contrast, apply additional enhancement
+    if std_val < 40:
+        # Apply gamma correction for low contrast images
+        gamma = 0.8 if mean_val > 128 else 1.2
+        enhanced = np.power(enhanced / 255.0, gamma) * 255
+        enhanced = np.clip(enhanced, 0, 255).astype(np.uint8)
+        
+        # Apply additional CLAHE with different parameters
+        clahe2 = cv2.createCLAHE(clipLimit=3.0, tileGridSize=(4, 4))
+        enhanced = clahe2.apply(enhanced)
     if debug_dir:
         cv2.imwrite(os.path.join(debug_dir, "03_clahe.png"), enhanced)
     
@@ -256,6 +296,9 @@ def preprocess_image(
     filtered = cv2.bilateralFilter(
         enhanced, d=bilateral_d, sigmaColor=bilateral_sigma_color, sigmaSpace=bilateral_sigma_space
     )
+    
+    # Apply additional text visibility enhancement
+    filtered = _enhance_text_visibility(filtered)
     if debug_dir:
         cv2.imwrite(os.path.join(debug_dir, "04_bilateral.png"), filtered)
     
@@ -269,9 +312,19 @@ def preprocess_image(
     if mode == "gray":
         out = filtered
     else:
-        # Apply adaptive thresholding for binary mode
+        # Apply adaptive thresholding for binary mode with improved parameters
+        # Calculate optimal block size based on image size
+        optimal_block_size = max(11, min(51, filtered.shape[1] // 20))
+        if optimal_block_size % 2 == 0:
+            optimal_block_size += 1  # Ensure odd number
+            
+        # Calculate optimal C value based on image statistics
+        mean_val = np.mean(filtered)
+        optimal_C = max(5, min(15, int(mean_val / 20)))
+        
         th = cv2.adaptiveThreshold(
-            filtered, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, thresh_block_size, thresh_C
+            filtered, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 
+            optimal_block_size, optimal_C
         )
         if debug_dir:
             cv2.imwrite(os.path.join(debug_dir, "06_threshold.png"), th)
@@ -702,12 +755,60 @@ def _read_serials_from_image(
     serials: List[Tuple[str, float]] = []
     for bbox, text, confidence in results:
         base = text.strip().upper().replace(" ", "")
+        
+        # Enhanced confidence scoring based on text characteristics
+        enhanced_confidence = float(confidence)
+        
+        # Boost confidence for longer, more complete serials
+        if len(base) >= 10:
+            enhanced_confidence *= 1.1
+        elif len(base) >= 8:
+            enhanced_confidence *= 1.05
+        
+        # Boost confidence for serials with good character distribution
+        if len(set(base)) >= 8:  # Good character variety
+            enhanced_confidence *= 1.05
+        
+        # Penalize confidence for very short or suspicious text
+        if len(base) < 6:
+            enhanced_confidence *= 0.8
+        
+        # Cap confidence at 1.0
+        enhanced_confidence = min(enhanced_confidence, 1.0)
+        
         candidates = _expand_ambiguous(base, position_aware=True)
         for c in candidates:
-            if is_valid_apple_serial(c) and float(confidence) >= min_confidence:
-                serials.append((c, float(confidence)))
+            if is_valid_apple_serial(c) and enhanced_confidence >= min_confidence:
+                serials.append((c, enhanced_confidence))
     
-    return serials
+    # Apply quality filtering to remove low-quality detections
+    filtered_serials = []
+    for serial, confidence in serials:
+        # Calculate quality score based on multiple factors
+        quality_score = confidence
+        
+        # Boost score for valid Apple serial patterns
+        if len(serial) == 12 and serial.isalnum():
+            quality_score *= 1.1
+        
+        # Penalize for common OCR errors
+        if any(char in serial for char in ['I', 'O', 'S', 'Z']):
+            # These characters are often confused, slight penalty
+            quality_score *= 0.95
+        
+        # Boost for good character distribution
+        unique_chars = len(set(serial))
+        if unique_chars >= 8:
+            quality_score *= 1.05
+        
+        # Cap at 1.0
+        quality_score = min(quality_score, 1.0)
+        
+        # Only keep results with reasonable quality
+        if quality_score >= min_confidence * 0.8:  # Allow slightly lower quality
+            filtered_serials.append((serial, quality_score))
+    
+    return filtered_serials
 
 
 def _find_rois_by_projection(
@@ -749,9 +850,22 @@ def _find_rois_by_projection(
     # Dynamic threshold based on projection statistics
     mean_proj = np.mean(proj)
     max_proj = np.max(proj)
+    median_proj = np.median(proj)
+    std_proj = np.std(proj)
     
-    # More aggressive thresholding to filter out noise
-    thr = max(mean_proj * 1.8, max_proj * 0.25)  # Adjusted thresholds
+    # More sophisticated thresholding for better ROI detection
+    # Use multiple criteria to determine threshold
+    thr1 = mean_proj * 1.5  # Mean-based threshold
+    thr2 = max_proj * 0.3   # Max-based threshold
+    thr3 = median_proj * 2.0  # Median-based threshold
+    
+    # Use the most appropriate threshold based on image characteristics
+    if max_proj > mean_proj * 3:  # High contrast image
+        thr = max(thr1, thr2)
+    elif std_proj > 50:  # High variance image
+        thr = max(thr1, thr3)
+    else:  # Normal image
+        thr = max(thr1, thr2, thr3)
     
     mask = (proj >= thr).astype(np.uint8)
 
@@ -909,7 +1023,7 @@ def progressive_process(
                 smart_rotation=True,
                 roi=False,  # No need for ROI detection on crops
                 fine_rotation=False,
-                upscale_scale=2.5,  # Slightly higher upscale for crops
+                upscale_scale=3.5,  # Higher upscale for better accuracy on crops
                 mode="gray",
                 glare_reduction="adaptive",  # Use adaptive glare reduction
                 debug_save_path=debug_save_path + f".yolo_crop_{i}.png" if debug_save_path else None,
@@ -920,7 +1034,7 @@ def progressive_process(
             stage1_yolo_results.extend(crop_results)
         
         # If we got good results from YOLO crops, return them
-        if stage1_yolo_results and stage1_yolo_results[0][1] >= 0.8:
+        if stage1_yolo_results and stage1_yolo_results[0][1] >= early_stop_confidence:
             logger.info(f"[Progressive] YOLO ROI success: {stage1_yolo_results[0][0]} ({stage1_yolo_results[0][1]:.3f})")
             return sorted(stage1_yolo_results, key=lambda x: x[1], reverse=True)
         
@@ -936,7 +1050,7 @@ def progressive_process(
         smart_rotation=True,
         roi=False,  # No ROI detection in fast stage
         fine_rotation=False,
-        upscale_scale=2.0,  # Lower upscale for speed
+        upscale_scale=3.0,  # Higher upscale for better accuracy
         mode="gray",
         glare_reduction="adaptive",
         debug_save_path=debug_save_path + ".stage1.png" if debug_save_path else None,
@@ -970,7 +1084,7 @@ def progressive_process(
             smart_rotation=True,
             roi=False,
             fine_rotation=False,
-            upscale_scale=2.5,
+            upscale_scale=3.5,
             mode="gray",
             glare_reduction="multi",  # Try multiple glare reduction methods
             debug_save_path=debug_save_path + ".stage2_inv.png" if debug_save_path else None,
@@ -1020,7 +1134,7 @@ def progressive_process(
     
     # Try with full preprocessing
     stage3_params = {
-        "upscale_scale": 3.0,
+        "upscale_scale": 4.0,  # Higher upscale for better accuracy
         "mode": "binary",
         "glare_reduction": "multi",
         "sharpen": True,
@@ -1052,7 +1166,7 @@ def progressive_process(
     
     # Try different scales if needed and if multi-scale is enabled
     if try_multi_scale:
-        scales = [2.0, 3.0, 4.0, 5.0]  # Different scales to try
+        scales = [3.0, 4.0, 5.0, 6.0]  # Higher scales for better accuracy
         
         for scale in scales:
             # Skip scales we've already tried
@@ -1085,7 +1199,7 @@ def progressive_process(
             all_results.extend(scale_results)
             
             # Check if we got good results
-            if scale_results and scale_results[0][1] >= 0.8:
+            if scale_results and scale_results[0][1] >= early_stop_confidence:
                 logger.info(f"[Progressive] Scale {scale}x success: {scale_results[0][0]} ({scale_results[0][1]:.3f})")
                 break
     
@@ -1093,7 +1207,7 @@ def progressive_process(
     results = _merge_and_deduplicate_results(all_results)
     
     # Check if we got good results
-    if results and results[0][1] >= 0.7:
+    if results and results[0][1] >= early_stop_confidence * 0.8:  # Lower threshold for final stage
         logger.info(f"[Progressive] Stage 3 success: {results[0][0]} ({results[0][1]:.3f})")
         return results
     
@@ -1238,8 +1352,8 @@ def extract_serials(
     try_rotations: Optional[Iterable[int]] = None,
     smart_rotation: bool = True,
     fine_rotation: bool = False,
-    low_text: float = 0.3,
-    text_threshold: float = 0.6,
+    low_text: float = 0.2,  # Lower threshold for better text detection
+    text_threshold: float = 0.4,  # Lower threshold for better accuracy
     roi: bool = False,
     roi_top_k: int = 2,
     roi_pad: int = 8,

@@ -1,10 +1,30 @@
+version: '3.8'
+
 services:
   api:
     build: .
+    container_name: apple-ocr-backend
     ports:
       - "8000:8000"
     volumes:
+      # Mount source code for development
       - .:/app
-      - ./data:/app/data
-      - ./exports:/app/exports
+      # Persistent storage
+      - ./storage:/app/storage
+    environment:
+      - PYTHONPATH=/app
+      - PRODUCTION_MODE=false
+      - ENABLE_TESSERACT_FALLBACK=true
+      - MAX_PROCESSING_TIME=30.0
+                    - EARLY_STOP_CONFIDENCE=0.65
+      - USE_GPU=true
+      - PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0
+      - OCR_BATCH_SIZE=4
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s

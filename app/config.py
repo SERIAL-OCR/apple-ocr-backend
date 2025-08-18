@@ -116,7 +116,7 @@ PRODUCTION_CONFIG = {
     "FALLBACK_STRATEGY": os.getenv("FALLBACK_STRATEGY", "hybrid"),
     
     # Performance Tuning
-    "EARLY_STOP_CONFIDENCE": float(os.getenv("EARLY_STOP_CONFIDENCE", "0.75")),
+    "EARLY_STOP_CONFIDENCE": float(os.getenv("EARLY_STOP_CONFIDENCE", "0.65")),
     "USE_YOLO_ROI": os.getenv("USE_YOLO_ROI", "true").lower() == "true",
     "TRY_INVERT": os.getenv("TRY_INVERT", "true").lower() == "true",
     "TRY_MULTI_SCALE": os.getenv("TRY_MULTI_SCALE", "false").lower() == "true",

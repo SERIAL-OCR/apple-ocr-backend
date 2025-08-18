@@ -1,31 +1,71 @@
-# VCS
+# Git
 .git
 .gitignore
 
-# Python build artifacts
-__pycache__/
-*.py[cod]
+# Python
+__pycache__
+*.pyc
 *.pyo
 *.pyd
-*.egg-info/
-
-# Local environments
-.venv/
-venv/
-.env
-
-# Logs
+.Python
+env
+pip-log.txt
+pip-delete-this-directory.txt
+.tox
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
 *.log
+.git
+.mypy_cache
+.pytest_cache
+.hypothesis
 
-# Large or local-only content
-context/
-samples/
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 
-# Runtime data (mounted as volumes via compose)
-data/
-exports/
-
-# OS/editor
-.DS_Store
+# IDE
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project specific
+logs/
+exports/
+data/
+*.log
+*.xlsx
+*.csv
+*.json
+
+# Documentation
+*.md
+docs/
+
+# Tests
+tests/
+scripts/
+
+# Development files
+docker-compose.prod.yml
+.dockerignore

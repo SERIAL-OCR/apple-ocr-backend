@@ -95,7 +95,7 @@ def test_export_endpoint():
         filename = content_disposition.split("filename=")[-1].strip('"')
         
         # Save the file
-        output_path = os.path.join("exports", "test_export.xlsx")
+        output_path = os.path.join("storage", "exports", "test_export.xlsx")
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         
         with open(output_path, "wb") as f:

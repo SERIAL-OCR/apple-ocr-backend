@@ -24,8 +24,13 @@ router = APIRouter()
 # In-memory job storage 
 job_store: Dict[str, Dict[str, Any]] = {}
 
-# Background task queue
+# Background task queue for true asynchronous processing
 task_queue: List[str] = []
+processing_queue: List[str] = []
+completed_queue: List[str] = []
+
+# Queue processing state
+queue_processor_running = False
 
 def _auto_select_preset(device_type: str = None) -> str:
     """Auto-select the best preset based on device type."""
@@ -56,11 +61,10 @@ async def submit_scan(
     image: UploadFile = File(...),
     device_type: Optional[str] = None,
     preset: Optional[str] = None,
-    background_tasks: BackgroundTasks = None,
 ) -> dict:
-    """Submit a scan for asynchronous processing.
+    """Submit a scan for queue-based processing.
     
-    Returns immediately with a job ID for tracking.
+    Returns immediately - scan will be processed in background queue.
     """
     if image.content_type not in {"image/jpeg", "image/png", "image/heic", "image/heif"}:
         raise HTTPException(status_code=400, detail="Unsupported image type")
@@ -68,34 +72,39 @@ async def submit_scan(
     # Generate unique job ID
     job_id = str(uuid.uuid4())
     
-    # Read image data before starting background task (UploadFile gets closed after request)
+    # Read image data and store it
     image_data = await image.read()
     
-    # Store job metadata
+    # Store job metadata with image data
     job_store[job_id] = {
-        "status": "pending",
+        "status": "queued",
         "created_at": datetime.now().isoformat(),
         "device_type": device_type,
         "preset": preset,
         "image_filename": image.filename,
+        "image_data": image_data,  # Store image data for later processing
         "progress": 0,
-        "message": "Scan submitted successfully"
+        "message": "Scan received and added to processing queue",
+        "queue_position": len(task_queue) + 1
     }
     
-    # Add to background task queue
+    # Add to processing queue
     task_queue.append(job_id)
     
-    # Start background processing with image data
-    if background_tasks:
-        background_tasks.add_task(process_scan_background, job_id, image_data, device_type)
+    # Start queue processor if not running
+    global queue_processor_running
+    if not queue_processor_running:
+        import asyncio
+        asyncio.create_task(process_queue_background())
     
-    logger.info(f"Scan submitted with job ID: {job_id}")
+    logger.info(f"Scan queued with job ID: {job_id} (position: {len(task_queue)})")
     
     return {
         "job_id": job_id,
-        "status": "submitted",
-        "message": "Scan received and queued for processing",
-        "estimated_time": "15-25 seconds",  # Updated for optimized pipeline
+        "status": "queued",
+        "message": "Scan received and added to processing queue",
+        "queue_position": len(task_queue),
+        "estimated_wait_time": f"{len(task_queue) * 5} seconds",
         "check_status_url": f"/result/{job_id}"
     }
 
@@ -124,6 +133,188 @@ async def get_scan_result(job_id: str) -> dict:
         "error": job.get("error")
     }
 
+async def process_queue_background():
+    """Background task that processes the scan queue continuously."""
+    global queue_processor_running, task_queue, processing_queue, completed_queue
+    
+    queue_processor_running = True
+    logger.info("Queue processor started")
+    
+    while True:
+        try:
+            # Check if there are jobs in the queue
+            if task_queue:
+                # Get next job from queue
+                job_id = task_queue.pop(0)
+                
+                # Move to processing queue
+                processing_queue.append(job_id)
+                
+                # Update job status
+                job_store[job_id]["status"] = "processing"
+                job_store[job_id]["progress"] = 10
+                job_store[job_id]["message"] = "Processing started"
+                job_store[job_id]["updated_at"] = datetime.now().isoformat()
+                
+                logger.info(f"Processing job {job_id} from queue")
+                
+                # Process the job
+                await process_single_scan(job_id)
+                
+                # Move to completed queue
+                processing_queue.remove(job_id)
+                completed_queue.append(job_id)
+                
+                logger.info(f"Job {job_id} completed and moved to completed queue")
+            
+            # Wait before checking queue again
+            import asyncio
+            await asyncio.sleep(1)  # Check queue every second
+            
+        except Exception as e:
+            logger.error(f"Error in queue processor: {e}")
+            import asyncio
+            await asyncio.sleep(5)  # Wait longer on error
+
+async def process_single_scan(job_id: str):
+    """Process a single scan job."""
+    try:
+        # Get job data
+        job_data = job_store[job_id]
+        image_data = job_data["image_data"]
+        device_type = job_data["device_type"]
+        
+        # Auto-select preset based on device type
+        preset = _auto_select_preset(device_type)
+        job_store[job_id]["preset"] = preset
+        
+        # Update progress
+        job_store[job_id]["progress"] = 20
+        job_store[job_id]["message"] = f"Using preset: {preset}"
+        job_store[job_id]["updated_at"] = datetime.now().isoformat()
+        
+        # Determine fallback strategy based on production mode
+        if get_config("PRODUCTION_MODE", False):
+            use_tesseract_fallback = get_config("ENABLE_TESSERACT_FALLBACK", True)
+            max_processing_time = get_config("MAX_PROCESSING_TIME", 35.0)
+            early_stop_confidence = get_config("EARLY_STOP_CONFIDENCE", 0.75)
+            logger.info(f"[Production] Using fallback strategy: {get_config('FALLBACK_STRATEGY', 'hybrid')}")
+        else:
+            # Development mode: optimized for detection
+            use_tesseract_fallback = True  # Enable Tesseract fallback
+            max_processing_time = 30.0  # Increased for better detection
+            early_stop_confidence = 0.3  # Even lower threshold for early stopping
+            logger.info("[Development] Enhanced mode with full fallback")
+        
+        # Update progress
+        job_store[job_id]["progress"] = 30
+        job_store[job_id]["message"] = "Running progressive OCR pipeline..."
+        job_store[job_id]["updated_at"] = datetime.now().isoformat()
+        
+        # Run progressive processing with hybrid fallback
+        results = progressive_process(
+            image_bytes=image_data,
+            min_confidence=0.2,  # Much lower min_confidence to allow early stopping
+            early_stop_confidence=early_stop_confidence,
+            max_processing_time=max_processing_time,
+            use_tesseract_fallback=use_tesseract_fallback,
+            use_yolo_roi=get_config("USE_YOLO_ROI", True),
+            try_invert=get_config("TRY_INVERT", True),
+            try_multi_scale=get_config("TRY_MULTI_SCALE", False),
+            device_type=device_type,
+            production_mode=get_config("PRODUCTION_MODE", False),
+            fallback_strategy=get_config("FALLBACK_STRATEGY", "hybrid")
+        )
+        
+        # Update progress
+        job_store[job_id]["progress"] = 90
+        job_store[job_id]["message"] = "Processing completed, finalizing results..."
+        job_store[job_id]["updated_at"] = datetime.now().isoformat()
+        
+        if results and len(results) > 0:
+            # Success: Extract top results
+            top_results = []
+            for result in results[:5]:  # Top 5 results
+                # Handle both tuple format (serial, confidence) and object format
+                if isinstance(result, tuple):
+                    serial, confidence = result
+                    top_results.append({
+                        "serial": serial,
+                        "confidence": confidence,
+                        "method": "easyocr",
+                        "roi_index": None
+                    })
+                else:
+                    top_results.append({
+                        "serial": result.serial,
+                        "confidence": result.confidence,
+                        "method": getattr(result, 'method', 'easyocr'),
+                        "roi_index": getattr(result, 'roi_index', None)
+                    })
+            
+            # Find top result
+            if isinstance(results[0], tuple):
+                top_result = max(results, key=lambda x: x[1])  # x[1] is confidence for tuples
+                top_serial, top_confidence = top_result
+            else:
+                top_result = max(results, key=lambda x: x.confidence)
+                top_serial, top_confidence = top_result.serial, top_result.confidence
+            
+            # Save to database
+            try:
+                insert_serial(
+                    serial=top_serial,
+                    device_type=device_type,
+                    confidence=top_confidence
+                )
+                logger.info(f"Job {job_id} saved to database: {top_serial}")
+            except Exception as db_error:
+                logger.error(f"Failed to save job {job_id} to database: {db_error}")
+            
+            job_store[job_id]["status"] = "completed"
+            job_store[job_id]["progress"] = 100
+            job_store[job_id]["message"] = f"Successfully detected {len(results)} serial numbers"
+            job_store[job_id]["results"] = {
+                "serials": top_results,
+                "top_result": {
+                    "serial": top_serial,
+                    "confidence": top_confidence
+                },
+                "total_detected": len(results),
+                "processing_time": (datetime.now() - datetime.fromisoformat(job_store[job_id]["created_at"])).total_seconds(),
+                "fallback_used": any(isinstance(r, tuple) or getattr(r, 'method', 'easyocr') == 'tesseract' for r in results),
+                "strategy_used": get_config("FALLBACK_STRATEGY", "hybrid"),
+                "saved_to_database": True
+            }
+            job_store[job_id]["updated_at"] = datetime.now().isoformat()
+            
+            logger.info(f"Job {job_id} completed successfully with {len(results)} results")
+            
+        else:
+            # No results found - this should not happen with proper fallback
+            job_store[job_id]["status"] = "failed"
+            job_store[job_id]["progress"] = 100
+            job_store[job_id]["message"] = "No serial numbers detected after all fallback attempts"
+            job_store[job_id]["error"] = "OCR pipeline failed to detect any serial numbers"
+            job_store[job_id]["updated_at"] = datetime.now().isoformat()
+            
+            logger.warning(f"Job {job_id} failed: No results found even with fallback")
+            
+    except Exception as e:
+        # Handle any errors during processing
+        error_msg = f"Processing failed: {str(e)}"
+        job_store[job_id]["status"] = "failed"
+        job_store[job_id]["progress"] = 100
+        job_store[job_id]["message"] = "Processing failed due to an error"
+        job_store[job_id]["error"] = error_msg
+        job_store[job_id]["updated_at"] = datetime.now().isoformat()
+        
+        logger.error(f"Job {job_id} failed: {error_msg}")
+        
+        # If this is production and we have a critical failure, log it for monitoring
+        if get_config("PRODUCTION_MODE", False):
+            logger.critical(f"PRODUCTION CRITICAL: Job {job_id} failed in production mode: {error_msg}")
+
 async def process_scan_background(job_id: str, image_data: bytes, device_type: str = None):
     """Background task for processing OCR scan with hybrid fallback strategy"""
     try:
@@ -151,8 +342,8 @@ async def process_scan_background(job_id: str, image_data: bytes, device_type: s
         else:
             # Development mode: optimized for detection
             use_tesseract_fallback = True  # Enable Tesseract fallback
-            max_processing_time = 30.0
-            early_stop_confidence = 0.5  # Lower threshold for better detection
+            max_processing_time = 30.0  # Increased for better detection
+            early_stop_confidence = 0.3  # Even lower threshold for early stopping
             logger.info("[Development] Enhanced mode with full fallback")
         
         # Update progress
@@ -163,7 +354,7 @@ async def process_scan_background(job_id: str, image_data: bytes, device_type: s
         # Run progressive processing with hybrid fallback
         results = progressive_process(
             image_bytes=image_data,
-            min_confidence=0.6,
+            min_confidence=0.2,  # Much lower min_confidence to allow early stopping
             early_stop_confidence=early_stop_confidence,
             max_processing_time=max_processing_time,
             use_tesseract_fallback=use_tesseract_fallback,
@@ -184,15 +375,41 @@ async def process_scan_background(job_id: str, image_data: bytes, device_type: s
             # Success: Extract top results
             top_results = []
             for result in results[:5]:  # Top 5 results
-                top_results.append({
-                    "serial": result.serial,
-                    "confidence": result.confidence,
-                    "method": getattr(result, 'method', 'easyocr'),
-                    "roi_index": getattr(result, 'roi_index', None)
-                })
+                # Handle both tuple format (serial, confidence) and object format
+                if isinstance(result, tuple):
+                    serial, confidence = result
+                    top_results.append({
+                        "serial": serial,
+                        "confidence": confidence,
+                        "method": "easyocr",
+                        "roi_index": None
+                    })
+                else:
+                    top_results.append({
+                        "serial": result.serial,
+                        "confidence": result.confidence,
+                        "method": getattr(result, 'method', 'easyocr'),
+                        "roi_index": getattr(result, 'roi_index', None)
+                    })
             
             # Find top result
-            top_result = max(results, key=lambda x: x.confidence)
+            if isinstance(results[0], tuple):
+                top_result = max(results, key=lambda x: x[1])  # x[1] is confidence for tuples
+                top_serial, top_confidence = top_result
+            else:
+                top_result = max(results, key=lambda x: x.confidence)
+                top_serial, top_confidence = top_result.serial, top_result.confidence
+            
+            # Save to database
+            try:
+                insert_serial(
+                    serial=top_serial,
+                    device_type=device_type,
+                    confidence=top_confidence
+                )
+                logger.info(f"Job {job_id} saved to database: {top_serial}")
+            except Exception as db_error:
+                logger.error(f"Failed to save job {job_id} to database: {db_error}")
             
             job_store[job_id]["status"] = "completed"
             job_store[job_id]["progress"] = 100
@@ -200,13 +417,14 @@ async def process_scan_background(job_id: str, image_data: bytes, device_type: s
             job_store[job_id]["results"] = {
                 "serials": top_results,
                 "top_result": {
-                    "serial": top_result.serial,
-                    "confidence": top_result.confidence
+                    "serial": top_serial,
+                    "confidence": top_confidence
                 },
                 "total_detected": len(results),
                 "processing_time": (datetime.now() - datetime.fromisoformat(job_store[job_id]["created_at"])).total_seconds(),
-                "fallback_used": any(getattr(r, 'method', 'easyocr') == 'tesseract' for r in results),
-                "strategy_used": get_config("FALLBACK_STRATEGY", "hybrid")
+                "fallback_used": any(isinstance(r, tuple) or getattr(r, 'method', 'easyocr') == 'tesseract' for r in results),
+                "strategy_used": get_config("FALLBACK_STRATEGY", "hybrid"),
+                "saved_to_database": True
             }
             job_store[job_id]["updated_at"] = datetime.now().isoformat()
             
@@ -254,6 +472,66 @@ async def list_jobs(limit: int = Query(10, ge=1, le=100)) -> dict:
         "total_jobs": len(job_store),
         "recent_jobs": recent_jobs
     }
+
+@router.get("/queue/status")
+async def get_queue_status() -> dict:
+    """Get current queue status for iOS app."""
+    return {
+        "queue_processor_running": queue_processor_running,
+        "queued_jobs": len(task_queue),
+        "processing_jobs": len(processing_queue),
+        "completed_jobs": len(completed_queue),
+        "total_jobs": len(job_store),
+        "queue_positions": {
+            job_id: {
+                "position": i + 1,
+                "status": job_store[job_id]["status"],
+                "created_at": job_store[job_id]["created_at"]
+            }
+            for i, job_id in enumerate(task_queue)
+        }
+    }
+
+@router.get("/history")
+async def get_scan_history(limit: int = Query(50, ge=1, le=200)) -> dict:
+    """Get scan history for iOS app display."""
+    from app.db import fetch_serials
+    
+    try:
+        # Get recent scans from database
+        db_results = fetch_serials()
+        
+        # Convert to iOS-friendly format
+        history = []
+        for row in db_results[-limit:]:  # Get most recent entries
+            id, created_at, serial, device_type, confidence = row
+            history.append({
+                "id": id,
+                "timestamp": created_at,
+                "serial": serial,
+                "device_type": device_type or "unknown",
+                "confidence": confidence or 0.0,
+                "status": "completed"
+            })
+        
+        return {
+            "total_scans": len(db_results),
+            "recent_scans": history,
+            "export_url": "/export",
+            "queue_status": {
+                "queued": len(task_queue),
+                "processing": len(processing_queue),
+                "completed": len(completed_queue)
+            }
+        }
+    except Exception as e:
+        logger.error(f"Failed to fetch scan history: {e}")
+        return {
+            "total_scans": 0,
+            "recent_scans": [],
+            "export_url": "/export",
+            "error": "Failed to fetch history"
+        }
 
 @router.delete("/jobs/{job_id}")
 async def delete_job(job_id: str) -> dict:
@@ -560,7 +838,7 @@ async def process_progressive(
 
 @router.get("/export")
 def export_excel() -> FileResponse:
-    export_name = f"exports/serials_{datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx"
+    export_name = f"storage/exports/serials_{datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx"
     path = generate_excel(export_name)
     if not os.path.exists(path):
         raise HTTPException(status_code=500, detail="Failed to generate export")

@@ -1,270 +1,118 @@
-{"timestamp": "2025-08-14T22:34:54.669411", "event_type": "api_request", "message": "POST /process-serial - 400 in 77.08s", "endpoint": "/process-serial", "method": "POST", "params": {"min_confidence": "0.0", "debug_save": "True", "persist": "False", "preset": "etched", "upscale_scale": "5.0", "mode": "gray", "roi": "False", "roi_top_k": "3", "adaptive_pad": "True", "glare_reduction": "division", "fine_rotation": "True", "rotations": "0,90,180,270", "keyword_crop": "True", "zoom_strips": "3"}, "status_code": 400, "response_time_ms": 77079.31, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 400 in 77.08s
-{"timestamp": "2025-08-14T22:34:57.109082", "event_type": "api_request", "message": "POST /process-serial - 400 in 0.33s", "endpoint": "/process-serial", "method": "POST", "params": {"min_confidence": "0.0", "debug_save": "True", "persist": "False", "preset": "etched", "upscale_scale": "5.0", "mode": "gray", "roi": "False", "roi_top_k": "3", "adaptive_pad": "True", "glare_reduction": "division", "fine_rotation": "True", "rotations": "0,90,180,270", "keyword_crop": "True", "zoom_strips": "3"}, "status_code": 400, "response_time_ms": 334.14, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 400 in 0.33s
-{"timestamp": "2025-08-14T22:34:59.408059", "event_type": "api_request", "message": "POST /process-serial - 400 in 0.25s", "endpoint": "/process-serial", "method": "POST", "params": {"min_confidence": "0.0", "debug_save": "True", "persist": "False", "preset": "etched", "upscale_scale": "5.0", "mode": "gray", "roi": "False", "roi_top_k": "3", "adaptive_pad": "True", "glare_reduction": "division", "fine_rotation": "True", "rotations": "0,90,180,270", "keyword_crop": "True", "zoom_strips": "3"}, "status_code": 400, "response_time_ms": 246.44, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 400 in 0.25s
-{"timestamp": "2025-08-14T22:35:02.094895", "event_type": "api_request", "message": "POST /process-serial - 400 in 0.38s", "endpoint": "/process-serial", "method": "POST", "params": {"min_confidence": "0.0", "debug_save": "True", "persist": "False", "preset": "etched", "upscale_scale": "5.0", "mode": "gray", "roi": "False", "roi_top_k": "3", "adaptive_pad": "True", "glare_reduction": "division", "fine_rotation": "True", "rotations": "0,90,180,270", "keyword_crop": "True", "zoom_strips": "3"}, "status_code": 400, "response_time_ms": 382.19, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 400 in 0.38s
-{"timestamp": "2025-08-14T22:35:02.094895", "event_type": "api_request", "message": "GET /health - 200 in 0.71s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 714.46, "client_ip": "127.0.0.1"}
-api_request: GET /health - 200 in 0.71s
-{"timestamp": "2025-08-14T22:35:04.318781", "event_type": "api_request", "message": "POST /process-serial - 400 in 0.14s", "endpoint": "/process-serial", "method": "POST", "params": {"min_confidence": "0.0", "debug_save": "True", "persist": "False", "preset": "etched", "upscale_scale": "5.0", "mode": "gray", "roi": "False", "roi_top_k": "3", "adaptive_pad": "True", "glare_reduction": "division", "fine_rotation": "True", "rotations": "0,90,180,270", "keyword_crop": "True", "zoom_strips": "3"}, "status_code": 400, "response_time_ms": 135.96, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 400 in 0.14s
-{"timestamp": "2025-08-14T22:35:06.746231", "event_type": "api_request", "message": "POST /process-serial - 400 in 0.36s", "endpoint": "/process-serial", "method": "POST", "params": {"min_confidence": "0.0", "debug_save": "True", "persist": "False", "preset": "etched", "upscale_scale": "5.0", "mode": "gray", "roi": "False", "roi_top_k": "3", "adaptive_pad": "True", "glare_reduction": "division", "fine_rotation": "True", "rotations": "0,90,180,270", "keyword_crop": "True", "zoom_strips": "3"}, "status_code": 400, "response_time_ms": 358.71, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 400 in 0.36s
-{"timestamp": "2025-08-14T22:35:09.630750", "event_type": "api_request", "message": "POST /process-serial - 400 in 0.82s", "endpoint": "/process-serial", "method": "POST", "params": {"min_confidence": "0.0", "debug_save": "True", "persist": "False", "preset": "etched", "upscale_scale": "5.0", "mode": "gray", "roi": "False", "roi_top_k": "3", "adaptive_pad": "True", "glare_reduction": "division", "fine_rotation": "True", "rotations": "0,90,180,270", "keyword_crop": "True", "zoom_strips": "3"}, "status_code": 400, "response_time_ms": 816.74, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 400 in 0.82s
-{"timestamp": "2025-08-14T22:35:12.722912", "event_type": "api_request", "message": "POST /process-serial - 400 in 1.04s", "endpoint": "/process-serial", "method": "POST", "params": {"min_confidence": "0.0", "debug_save": "True", "persist": "False", "preset": "etched", "upscale_scale": "5.0", "mode": "gray", "roi": "False", "roi_top_k": "3", "adaptive_pad": "True", "glare_reduction": "division", "fine_rotation": "True", "rotations": "0,90,180,270", "keyword_crop": "True", "zoom_strips": "3"}, "status_code": 400, "response_time_ms": 1043.75, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 400 in 1.04s
-{"timestamp": "2025-08-14T22:35:15.580041", "event_type": "api_request", "message": "POST /process-serial - 400 in 0.77s", "endpoint": "/process-serial", "method": "POST", "params": {"min_confidence": "0.0", "debug_save": "True", "persist": "False", "preset": "etched", "upscale_scale": "5.0", "mode": "gray", "roi": "False", "roi_top_k": "3", "adaptive_pad": "True", "glare_reduction": "division", "fine_rotation": "True", "rotations": "0,90,180,270", "keyword_crop": "True", "zoom_strips": "3"}, "status_code": 400, "response_time_ms": 765.2, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 400 in 0.77s
-{"timestamp": "2025-08-14T22:35:18.469830", "event_type": "api_request", "message": "POST /process-serial - 400 in 0.82s", "endpoint": "/process-serial", "method": "POST", "params": {"min_confidence": "0.0", "debug_save": "True", "persist": "False", "preset": "etched", "upscale_scale": "5.0", "mode": "gray", "roi": "False", "roi_top_k": "3", "adaptive_pad": "True", "glare_reduction": "division", "fine_rotation": "True", "rotations": "0,90,180,270", "keyword_crop": "True", "zoom_strips": "3"}, "status_code": 400, "response_time_ms": 824.41, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 400 in 0.82s
-{"timestamp": "2025-08-14T22:35:21.420207", "event_type": "api_request", "message": "POST /process-serial - 400 in 0.88s", "endpoint": "/process-serial", "method": "POST", "params": {"min_confidence": "0.0", "debug_save": "True", "persist": "False", "preset": "etched", "upscale_scale": "5.0", "mode": "gray", "roi": "False", "roi_top_k": "3", "adaptive_pad": "True", "glare_reduction": "division", "fine_rotation": "True", "rotations": "0,90,180,270", "keyword_crop": "True", "zoom_strips": "3"}, "status_code": 400, "response_time_ms": 882.93, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 400 in 0.88s
-{"timestamp": "2025-08-14T22:35:24.255240", "event_type": "api_request", "message": "POST /process-serial - 400 in 0.76s", "endpoint": "/process-serial", "method": "POST", "params": {"min_confidence": "0.0", "debug_save": "True", "persist": "False", "preset": "etched", "upscale_scale": "5.0", "mode": "gray", "roi": "False", "roi_top_k": "3", "adaptive_pad": "True", "glare_reduction": "division", "fine_rotation": "True", "rotations": "0,90,180,270", "keyword_crop": "True", "zoom_strips": "3"}, "status_code": 400, "response_time_ms": 755.99, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 400 in 0.76s
-{"timestamp": "2025-08-14T22:35:27.354295", "event_type": "api_request", "message": "POST /process-serial - 400 in 1.04s", "endpoint": "/process-serial", "method": "POST", "params": {"min_confidence": "0.0", "debug_save": "True", "persist": "False", "preset": "etched", "upscale_scale": "5.0", "mode": "gray", "roi": "False", "roi_top_k": "3", "adaptive_pad": "True", "glare_reduction": "division", "fine_rotation": "True", "rotations": "0,90,180,270", "keyword_crop": "True", "zoom_strips": "3"}, "status_code": 400, "response_time_ms": 1035.13, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 400 in 1.04s
-{"timestamp": "2025-08-14T22:35:30.176301", "event_type": "api_request", "message": "POST /process-serial - 400 in 0.77s", "endpoint": "/process-serial", "method": "POST", "params": {"min_confidence": "0.0", "debug_save": "True", "persist": "False", "preset": "etched", "upscale_scale": "5.0", "mode": "gray", "roi": "False", "roi_top_k": "3", "adaptive_pad": "True", "glare_reduction": "division", "fine_rotation": "True", "rotations": "0,90,180,270", "keyword_crop": "True", "zoom_strips": "3"}, "status_code": 400, "response_time_ms": 773.14, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 400 in 0.77s
-{"timestamp": "2025-08-14T22:35:33.194350", "event_type": "api_request", "message": "POST /process-serial - 400 in 0.94s", "endpoint": "/process-serial", "method": "POST", "params": {"min_confidence": "0.0", "debug_save": "True", "persist": "False", "preset": "etched", "upscale_scale": "5.0", "mode": "gray", "roi": "False", "roi_top_k": "3", "adaptive_pad": "True", "glare_reduction": "division", "fine_rotation": "True", "rotations": "0,90,180,270", "keyword_crop": "True", "zoom_strips": "3"}, "status_code": 400, "response_time_ms": 939.7, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 400 in 0.94s
-{"timestamp": "2025-08-14T22:35:36.011837", "event_type": "api_request", "message": "POST /process-serial - 400 in 0.78s", "endpoint": "/process-serial", "method": "POST", "params": {"min_confidence": "0.0", "debug_save": "True", "persist": "False", "preset": "etched", "upscale_scale": "5.0", "mode": "gray", "roi": "False", "roi_top_k": "3", "adaptive_pad": "True", "glare_reduction": "division", "fine_rotation": "True", "rotations": "0,90,180,270", "keyword_crop": "True", "zoom_strips": "3"}, "status_code": 400, "response_time_ms": 779.43, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 400 in 0.78s
-{"timestamp": "2025-08-14T22:38:50.446553", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.69, "client_ip": "127.0.0.1"}
-api_request: GET /health - 200 in 0.01s
-{"timestamp": "2025-08-15T13:33:46.430954", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.24, "client_ip": "127.0.0.1"}
+{"timestamp": "2025-08-17T23:13:19.577888", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.43, "client_ip": "127.0.0.1"}
 api_request: GET /health - 200 in 0.00s
-{"timestamp": "2025-08-15T13:34:17.998117", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.96, "client_ip": "127.0.0.1"}
-api_request: GET /health - 200 in 0.00s
-{"timestamp": "2025-08-15T13:34:18.000828", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.41, "client_ip": "127.0.0.1"}
-api_request: GET /health - 200 in 0.00s
-{"timestamp": "2025-08-15T13:34:37.017217", "event_type": "ocr_timing", "message": "OCR processed img_1755264858.003984 in 19.01s, found 0 serials", "image_id": "img_1755264858.003984", "timing": {"total_ms": 19008.19, "preprocessing_ms": 47.55, "detection_ms": 9411.08, "validation_ms": 0.0}, "results": {"serials_found": 0, "top_confidence": null}, "params": {"low_text": 0.15, "text_threshold": 0.35, "mag_ratio": 1.5, "roi": true, "roi_top_k": 3, "zoom_strips": 0, "keyword_crop": false, "fine_rotation": false, "rotations_count": 4, "regions_count": 3}}
-ocr_timing: OCR processed img_1755264858.003984 in 19.01s, found 0 serials
-{"timestamp": "2025-08-15T13:34:37.017403", "event_type": "debug_asset", "message": "Saved preprocessed debug asset for img_1755264858.003984", "image_id": "img_1755264858.003984", "asset_type": "preprocessed", "asset_path": "exports/debug/preproc_20250815_133418003910.png"}
-debug_asset: Saved preprocessed debug asset for img_1755264858.003984
-{"timestamp": "2025-08-15T13:34:37.017474", "event_type": "detection_miss", "message": "Failed to detect serial in img_1755264858.003984", "image_id": "img_1755264858.003984", "params": {"low_text": 0.15, "text_threshold": 0.35, "mag_ratio": 1.5, "roi": true, "roi_top_k": 3, "zoom_strips": 0, "keyword_crop": false, "fine_rotation": false}, "debug_path": "exports/debug/preproc_20250815_133418003910.png"}
-detection_miss: Failed to detect serial in img_1755264858.003984
-{"timestamp": "2025-08-15T13:34:37.020715", "event_type": "api_request", "message": "POST /process-serial - 200 in 19.02s", "endpoint": "/process-serial", "method": "POST", "params": {"min_confidence": "0.0", "debug_save": "True", "persist": "False", "preset": "default"}, "status_code": 200, "response_time_ms": 19017.83, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 200 in 19.02s
-{"timestamp": "2025-08-15T13:34:37.031890", "event_type": "api_request", "message": "GET /export - 200 in 0.01s", "endpoint": "/export", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 6.49, "client_ip": "127.0.0.1"}
+{"timestamp": "2025-08-17T23:14:04.680927", "event_type": "api_request", "message": "GET /export - 200 in 0.02s", "endpoint": "/export", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 15.42, "client_ip": "127.0.0.1"}
+api_request: GET /export - 200 in 0.02s
+{"timestamp": "2025-08-17T23:14:39.091970", "event_type": "api_request", "message": "GET /export - 200 in 0.01s", "endpoint": "/export", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 7.71, "client_ip": "127.0.0.1"}
 api_request: GET /export - 200 in 0.01s
-{"timestamp": "2025-08-15T13:34:37.035541", "event_type": "api_request", "message": "GET /params - 200 in 0.00s", "endpoint": "/params", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.1, "client_ip": "127.0.0.1"}
-api_request: GET /params - 200 in 0.00s
-{"timestamp": "2025-08-15T20:50:40.567475", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.41, "client_ip": "127.0.0.1"}
-api_request: GET /health - 200 in 0.00s
-{"timestamp": "2025-08-15T20:50:47.594620", "event_type": "api_request", "message": "POST /api/v1/serials/extract - 404 in 0.00s", "endpoint": "/api/v1/serials/extract", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 0.25, "client_ip": "127.0.0.1"}
-api_request: POST /api/v1/serials/extract - 404 in 0.00s
-{"timestamp": "2025-08-15T20:51:02.584210", "event_type": "api_request", "message": "POST /api/v1/serials/process-serial - 404 in 0.00s", "endpoint": "/api/v1/serials/process-serial", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 0.28, "client_ip": "127.0.0.1"}
-api_request: POST /api/v1/serials/process-serial - 404 in 0.00s
-{"timestamp": "2025-08-15T20:51:23.151413", "event_type": "api_request", "message": "POST /process-serial - 422 in 0.00s", "endpoint": "/process-serial", "method": "POST", "params": {}, "status_code": 422, "response_time_ms": 1.62, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 422 in 0.00s
-{"timestamp": "2025-08-15T20:51:35.802327", "event_type": "ocr_timing", "message": "OCR processed img_1755291091.574222 in 4.21s, found 0 serials", "image_id": "img_1755291091.574222", "timing": {"total_ms": 4207.43, "preprocessing_ms": 23.13, "detection_ms": 3567.04, "validation_ms": 0.0}, "results": {"serials_found": 0, "top_confidence": null}, "params": {"low_text": 0.2, "text_threshold": 0.4, "mag_ratio": 1.2, "roi": true, "roi_top_k": 3, "zoom_strips": 0, "keyword_crop": false, "fine_rotation": false, "rotations_count": 4, "regions_count": 3}}
-ocr_timing: OCR processed img_1755291091.574222 in 4.21s, found 0 serials
-{"timestamp": "2025-08-15T20:51:35.802449", "event_type": "detection_miss", "message": "Failed to detect serial in img_1755291091.574222", "image_id": "img_1755291091.574222", "params": {"low_text": 0.2, "text_threshold": 0.4, "mag_ratio": 1.2, "roi": true, "roi_top_k": 3, "zoom_strips": 0, "keyword_crop": false, "fine_rotation": false}}
-detection_miss: Failed to detect serial in img_1755291091.574222
-{"timestamp": "2025-08-15T20:51:36.632484", "event_type": "ocr_timing", "message": "OCR processed img_1755291095.804559 in 0.82s, found 0 serials", "image_id": "img_1755291095.804559", "timing": {"total_ms": 820.05, "preprocessing_ms": 164.1, "detection_ms": 640.14, "validation_ms": 0.0}, "results": {"serials_found": 0, "top_confidence": null}, "params": {"low_text": 0.3, "text_threshold": 0.6, "mag_ratio": 1.2, "roi": true, "roi_top_k": 3, "zoom_strips": 0, "keyword_crop": false, "fine_rotation": false, "rotations_count": 4, "regions_count": 3}}
-ocr_timing: OCR processed img_1755291095.804559 in 0.82s, found 0 serials
-{"timestamp": "2025-08-15T20:51:36.632637", "event_type": "debug_asset", "message": "Saved preprocessed debug asset for img_1755291095.804559", "image_id": "img_1755291095.804559", "asset_type": "preprocessed", "asset_path": "exports/debug/failed/no_detection_20250815_205135804315_preprocessed.png"}
-debug_asset: Saved preprocessed debug asset for img_1755291095.804559
-{"timestamp": "2025-08-15T20:51:36.632691", "event_type": "detection_miss", "message": "Failed to detect serial in img_1755291095.804559", "image_id": "img_1755291095.804559", "params": {"low_text": 0.3, "text_threshold": 0.6, "mag_ratio": 1.2, "roi": true, "roi_top_k": 3, "zoom_strips": 0, "keyword_crop": false, "fine_rotation": false}, "debug_path": "exports/debug/failed/no_detection_20250815_205135804315_preprocessed.png"}
-detection_miss: Failed to detect serial in img_1755291095.804559
-{"timestamp": "2025-08-15T20:51:36.635109", "event_type": "api_request", "message": "POST /process-serial - 200 in 5.06s", "endpoint": "/process-serial", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 5061.96, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 200 in 5.06s
-{"timestamp": "2025-08-16T21:57:55.437919", "event_type": "api_request", "message": "GET / - 404 in 0.01s", "endpoint": "/", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 6.14, "client_ip": "127.0.0.1"}
-api_request: GET / - 404 in 0.01s
-{"timestamp": "2025-08-16T21:57:55.459926", "event_type": "api_request", "message": "GET /favicon.ico - 404 in 0.00s", "endpoint": "/favicon.ico", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.24, "client_ip": "127.0.0.1"}
-api_request: GET /favicon.ico - 404 in 0.00s
-{"timestamp": "2025-08-16T21:58:10.687457", "event_type": "api_request", "message": "GET /health - 200 in 0.01s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 11.73, "client_ip": "127.0.0.1"}
-api_request: GET /health - 200 in 0.01s
-{"timestamp": "2025-08-16T21:58:20.022615", "event_type": "api_request", "message": "GET /preset-serials/ - 404 in 0.00s", "endpoint": "/preset-serials/", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.87, "client_ip": "127.0.0.1"}
-api_request: GET /preset-serials/ - 404 in 0.00s
-{"timestamp": "2025-08-16T21:58:25.938942", "event_type": "api_request", "message": "GET /preset-serials/ - 404 in 0.00s", "endpoint": "/preset-serials/", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.71, "client_ip": "127.0.0.1"}
-api_request: GET /preset-serials/ - 404 in 0.00s
-{"timestamp": "2025-08-16T21:58:34.428548", "event_type": "api_request", "message": "GET /serials/ - 404 in 0.00s", "endpoint": "/serials/", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 1.05, "client_ip": "127.0.0.1"}
-api_request: GET /serials/ - 404 in 0.00s
-{"timestamp": "2025-08-16T21:58:45.724883", "event_type": "api_request", "message": "GET /.preset-serials/ - 404 in 0.00s", "endpoint": "/.preset-serials/", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.81, "client_ip": "127.0.0.1"}
-api_request: GET /.preset-serials/ - 404 in 0.00s
-{"timestamp": "2025-08-16T22:00:32.649841", "event_type": "api_request", "message": "GET /process-serial/ - 307 in 0.00s", "endpoint": "/process-serial/", "method": "GET", "params": {}, "status_code": 307, "response_time_ms": 2.53, "client_ip": "127.0.0.1"}
-api_request: GET /process-serial/ - 307 in 0.00s
-{"timestamp": "2025-08-16T22:00:32.656974", "event_type": "api_request", "message": "GET /process-serial - 405 in 0.00s", "endpoint": "/process-serial", "method": "GET", "params": {}, "status_code": 405, "response_time_ms": 0.83, "client_ip": "127.0.0.1"}
-api_request: GET /process-serial - 405 in 0.00s
-{"timestamp": "2025-08-16T22:00:41.925518", "event_type": "api_request", "message": "GET /presets/ - 404 in 0.00s", "endpoint": "/presets/", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 1.18, "client_ip": "127.0.0.1"}
-api_request: GET /presets/ - 404 in 0.00s
-{"timestamp": "2025-08-16T22:00:48.303060", "event_type": "api_request", "message": "GET /presets - 404 in 0.00s", "endpoint": "/presets", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 1.09, "client_ip": "127.0.0.1"}
-api_request: GET /presets - 404 in 0.00s
-{"timestamp": "2025-08-16T22:00:52.504803", "event_type": "api_request", "message": "GET /presets/ - 404 in 0.00s", "endpoint": "/presets/", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 1.41, "client_ip": "127.0.0.1"}
-api_request: GET /presets/ - 404 in 0.00s
-{"timestamp": "2025-08-16T22:01:14.173909", "event_type": "api_request", "message": "GET /presets - 404 in 0.00s", "endpoint": "/presets", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.43, "client_ip": "127.0.0.1"}
-api_request: GET /presets - 404 in 0.00s
-{"timestamp": "2025-08-16T22:40:30.011454", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 2.79, "client_ip": "127.0.0.1"}
-api_request: GET /health - 200 in 0.00s
-{"timestamp": "2025-08-16T22:41:13.060062", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.67, "client_ip": "127.0.0.1"}
-api_request: GET /health - 200 in 0.00s
-{"timestamp": "2025-08-16T22:41:20.006948", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.46, "client_ip": "127.0.0.1"}
-api_request: GET /health - 200 in 0.00s
-{"timestamp": "2025-08-16T22:41:20.839615", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.62, "client_ip": "127.0.0.1"}
-api_request: GET /health - 200 in 0.00s
-{"timestamp": "2025-08-16T22:46:05.642524", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 2.67, "client_ip": "127.0.0.1"}
-api_request: GET /health - 200 in 0.00s
-{"timestamp": "2025-08-16T22:46:42.188082", "event_type": "api_request", "message": "POST /process-serial - 200 in 30.26s", "endpoint": "/process-serial", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 30256.78, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 200 in 30.26s
-{"timestamp": "2025-08-16T22:47:55.846182", "event_type": "api_request", "message": "GET /params - 200 in 0.00s", "endpoint": "/params", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.44, "client_ip": "127.0.0.1"}
-api_request: GET /params - 200 in 0.00s
-{"timestamp": "2025-08-16T22:48:25.186680", "event_type": "api_request", "message": "POST /process-serial - 200 in 23.55s", "endpoint": "/process-serial", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 23548.02, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 200 in 23.55s
-{"timestamp": "2025-08-16T23:03:57.434896", "event_type": "api_request", "message": "GET / - 404 in 0.00s", "endpoint": "/", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.92, "client_ip": "127.0.0.1"}
-api_request: GET / - 404 in 0.00s
-{"timestamp": "2025-08-16T23:06:19.844145", "event_type": "api_request", "message": "POST /process-serial - 200 in 78.17s", "endpoint": "/process-serial", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 78167.71, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 200 in 78.17s
-{"timestamp": "2025-08-16T23:20:57.465162", "event_type": "api_request", "message": "POST /scan - 200 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 3.44, "client_ip": "127.0.0.1"}
-api_request: POST /scan - 200 in 0.00s
-{"timestamp": "2025-08-16T23:23:22.836142", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 3.59, "client_ip": "127.0.0.1"}
-api_request: GET /health - 200 in 0.00s
-{"timestamp": "2025-08-16T23:23:30.633769", "event_type": "api_request", "message": "POST /scan - 200 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 2.94, "client_ip": "127.0.0.1"}
-api_request: POST /scan - 200 in 0.00s
-{"timestamp": "2025-08-16T23:23:37.042104", "event_type": "api_request", "message": "GET /result/3861b739-caf6-4a13-ac88-76cbb0f20773 - 200 in 0.00s", "endpoint": "/result/3861b739-caf6-4a13-ac88-76cbb0f20773", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.3, "client_ip": "127.0.0.1"}
-api_request: GET /result/3861b739-caf6-4a13-ac88-76cbb0f20773 - 200 in 0.00s
-{"timestamp": "2025-08-16T23:24:19.813689", "event_type": "api_request", "message": "POST /scan - 200 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 1.21, "client_ip": "127.0.0.1"}
-api_request: POST /scan - 200 in 0.00s
-{"timestamp": "2025-08-16T23:24:54.302498", "event_type": "api_request", "message": "GET /jobs - 200 in 0.00s", "endpoint": "/jobs", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.42, "client_ip": "127.0.0.1"}
-api_request: GET /jobs - 200 in 0.00s
-{"timestamp": "2025-08-16T23:25:01.746628", "event_type": "api_request", "message": "POST /scan - 200 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 1.55, "client_ip": "127.0.0.1"}
-api_request: POST /scan - 200 in 0.00s
-{"timestamp": "2025-08-16T23:25:39.700588", "event_type": "api_request", "message": "GET /jobs - 200 in 0.00s", "endpoint": "/jobs", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.57, "client_ip": "127.0.0.1"}
-api_request: GET /jobs - 200 in 0.00s
-{"timestamp": "2025-08-16T23:25:47.376511", "event_type": "api_request", "message": "GET /result/ecff71d1-086a-48a3-954c-2c34f9a76bbc - 200 in 0.00s", "endpoint": "/result/ecff71d1-086a-48a3-954c-2c34f9a76bbc", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.4, "client_ip": "127.0.0.1"}
-api_request: GET /result/ecff71d1-086a-48a3-954c-2c34f9a76bbc - 200 in 0.00s
-{"timestamp": "2025-08-16T23:25:53.637042", "event_type": "api_request", "message": "POST /scan - 200 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 1.42, "client_ip": "127.0.0.1"}
-api_request: POST /scan - 200 in 0.00s
-{"timestamp": "2025-08-16T23:31:11.576469", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.99, "client_ip": "127.0.0.1"}
-api_request: GET /health - 200 in 0.00s
-{"timestamp": "2025-08-16T23:34:57.749454", "event_type": "api_request", "message": "POST /process-serial - 200 in 79.01s", "endpoint": "/process-serial", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 79014.3, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 200 in 79.01s
-{"timestamp": "2025-08-17T08:09:34.096145", "event_type": "api_request", "message": "POST /process-serial - 200 in 78.74s", "endpoint": "/process-serial", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 78744.76, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 200 in 78.74s
-{"timestamp": "2025-08-17T08:15:11.876236", "event_type": "api_request", "message": "POST /process-serial - 200 in 77.58s", "endpoint": "/process-serial", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 77577.32, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 200 in 77.58s
-{"timestamp": "2025-08-17T08:15:11.876918", "event_type": "api_request", "message": "POST /result/3861b739-caf6-4a13-ac88-76cbb0f20773curl - 405 in 0.00s", "endpoint": "/result/3861b739-caf6-4a13-ac88-76cbb0f20773curl", "method": "POST", "params": {}, "status_code": 405, "response_time_ms": 0.36, "client_ip": "127.0.0.1"}
-api_request: POST /result/3861b739-caf6-4a13-ac88-76cbb0f20773curl - 405 in 0.00s
-{"timestamp": "2025-08-17T08:15:11.878518", "event_type": "api_request", "message": "POST /scan - 200 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 0.78, "client_ip": "127.0.0.1"}
-api_request: POST /scan - 200 in 0.00s
-{"timestamp": "2025-08-17T08:15:20.037007", "event_type": "api_request", "message": "GET /result/79fc1240-6530-41bc-82af-d985d80ae00b - 200 in 0.00s", "endpoint": "/result/79fc1240-6530-41bc-82af-d985d80ae00b", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.33, "client_ip": "127.0.0.1"}
-api_request: GET /result/79fc1240-6530-41bc-82af-d985d80ae00b - 200 in 0.00s
-{"timestamp": "2025-08-17T08:15:50.275690", "event_type": "api_request", "message": "POST /scan - 200 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 1.68, "client_ip": "127.0.0.1"}
-api_request: POST /scan - 200 in 0.00s
-{"timestamp": "2025-08-17T08:16:15.872995", "event_type": "api_request", "message": "GET /result/9a6d4266-0e03-45a9-8ff0-d84fb7a40a2c - 200 in 0.00s", "endpoint": "/result/9a6d4266-0e03-45a9-8ff0-d84fb7a40a2c", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.37, "client_ip": "127.0.0.1"}
-api_request: GET /result/9a6d4266-0e03-45a9-8ff0-d84fb7a40a2c - 200 in 0.00s
-{"timestamp": "2025-08-17T08:16:23.449531", "event_type": "api_request", "message": "GET /jobs - 200 in 0.00s", "endpoint": "/jobs", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.29, "client_ip": "127.0.0.1"}
-api_request: GET /jobs - 200 in 0.00s
-{"timestamp": "2025-08-17T08:37:25.131704", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.42, "client_ip": "127.0.0.1"}
-api_request: GET /health - 200 in 0.00s
-{"timestamp": "2025-08-17T08:37:43.734194", "event_type": "api_request", "message": "GET / - 404 in 0.00s", "endpoint": "/", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.3, "client_ip": "127.0.0.1"}
-api_request: GET / - 404 in 0.00s
-{"timestamp": "2025-08-17T08:37:51.975425", "event_type": "api_request", "message": "GET /docs - 200 in 0.00s", "endpoint": "/docs", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.25, "client_ip": "127.0.0.1"}
-api_request: GET /docs - 200 in 0.00s
-{"timestamp": "2025-08-17T08:37:58.067309", "event_type": "api_request", "message": "POST /scan - 200 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 2.43, "client_ip": "127.0.0.1"}
-api_request: POST /scan - 200 in 0.00s
-{"timestamp": "2025-08-17T08:38:15.625355", "event_type": "api_request", "message": "GET /jobs - 200 in 0.00s", "endpoint": "/jobs", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.32, "client_ip": "127.0.0.1"}
-api_request: GET /jobs - 200 in 0.00s
-{"timestamp": "2025-08-17T08:39:00.406832", "event_type": "api_request", "message": "POST /scan - 200 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 1.8, "client_ip": "127.0.0.1"}
-api_request: POST /scan - 200 in 0.00s
-{"timestamp": "2025-08-17T08:44:22.518292", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 2.03, "client_ip": "127.0.0.1"}
-api_request: GET /health - 200 in 0.00s
-{"timestamp": "2025-08-17T08:44:28.894141", "event_type": "api_request", "message": "POST /scan - 200 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 1.28, "client_ip": "127.0.0.1"}
-api_request: POST /scan - 200 in 0.00s
-{"timestamp": "2025-08-17T08:45:46.336386", "event_type": "api_request", "message": "POST /scan - 200 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 1.45, "client_ip": "127.0.0.1"}
-api_request: POST /scan - 200 in 0.00s
-{"timestamp": "2025-08-17T08:46:21.829939", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.02, "client_ip": "127.0.0.1"}
-api_request: GET /health - 200 in 0.00s
-{"timestamp": "2025-08-17T08:46:42.808013", "event_type": "api_request", "message": "POST /process-serial - 400 in 6.82s", "endpoint": "/process-serial", "method": "POST", "params": {}, "status_code": 400, "response_time_ms": 6816.69, "client_ip": "127.0.0.1"}
-api_request: POST /process-serial - 400 in 6.82s
-{"timestamp": "2025-08-17T08:47:21.423838", "event_type": "api_request", "message": "POST /scan - 200 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 1.52, "client_ip": "127.0.0.1"}
-api_request: POST /scan - 200 in 0.00s
-{"timestamp": "2025-08-17T08:51:30.478520", "event_type": "api_request", "message": "POST /scan - 200 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 1.82, "client_ip": "127.0.0.1"}
-api_request: POST /scan - 200 in 0.00s
-{"timestamp": "2025-08-17T08:52:31.103907", "event_type": "api_request", "message": "GET /result/9b7467d7-82c3-4407-b82e-299740e31c96 - 404 in 0.00s", "endpoint": "/result/9b7467d7-82c3-4407-b82e-299740e31c96", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.68, "client_ip": "127.0.0.1"}
-api_request: GET /result/9b7467d7-82c3-4407-b82e-299740e31c96 - 404 in 0.00s
-{"timestamp": "2025-08-17T08:53:03.779859", "event_type": "api_request", "message": "GET /jobs - 200 in 0.00s", "endpoint": "/jobs", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.51, "client_ip": "127.0.0.1"}
-api_request: GET /jobs - 200 in 0.00s
-{"timestamp": "2025-08-17T08:53:11.633376", "event_type": "api_request", "message": "POST /scan - 200 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 1.33, "client_ip": "127.0.0.1"}
-api_request: POST /scan - 200 in 0.00s
-{"timestamp": "2025-08-17T09:08:28.104797", "event_type": "api_request", "message": "POST /scan - 200 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 2.18, "client_ip": "127.0.0.1"}
-api_request: POST /scan - 200 in 0.00s
-{"timestamp": "2025-08-17T09:08:40.969921", "event_type": "api_request", "message": "GET /result/9159ce06-8c21-493d-b816-f2b65401c730 - 200 in 0.00s", "endpoint": "/result/9159ce06-8c21-493d-b816-f2b65401c730", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.35, "client_ip": "127.0.0.1"}
-api_request: GET /result/9159ce06-8c21-493d-b816-f2b65401c730 - 200 in 0.00s
-{"timestamp": "2025-08-17T09:09:36.547537", "event_type": "api_request", "message": "POST /scan - 200 in 0.01s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 6.04, "client_ip": "127.0.0.1"}
+{"timestamp": "2025-08-17T23:17:16.531436", "event_type": "api_request", "message": "POST /scan - 200 in 9.07s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 9074.31, "client_ip": "127.0.0.1"}
+api_request: POST /scan - 200 in 9.07s
+{"timestamp": "2025-08-17T23:17:16.534022", "event_type": "api_request", "message": "GET /result/1995B988-577B-422E-BF5F-E255EC037136 - 404 in 0.00s", "endpoint": "/result/1995B988-577B-422E-BF5F-E255EC037136", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 1.6, "client_ip": "127.0.0.1"}
+api_request: GET /result/1995B988-577B-422E-BF5F-E255EC037136 - 404 in 0.00s
+{"timestamp": "2025-08-17T23:17:16.534464", "event_type": "api_request", "message": "GET /result/1995B988-577B-422E-BF5F-E255EC037136 - 404 in 0.00s", "endpoint": "/result/1995B988-577B-422E-BF5F-E255EC037136", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.7, "client_ip": "127.0.0.1"}
+api_request: GET /result/1995B988-577B-422E-BF5F-E255EC037136 - 404 in 0.00s
+{"timestamp": "2025-08-17T23:17:16.534926", "event_type": "api_request", "message": "GET /result/1995B988-577B-422E-BF5F-E255EC037136 - 404 in 0.00s", "endpoint": "/result/1995B988-577B-422E-BF5F-E255EC037136", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.96, "client_ip": "127.0.0.1"}
+api_request: GET /result/1995B988-577B-422E-BF5F-E255EC037136 - 404 in 0.00s
+{"timestamp": "2025-08-17T23:17:16.535190", "event_type": "api_request", "message": "GET /result/1995B988-577B-422E-BF5F-E255EC037136 - 404 in 0.00s", "endpoint": "/result/1995B988-577B-422E-BF5F-E255EC037136", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.81, "client_ip": "127.0.0.1"}
+api_request: GET /result/1995B988-577B-422E-BF5F-E255EC037136 - 404 in 0.00s
+{"timestamp": "2025-08-17T23:17:21.261150", "event_type": "api_request", "message": "POST /scan - 200 in 0.01s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 5.24, "client_ip": "127.0.0.1"}
 api_request: POST /scan - 200 in 0.01s
-{"timestamp": "2025-08-17T09:09:43.202292", "event_type": "api_request", "message": "GET /result/d5683506-7dc5-4085-bbf4-b3d040a115f6 - 200 in 0.00s", "endpoint": "/result/d5683506-7dc5-4085-bbf4-b3d040a115f6", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.44, "client_ip": "127.0.0.1"}
-api_request: GET /result/d5683506-7dc5-4085-bbf4-b3d040a115f6 - 200 in 0.00s
-{"timestamp": "2025-08-17T09:09:43.203027", "event_type": "api_request", "message": "GET /result/d5683506-7dc5-4085-bbf4-b3d040a115f6 - 200 in 0.00s", "endpoint": "/result/d5683506-7dc5-4085-bbf4-b3d040a115f6", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.92, "client_ip": "127.0.0.1"}
-api_request: GET /result/d5683506-7dc5-4085-bbf4-b3d040a115f6 - 200 in 0.00s
-{"timestamp": "2025-08-17T09:09:43.203422", "event_type": "api_request", "message": "GET /result/d5683506-7dc5-4085-bbf4-b3d040a115f6 - 200 in 0.00s", "endpoint": "/result/d5683506-7dc5-4085-bbf4-b3d040a115f6", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.19, "client_ip": "127.0.0.1"}
-api_request: GET /result/d5683506-7dc5-4085-bbf4-b3d040a115f6 - 200 in 0.00s
-{"timestamp": "2025-08-17T09:10:52.861755", "event_type": "api_request", "message": "GET /jobs - 200 in 0.00s", "endpoint": "/jobs", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.53, "client_ip": "127.0.0.1"}
-api_request: GET /jobs - 200 in 0.00s
-{"timestamp": "2025-08-17T09:11:20.630570", "event_type": "api_request", "message": "POST /scan - 200 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 3.01, "client_ip": "127.0.0.1"}
+{"timestamp": "2025-08-17T23:17:25.437565", "event_type": "api_request", "message": "GET /result/CEE29CEA-4456-4A96-A0D2-2D4B6E0B6C83 - 404 in 0.00s", "endpoint": "/result/CEE29CEA-4456-4A96-A0D2-2D4B6E0B6C83", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.21, "client_ip": "127.0.0.1"}
+api_request: GET /result/CEE29CEA-4456-4A96-A0D2-2D4B6E0B6C83 - 404 in 0.00s
+{"timestamp": "2025-08-17T23:17:25.438732", "event_type": "api_request", "message": "POST /scan - 200 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 1.64, "client_ip": "127.0.0.1"}
 api_request: POST /scan - 200 in 0.00s
-{"timestamp": "2025-08-17T09:11:40.374431", "event_type": "api_request", "message": "GET /result/a9ac7b78-0d86-4328-bc1e-bc0808a77282 - 200 in 0.00s", "endpoint": "/result/a9ac7b78-0d86-4328-bc1e-bc0808a77282", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.36, "client_ip": "127.0.0.1"}
-api_request: GET /result/a9ac7b78-0d86-4328-bc1e-bc0808a77282 - 200 in 0.00s
-{"timestamp": "2025-08-17T09:11:45.409592", "event_type": "api_request", "message": "GET /result/a9ac7b78-0d86-4328-bc1e-bc0808a77282 - 200 in 0.00s", "endpoint": "/result/a9ac7b78-0d86-4328-bc1e-bc0808a77282", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.73, "client_ip": "127.0.0.1"}
-api_request: GET /result/a9ac7b78-0d86-4328-bc1e-bc0808a77282 - 200 in 0.00s
-{"timestamp": "2025-08-17T09:11:50.447840", "event_type": "api_request", "message": "GET /result/a9ac7b78-0d86-4328-bc1e-bc0808a77282 - 200 in 0.00s", "endpoint": "/result/a9ac7b78-0d86-4328-bc1e-bc0808a77282", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.59, "client_ip": "127.0.0.1"}
-api_request: GET /result/a9ac7b78-0d86-4328-bc1e-bc0808a77282 - 200 in 0.00s
-{"timestamp": "2025-08-17T09:11:55.471322", "event_type": "api_request", "message": "GET /result/a9ac7b78-0d86-4328-bc1e-bc0808a77282 - 200 in 0.00s", "endpoint": "/result/a9ac7b78-0d86-4328-bc1e-bc0808a77282", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.29, "client_ip": "127.0.0.1"}
-api_request: GET /result/a9ac7b78-0d86-4328-bc1e-bc0808a77282 - 200 in 0.00s
-{"timestamp": "2025-08-17T09:12:00.503661", "event_type": "api_request", "message": "GET /result/a9ac7b78-0d86-4328-bc1e-bc0808a77282 - 200 in 0.00s", "endpoint": "/result/a9ac7b78-0d86-4328-bc1e-bc0808a77282", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 3.74, "client_ip": "127.0.0.1"}
-api_request: GET /result/a9ac7b78-0d86-4328-bc1e-bc0808a77282 - 200 in 0.00s
-{"timestamp": "2025-08-17T09:12:05.529060", "event_type": "api_request", "message": "GET /result/a9ac7b78-0d86-4328-bc1e-bc0808a77282 - 200 in 0.00s", "endpoint": "/result/a9ac7b78-0d86-4328-bc1e-bc0808a77282", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.3, "client_ip": "127.0.0.1"}
-api_request: GET /result/a9ac7b78-0d86-4328-bc1e-bc0808a77282 - 200 in 0.00s
-{"timestamp": "2025-08-17T09:12:23.895274", "event_type": "api_request", "message": "GET /jobs - 200 in 0.00s", "endpoint": "/jobs", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.24, "client_ip": "127.0.0.1"}
-api_request: GET /jobs - 200 in 0.00s
-{"timestamp": "2025-08-17T09:12:52.508518", "event_type": "api_request", "message": "POST /scan - 200 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 1.77, "client_ip": "127.0.0.1"}
+{"timestamp": "2025-08-17T23:17:25.454922", "event_type": "api_request", "message": "GET /result/CEE29CEA-4456-4A96-A0D2-2D4B6E0B6C83 - 404 in 0.00s", "endpoint": "/result/CEE29CEA-4456-4A96-A0D2-2D4B6E0B6C83", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.24, "client_ip": "127.0.0.1"}
+api_request: GET /result/CEE29CEA-4456-4A96-A0D2-2D4B6E0B6C83 - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.920155", "event_type": "api_request", "message": "POST /scan - 200 in 78.65s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 78652.84, "client_ip": "127.0.0.1"}
+api_request: POST /scan - 200 in 78.65s
+{"timestamp": "2025-08-17T23:30:59.924404", "event_type": "api_request", "message": "GET /result/37F5787F-6CB3-4C48-872C-748089FA4EB9 - 404 in 0.00s", "endpoint": "/result/37F5787F-6CB3-4C48-872C-748089FA4EB9", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 2.78}
+api_request: GET /result/37F5787F-6CB3-4C48-872C-748089FA4EB9 - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.926700", "event_type": "api_request", "message": "GET /result/37F5787F-6CB3-4C48-872C-748089FA4EB9 - 404 in 0.00s", "endpoint": "/result/37F5787F-6CB3-4C48-872C-748089FA4EB9", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 1.71, "client_ip": "127.0.0.1"}
+api_request: GET /result/37F5787F-6CB3-4C48-872C-748089FA4EB9 - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.927063", "event_type": "api_request", "message": "GET /result/37F5787F-6CB3-4C48-872C-748089FA4EB9 - 404 in 0.00s", "endpoint": "/result/37F5787F-6CB3-4C48-872C-748089FA4EB9", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.67, "client_ip": "127.0.0.1"}
+api_request: GET /result/37F5787F-6CB3-4C48-872C-748089FA4EB9 - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.927361", "event_type": "api_request", "message": "GET /result/37F5787F-6CB3-4C48-872C-748089FA4EB9 - 404 in 0.00s", "endpoint": "/result/37F5787F-6CB3-4C48-872C-748089FA4EB9", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.72, "client_ip": "127.0.0.1"}
+api_request: GET /result/37F5787F-6CB3-4C48-872C-748089FA4EB9 - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.927657", "event_type": "api_request", "message": "GET /result/37F5787F-6CB3-4C48-872C-748089FA4EB9 - 404 in 0.00s", "endpoint": "/result/37F5787F-6CB3-4C48-872C-748089FA4EB9", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.66, "client_ip": "127.0.0.1"}
+api_request: GET /result/37F5787F-6CB3-4C48-872C-748089FA4EB9 - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.927920", "event_type": "api_request", "message": "GET /result/37F5787F-6CB3-4C48-872C-748089FA4EB9 - 404 in 0.00s", "endpoint": "/result/37F5787F-6CB3-4C48-872C-748089FA4EB9", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.65, "client_ip": "127.0.0.1"}
+api_request: GET /result/37F5787F-6CB3-4C48-872C-748089FA4EB9 - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.928176", "event_type": "api_request", "message": "GET /result/37F5787F-6CB3-4C48-872C-748089FA4EB9 - 404 in 0.00s", "endpoint": "/result/37F5787F-6CB3-4C48-872C-748089FA4EB9", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.6, "client_ip": "127.0.0.1"}
+api_request: GET /result/37F5787F-6CB3-4C48-872C-748089FA4EB9 - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.928438", "event_type": "api_request", "message": "GET /result/37F5787F-6CB3-4C48-872C-748089FA4EB9 - 404 in 0.00s", "endpoint": "/result/37F5787F-6CB3-4C48-872C-748089FA4EB9", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.6, "client_ip": "127.0.0.1"}
+api_request: GET /result/37F5787F-6CB3-4C48-872C-748089FA4EB9 - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.928721", "event_type": "api_request", "message": "GET /result/37F5787F-6CB3-4C48-872C-748089FA4EB9 - 404 in 0.00s", "endpoint": "/result/37F5787F-6CB3-4C48-872C-748089FA4EB9", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.63, "client_ip": "127.0.0.1"}
+api_request: GET /result/37F5787F-6CB3-4C48-872C-748089FA4EB9 - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.929261", "event_type": "api_request", "message": "GET /result/37F5787F-6CB3-4C48-872C-748089FA4EB9 - 404 in 0.00s", "endpoint": "/result/37F5787F-6CB3-4C48-872C-748089FA4EB9", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.89, "client_ip": "127.0.0.1"}
+api_request: GET /result/37F5787F-6CB3-4C48-872C-748089FA4EB9 - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.929609", "event_type": "api_request", "message": "GET /result/37F5787F-6CB3-4C48-872C-748089FA4EB9 - 404 in 0.00s", "endpoint": "/result/37F5787F-6CB3-4C48-872C-748089FA4EB9", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.99, "client_ip": "127.0.0.1"}
+api_request: GET /result/37F5787F-6CB3-4C48-872C-748089FA4EB9 - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.930378", "event_type": "api_request", "message": "GET /result/37F5787F-6CB3-4C48-872C-748089FA4EB9 - 404 in 0.00s", "endpoint": "/result/37F5787F-6CB3-4C48-872C-748089FA4EB9", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 1.38, "client_ip": "127.0.0.1"}
+api_request: GET /result/37F5787F-6CB3-4C48-872C-748089FA4EB9 - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.930885", "event_type": "api_request", "message": "GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s", "endpoint": "/result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.61, "client_ip": "127.0.0.1"}
+api_request: GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.933627", "event_type": "api_request", "message": "GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s", "endpoint": "/result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 3.01, "client_ip": "127.0.0.1"}
+api_request: GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.934136", "event_type": "api_request", "message": "GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s", "endpoint": "/result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 3.35, "client_ip": "127.0.0.1"}
+api_request: GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.934403", "event_type": "api_request", "message": "POST /scan - 200 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 4.9, "client_ip": "127.0.0.1"}
 api_request: POST /scan - 200 in 0.00s
-{"timestamp": "2025-08-17T09:13:26.753313", "event_type": "api_request", "message": "GET /result/2511814f-01df-4aef-8a70-42aab2830f0e - 200 in 0.00s", "endpoint": "/result/2511814f-01df-4aef-8a70-42aab2830f0e", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 2.33, "client_ip": "127.0.0.1"}
-api_request: GET /result/2511814f-01df-4aef-8a70-42aab2830f0e - 200 in 0.00s
-{"timestamp": "2025-08-17T09:14:09.830232", "event_type": "api_request", "message": "POST /scan - 200 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 1.39, "client_ip": "127.0.0.1"}
-api_request: POST /scan - 200 in 0.00s
-{"timestamp": "2025-08-17T09:20:33.563493", "event_type": "api_request", "message": "GET /result/ec6f668a-b635-48bb-af1e-a6ae3287ae47 - 200 in 0.00s", "endpoint": "/result/ec6f668a-b635-48bb-af1e-a6ae3287ae47", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 3.38, "client_ip": "127.0.0.1"}
-api_request: GET /result/ec6f668a-b635-48bb-af1e-a6ae3287ae47 - 200 in 0.00s
-{"timestamp": "2025-08-17T09:21:00.737971", "event_type": "api_request", "message": "GET /jobs - 200 in 0.00s", "endpoint": "/jobs", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.53, "client_ip": "127.0.0.1"}
-api_request: GET /jobs - 200 in 0.00s
-{"timestamp": "2025-08-17T12:56:41.077919", "event_type": "api_request", "message": "POST /scan - 200 in 0.01s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 8.96, "client_ip": "127.0.0.1"}
-api_request: POST /scan - 200 in 0.01s
-{"timestamp": "2025-08-17T12:56:57.104961", "event_type": "api_request", "message": "GET /result/38a26e18-ab5e-4b04-84d3-dee0b43d0add - 200 in 0.00s", "endpoint": "/result/38a26e18-ab5e-4b04-84d3-dee0b43d0add", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.13, "client_ip": "127.0.0.1"}
-api_request: GET /result/38a26e18-ab5e-4b04-84d3-dee0b43d0add - 200 in 0.00s
-{"timestamp": "2025-08-17T12:56:57.105758", "event_type": "api_request", "message": "GET /result/38a26e18-ab5e-4b04-84d3-dee0b43d0add - 200 in 0.00s", "endpoint": "/result/38a26e18-ab5e-4b04-84d3-dee0b43d0add", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.13, "client_ip": "127.0.0.1"}
-api_request: GET /result/38a26e18-ab5e-4b04-84d3-dee0b43d0add - 200 in 0.00s
-{"timestamp": "2025-08-17T12:56:57.106345", "event_type": "api_request", "message": "GET /result/38a26e18-ab5e-4b04-84d3-dee0b43d0add - 200 in 0.00s", "endpoint": "/result/38a26e18-ab5e-4b04-84d3-dee0b43d0add", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.49, "client_ip": "127.0.0.1"}
-api_request: GET /result/38a26e18-ab5e-4b04-84d3-dee0b43d0add - 200 in 0.00s
-{"timestamp": "2025-08-17T12:56:57.106648", "event_type": "api_request", "message": "GET /result/38a26e18-ab5e-4b04-84d3-dee0b43d0add - 200 in 0.00s", "endpoint": "/result/38a26e18-ab5e-4b04-84d3-dee0b43d0add", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.05, "client_ip": "127.0.0.1"}
-api_request: GET /result/38a26e18-ab5e-4b04-84d3-dee0b43d0add - 200 in 0.00s
-{"timestamp": "2025-08-17T12:56:57.106912", "event_type": "api_request", "message": "GET /result/38a26e18-ab5e-4b04-84d3-dee0b43d0add - 200 in 0.00s", "endpoint": "/result/38a26e18-ab5e-4b04-84d3-dee0b43d0add", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.93, "client_ip": "127.0.0.1"}
-api_request: GET /result/38a26e18-ab5e-4b04-84d3-dee0b43d0add - 200 in 0.00s
-{"timestamp": "2025-08-17T12:56:57.107090", "event_type": "api_request", "message": "GET /result/38a26e18-ab5e-4b04-84d3-dee0b43d0add - 200 in 0.00s", "endpoint": "/result/38a26e18-ab5e-4b04-84d3-dee0b43d0add", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.56, "client_ip": "127.0.0.1"}
-api_request: GET /result/38a26e18-ab5e-4b04-84d3-dee0b43d0add - 200 in 0.00s
-{"timestamp": "2025-08-17T12:56:57.108270", "event_type": "api_request", "message": "GET /result/38a26e18-ab5e-4b04-84d3-dee0b43d0add - 200 in 0.00s", "endpoint": "/result/38a26e18-ab5e-4b04-84d3-dee0b43d0add", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.16, "client_ip": "127.0.0.1"}
-api_request: GET /result/38a26e18-ab5e-4b04-84d3-dee0b43d0add - 200 in 0.00s
-{"timestamp": "2025-08-17T12:56:57.117520", "event_type": "api_request", "message": "GET /result/38a26e18-ab5e-4b04-84d3-dee0b43d0add - 200 in 0.00s", "endpoint": "/result/38a26e18-ab5e-4b04-84d3-dee0b43d0add", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.33, "client_ip": "127.0.0.1"}
-api_request: GET /result/38a26e18-ab5e-4b04-84d3-dee0b43d0add - 200 in 0.00s
-{"timestamp": "2025-08-17T13:07:17.614226", "event_type": "api_request", "message": "POST /scan - 200 in 0.01s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 6.02, "client_ip": "127.0.0.1"}
-api_request: POST /scan - 200 in 0.01s
-{"timestamp": "2025-08-17T13:07:28.059826", "event_type": "api_request", "message": "GET /result/042ca222-8254-4fb2-be39-e2ff36375891 - 200 in 0.00s", "endpoint": "/result/042ca222-8254-4fb2-be39-e2ff36375891", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.51, "client_ip": "127.0.0.1"}
-api_request: GET /result/042ca222-8254-4fb2-be39-e2ff36375891 - 200 in 0.00s
-{"timestamp": "2025-08-17T13:07:28.061074", "event_type": "api_request", "message": "GET /result/042ca222-8254-4fb2-be39-e2ff36375891 - 200 in 0.00s", "endpoint": "/result/042ca222-8254-4fb2-be39-e2ff36375891", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.47, "client_ip": "127.0.0.1"}
-api_request: GET /result/042ca222-8254-4fb2-be39-e2ff36375891 - 200 in 0.00s
-{"timestamp": "2025-08-17T13:07:28.061352", "event_type": "api_request", "message": "GET /result/042ca222-8254-4fb2-be39-e2ff36375891 - 200 in 0.00s", "endpoint": "/result/042ca222-8254-4fb2-be39-e2ff36375891", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.6, "client_ip": "127.0.0.1"}
-api_request: GET /result/042ca222-8254-4fb2-be39-e2ff36375891 - 200 in 0.00s
-{"timestamp": "2025-08-17T13:07:28.061591", "event_type": "api_request", "message": "GET /result/042ca222-8254-4fb2-be39-e2ff36375891 - 200 in 0.00s", "endpoint": "/result/042ca222-8254-4fb2-be39-e2ff36375891", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.63, "client_ip": "127.0.0.1"}
-api_request: GET /result/042ca222-8254-4fb2-be39-e2ff36375891 - 200 in 0.00s
-{"timestamp": "2025-08-17T13:07:28.061761", "event_type": "api_request", "message": "GET /result/042ca222-8254-4fb2-be39-e2ff36375891 - 200 in 0.00s", "endpoint": "/result/042ca222-8254-4fb2-be39-e2ff36375891", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.51, "client_ip": "127.0.0.1"}
-api_request: GET /result/042ca222-8254-4fb2-be39-e2ff36375891 - 200 in 0.00s
-{"timestamp": "2025-08-17T13:20:36.603714", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.85, "client_ip": "127.0.0.1"}
-api_request: GET /health - 200 in 0.00s
-{"timestamp": "2025-08-17T19:54:08.051024", "event_type": "api_request", "message": "POST /scan - 200 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 4.03, "client_ip": "127.0.0.1"}
-api_request: POST /scan - 200 in 0.00s
-{"timestamp": "2025-08-17T19:55:34.062507", "event_type": "api_request", "message": "GET /result/1341b684-4c51-461d-8243-c1f6c284224f - 404 in 0.00s", "endpoint": "/result/1341b684-4c51-461d-8243-c1f6c284224f", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.4, "client_ip": "127.0.0.1"}
-api_request: GET /result/1341b684-4c51-461d-8243-c1f6c284224f - 404 in 0.00s
-{"timestamp": "2025-08-17T20:22:23.395770", "event_type": "api_request", "message": "POST /scan - 200 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 4.0, "client_ip": "127.0.0.1"}
-api_request: POST /scan - 200 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.934519", "event_type": "api_request", "message": "GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s", "endpoint": "/result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 3.46, "client_ip": "127.0.0.1"}
+api_request: GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.934856", "event_type": "api_request", "message": "GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s", "endpoint": "/result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.88, "client_ip": "127.0.0.1"}
+api_request: GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.935574", "event_type": "api_request", "message": "GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s", "endpoint": "/result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 1.2, "client_ip": "127.0.0.1"}
+api_request: GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.936195", "event_type": "api_request", "message": "GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s", "endpoint": "/result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 1.48, "client_ip": "127.0.0.1"}
+api_request: GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.936561", "event_type": "api_request", "message": "GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s", "endpoint": "/result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 1.54, "client_ip": "127.0.0.1"}
+api_request: GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.936930", "event_type": "api_request", "message": "GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s", "endpoint": "/result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.92, "client_ip": "127.0.0.1"}
+api_request: GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.937473", "event_type": "api_request", "message": "GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s", "endpoint": "/result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 1.02, "client_ip": "127.0.0.1"}
+api_request: GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.938359", "event_type": "api_request", "message": "GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s", "endpoint": "/result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 1.53, "client_ip": "127.0.0.1"}
+api_request: GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.938737", "event_type": "api_request", "message": "GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s", "endpoint": "/result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 1.58, "client_ip": "127.0.0.1"}
+api_request: GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.939049", "event_type": "api_request", "message": "GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s", "endpoint": "/result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.87, "client_ip": "127.0.0.1"}
+api_request: GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.939396", "event_type": "api_request", "message": "GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s", "endpoint": "/result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 0.77, "client_ip": "127.0.0.1"}
+api_request: GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s
+{"timestamp": "2025-08-17T23:30:59.939909", "event_type": "api_request", "message": "GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s", "endpoint": "/result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E", "method": "GET", "params": {}, "status_code": 404, "response_time_ms": 1.0, "client_ip": "127.0.0.1"}
+api_request: GET /result/45B4F0F2-236D-4AB5-A630-1D1CD5810B1E - 404 in 0.00s
+{"timestamp": "2025-08-17T23:33:29.911592", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.81, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-17T23:33:31.147271", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.37, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-17T23:33:31.728592", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.28, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-17T23:33:32.903278", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.77, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-17T23:34:42.686995", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.26, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-17T23:34:44.672052", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.62, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-17T23:34:45.331264", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.3, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-17T23:34:45.617066", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.37, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-17T23:40:37.978270", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.0, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-17T23:40:39.202132", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.32, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-17T23:40:40.431921", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.43, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-17T23:40:40.599899", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.27, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-17T23:40:40.946213", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.27, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-17T23:40:41.185372", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.34, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-17T23:41:07.205111", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.8, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-17T23:41:10.200039", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.38, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-17T23:41:11.870890", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.34, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s
+{"timestamp": "2025-08-17T23:41:14.876810", "event_type": "api_request", "message": "GET /queue/status - 200 in 0.00s", "endpoint": "/queue/status", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.28, "client_ip": "127.0.0.1"}
+api_request: GET /queue/status - 200 in 0.00s

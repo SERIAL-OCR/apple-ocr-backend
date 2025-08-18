@@ -3,7 +3,7 @@ import sqlite3
 from datetime import datetime
 from typing import Iterable, List, Tuple, Optional
 
-DB_DIR = "data"
+DB_DIR = "storage/database"
 DB_PATH = os.path.join(DB_DIR, "app.db")
 
 
@@ -13,7 +13,9 @@ def get_connection() -> sqlite3.Connection:
 
 def initialize_storage() -> None:
     os.makedirs(DB_DIR, exist_ok=True)
-    os.makedirs("exports", exist_ok=True)
+    os.makedirs("storage/exports", exist_ok=True)
+    os.makedirs("storage/logs", exist_ok=True)
+    os.makedirs("storage/backups", exist_ok=True)
     with get_connection() as conn:
         conn.execute(
             """
