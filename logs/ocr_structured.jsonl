@@ -1212,3 +1212,209 @@ api_request: GET /health - 200 in 0.01s
 api_request: GET /health - 200 in 0.01s
 {"timestamp": "2025-08-18T09:15:36.293111", "event_type": "api_request", "message": "GET /health - 200 in 0.00s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 4.52, "client_ip": "127.0.0.1"}
 api_request: GET /health - 200 in 0.00s
+{"timestamp": "2025-08-27T17:45:49.727010", "event_type": "api_request", "message": "GET /health - 200 in 3.77s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 3766.39, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 3.77s
+{"timestamp": "2025-08-27T17:45:49.731391", "event_type": "api_request", "message": "POST /serials - 500 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 500, "response_time_ms": 1.08, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 500 in 0.00s
+{"timestamp": "2025-08-27T17:45:49.735798", "event_type": "api_request", "message": "POST /serials - 500 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 500, "response_time_ms": 0.82, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 500 in 0.00s
+{"timestamp": "2025-08-27T17:45:49.739527", "event_type": "api_request", "message": "POST /serials - 422 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 422, "response_time_ms": 1.25, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 422 in 0.00s
+{"timestamp": "2025-08-27T17:45:49.743483", "event_type": "api_request", "message": "POST /serials - 401 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 401, "response_time_ms": 0.63, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 401 in 0.00s
+{"timestamp": "2025-08-27T17:45:49.747665", "event_type": "api_request", "message": "GET /history - 200 in 0.00s", "endpoint": "/history", "method": "GET", "params": {"limit": "10"}, "status_code": 200, "response_time_ms": 1.13, "client_ip": "127.0.0.1"}
+api_request: GET /history - 200 in 0.00s
+{"timestamp": "2025-08-27T17:45:49.751894", "event_type": "api_request", "message": "GET /stats - 200 in 0.00s", "endpoint": "/stats", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.6, "client_ip": "127.0.0.1"}
+api_request: GET /stats - 200 in 0.00s
+{"timestamp": "2025-08-27T17:45:49.754328", "event_type": "api_request", "message": "GET /config - 200 in 0.00s", "endpoint": "/config", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.34, "client_ip": "127.0.0.1"}
+api_request: GET /config - 200 in 0.00s
+{"timestamp": "2025-08-27T17:45:49.758560", "event_type": "api_request", "message": "POST /scan - 404 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 0.2, "client_ip": "127.0.0.1"}
+api_request: POST /scan - 404 in 0.00s
+{"timestamp": "2025-08-27T17:45:49.761186", "event_type": "api_request", "message": "POST /process-serial - 404 in 0.00s", "endpoint": "/process-serial", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 0.23, "client_ip": "127.0.0.1"}
+api_request: POST /process-serial - 404 in 0.00s
+{"timestamp": "2025-08-27T17:45:49.764143", "event_type": "api_request", "message": "POST /process-progressive - 404 in 0.00s", "endpoint": "/process-progressive", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 0.27, "client_ip": "127.0.0.1"}
+api_request: POST /process-progressive - 404 in 0.00s
+{"timestamp": "2025-08-27T17:47:20.203140", "event_type": "api_request", "message": "GET /health - 200 in 0.83s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 826.32, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.83s
+{"timestamp": "2025-08-27T17:47:20.207639", "event_type": "api_request", "message": "POST /serials - 200 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 1.24, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 200 in 0.00s
+{"timestamp": "2025-08-27T17:47:20.212557", "event_type": "api_request", "message": "POST /serials - 200 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 1.83, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 200 in 0.00s
+{"timestamp": "2025-08-27T17:47:20.215327", "event_type": "api_request", "message": "POST /serials - 422 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 422, "response_time_ms": 0.55, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 422 in 0.00s
+{"timestamp": "2025-08-27T17:47:20.220518", "event_type": "api_request", "message": "POST /serials - 401 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 401, "response_time_ms": 0.56, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 401 in 0.00s
+{"timestamp": "2025-08-27T17:47:20.223720", "event_type": "api_request", "message": "GET /history - 200 in 0.00s", "endpoint": "/history", "method": "GET", "params": {"limit": "10"}, "status_code": 200, "response_time_ms": 0.97, "client_ip": "127.0.0.1"}
+api_request: GET /history - 200 in 0.00s
+{"timestamp": "2025-08-27T17:47:20.226758", "event_type": "api_request", "message": "GET /stats - 200 in 0.00s", "endpoint": "/stats", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.72, "client_ip": "127.0.0.1"}
+api_request: GET /stats - 200 in 0.00s
+{"timestamp": "2025-08-27T17:47:20.231382", "event_type": "api_request", "message": "GET /config - 200 in 0.00s", "endpoint": "/config", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.27, "client_ip": "127.0.0.1"}
+api_request: GET /config - 200 in 0.00s
+{"timestamp": "2025-08-27T17:47:20.235551", "event_type": "api_request", "message": "POST /scan - 404 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 0.19, "client_ip": "127.0.0.1"}
+api_request: POST /scan - 404 in 0.00s
+{"timestamp": "2025-08-27T17:47:20.239952", "event_type": "api_request", "message": "POST /process-serial - 404 in 0.00s", "endpoint": "/process-serial", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 0.21, "client_ip": "127.0.0.1"}
+api_request: POST /process-serial - 404 in 0.00s
+{"timestamp": "2025-08-27T17:47:20.244112", "event_type": "api_request", "message": "POST /process-progressive - 404 in 0.00s", "endpoint": "/process-progressive", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 0.18, "client_ip": "127.0.0.1"}
+api_request: POST /process-progressive - 404 in 0.00s
+{"timestamp": "2025-08-27T17:47:42.023791", "event_type": "api_request", "message": "GET /health - 200 in 0.60s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 597.11, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.60s
+{"timestamp": "2025-08-27T17:47:42.027977", "event_type": "api_request", "message": "POST /serials - 200 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 0.84, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 200 in 0.00s
+{"timestamp": "2025-08-27T17:47:42.033128", "event_type": "api_request", "message": "POST /serials - 200 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 2.16, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 200 in 0.00s
+{"timestamp": "2025-08-27T17:47:42.036187", "event_type": "api_request", "message": "POST /serials - 200 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 0.61, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 200 in 0.00s
+{"timestamp": "2025-08-27T17:47:42.040532", "event_type": "api_request", "message": "POST /serials - 401 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 401, "response_time_ms": 0.67, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 401 in 0.00s
+{"timestamp": "2025-08-27T17:47:42.045997", "event_type": "api_request", "message": "GET /history - 200 in 0.00s", "endpoint": "/history", "method": "GET", "params": {"limit": "10"}, "status_code": 200, "response_time_ms": 1.1, "client_ip": "127.0.0.1"}
+api_request: GET /history - 200 in 0.00s
+{"timestamp": "2025-08-27T17:47:42.049577", "event_type": "api_request", "message": "GET /stats - 200 in 0.00s", "endpoint": "/stats", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.78, "client_ip": "127.0.0.1"}
+api_request: GET /stats - 200 in 0.00s
+{"timestamp": "2025-08-27T17:47:42.052662", "event_type": "api_request", "message": "GET /config - 200 in 0.00s", "endpoint": "/config", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.26, "client_ip": "127.0.0.1"}
+api_request: GET /config - 200 in 0.00s
+{"timestamp": "2025-08-27T17:47:42.055258", "event_type": "api_request", "message": "POST /scan - 404 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 0.23, "client_ip": "127.0.0.1"}
+api_request: POST /scan - 404 in 0.00s
+{"timestamp": "2025-08-27T17:47:42.059741", "event_type": "api_request", "message": "POST /process-serial - 404 in 0.00s", "endpoint": "/process-serial", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 0.2, "client_ip": "127.0.0.1"}
+api_request: POST /process-serial - 404 in 0.00s
+{"timestamp": "2025-08-27T17:47:42.062371", "event_type": "api_request", "message": "POST /process-progressive - 404 in 0.00s", "endpoint": "/process-progressive", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 0.17, "client_ip": "127.0.0.1"}
+api_request: POST /process-progressive - 404 in 0.00s
+{"timestamp": "2025-08-27T17:47:57.611020", "event_type": "api_request", "message": "GET /health - 200 in 0.58s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 581.72, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.58s
+{"timestamp": "2025-08-27T17:47:57.614745", "event_type": "api_request", "message": "POST /serials - 200 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 0.7, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 200 in 0.00s
+{"timestamp": "2025-08-27T17:47:57.622894", "event_type": "api_request", "message": "POST /serials - 200 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 1.99, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 200 in 0.00s
+{"timestamp": "2025-08-27T17:47:57.626216", "event_type": "api_request", "message": "POST /serials - 200 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 0.78, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 200 in 0.00s
+{"timestamp": "2025-08-27T17:47:57.628735", "event_type": "api_request", "message": "POST /serials - 401 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 401, "response_time_ms": 0.52, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 401 in 0.00s
+{"timestamp": "2025-08-27T17:47:57.682690", "event_type": "api_request", "message": "GET /history - 200 in 0.05s", "endpoint": "/history", "method": "GET", "params": {"limit": "10"}, "status_code": 200, "response_time_ms": 50.74, "client_ip": "127.0.0.1"}
+api_request: GET /history - 200 in 0.05s
+{"timestamp": "2025-08-27T17:47:57.686192", "event_type": "api_request", "message": "GET /stats - 200 in 0.00s", "endpoint": "/stats", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.71, "client_ip": "127.0.0.1"}
+api_request: GET /stats - 200 in 0.00s
+{"timestamp": "2025-08-27T17:47:57.689583", "event_type": "api_request", "message": "GET /config - 200 in 0.00s", "endpoint": "/config", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.4, "client_ip": "127.0.0.1"}
+api_request: GET /config - 200 in 0.00s
+{"timestamp": "2025-08-27T17:47:57.702276", "event_type": "api_request", "message": "POST /scan - 404 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 2.01, "client_ip": "127.0.0.1"}
+api_request: POST /scan - 404 in 0.00s
+{"timestamp": "2025-08-27T17:47:57.705478", "event_type": "api_request", "message": "POST /process-serial - 404 in 0.00s", "endpoint": "/process-serial", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 0.27, "client_ip": "127.0.0.1"}
+api_request: POST /process-serial - 404 in 0.00s
+{"timestamp": "2025-08-27T17:47:57.708315", "event_type": "api_request", "message": "POST /process-progressive - 404 in 0.00s", "endpoint": "/process-progressive", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 0.18, "client_ip": "127.0.0.1"}
+api_request: POST /process-progressive - 404 in 0.00s
+{"timestamp": "2025-08-27T17:48:27.326167", "event_type": "api_request", "message": "POST /serials - 200 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 2.2, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 200 in 0.00s
+{"timestamp": "2025-08-27T17:48:46.303664", "event_type": "api_request", "message": "GET /health - 200 in 0.58s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 584.68, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.58s
+{"timestamp": "2025-08-27T17:48:46.308355", "event_type": "api_request", "message": "POST /serials - 200 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 1.02, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 200 in 0.00s
+{"timestamp": "2025-08-27T17:48:46.312581", "event_type": "api_request", "message": "POST /serials - 422 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 422, "response_time_ms": 0.84, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 422 in 0.00s
+{"timestamp": "2025-08-27T17:48:46.316143", "event_type": "api_request", "message": "POST /serials - 200 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 0.69, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 200 in 0.00s
+{"timestamp": "2025-08-27T17:48:46.319320", "event_type": "api_request", "message": "POST /serials - 401 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 401, "response_time_ms": 0.58, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 401 in 0.00s
+{"timestamp": "2025-08-27T17:48:46.324242", "event_type": "api_request", "message": "GET /history - 200 in 0.00s", "endpoint": "/history", "method": "GET", "params": {"limit": "10"}, "status_code": 200, "response_time_ms": 1.12, "client_ip": "127.0.0.1"}
+api_request: GET /history - 200 in 0.00s
+{"timestamp": "2025-08-27T17:48:46.328389", "event_type": "api_request", "message": "GET /stats - 200 in 0.00s", "endpoint": "/stats", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.76, "client_ip": "127.0.0.1"}
+api_request: GET /stats - 200 in 0.00s
+{"timestamp": "2025-08-27T17:48:46.334858", "event_type": "api_request", "message": "GET /config - 200 in 0.00s", "endpoint": "/config", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.42, "client_ip": "127.0.0.1"}
+api_request: GET /config - 200 in 0.00s
+{"timestamp": "2025-08-27T17:48:46.337878", "event_type": "api_request", "message": "POST /scan - 404 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 0.22, "client_ip": "127.0.0.1"}
+api_request: POST /scan - 404 in 0.00s
+{"timestamp": "2025-08-27T17:48:46.340554", "event_type": "api_request", "message": "POST /process-serial - 404 in 0.00s", "endpoint": "/process-serial", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 0.3, "client_ip": "127.0.0.1"}
+api_request: POST /process-serial - 404 in 0.00s
+{"timestamp": "2025-08-27T17:48:46.345807", "event_type": "api_request", "message": "POST /process-progressive - 404 in 0.00s", "endpoint": "/process-progressive", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 0.28, "client_ip": "127.0.0.1"}
+api_request: POST /process-progressive - 404 in 0.00s
+{"timestamp": "2025-08-27T17:49:04.416352", "event_type": "api_request", "message": "GET /health - 200 in 0.59s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 589.7, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.59s
+{"timestamp": "2025-08-27T17:49:04.419991", "event_type": "api_request", "message": "POST /serials - 200 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 0.68, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 200 in 0.00s
+{"timestamp": "2025-08-27T17:49:04.425009", "event_type": "api_request", "message": "POST /serials - 422 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 422, "response_time_ms": 0.76, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 422 in 0.00s
+{"timestamp": "2025-08-27T17:49:04.427782", "event_type": "api_request", "message": "POST /serials - 200 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 0.6, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 200 in 0.00s
+{"timestamp": "2025-08-27T17:49:04.430126", "event_type": "api_request", "message": "POST /serials - 401 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 401, "response_time_ms": 0.57, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 401 in 0.00s
+{"timestamp": "2025-08-27T17:49:04.433300", "event_type": "api_request", "message": "GET /history - 200 in 0.00s", "endpoint": "/history", "method": "GET", "params": {"limit": "10"}, "status_code": 200, "response_time_ms": 0.96, "client_ip": "127.0.0.1"}
+api_request: GET /history - 200 in 0.00s
+{"timestamp": "2025-08-27T17:49:04.436319", "event_type": "api_request", "message": "GET /stats - 200 in 0.00s", "endpoint": "/stats", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.64, "client_ip": "127.0.0.1"}
+api_request: GET /stats - 200 in 0.00s
+{"timestamp": "2025-08-27T17:49:04.440233", "event_type": "api_request", "message": "GET /config - 200 in 0.00s", "endpoint": "/config", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.26, "client_ip": "127.0.0.1"}
+api_request: GET /config - 200 in 0.00s
+{"timestamp": "2025-08-27T17:49:04.442739", "event_type": "api_request", "message": "POST /scan - 404 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 0.24, "client_ip": "127.0.0.1"}
+api_request: POST /scan - 404 in 0.00s
+{"timestamp": "2025-08-27T17:49:04.445054", "event_type": "api_request", "message": "POST /process-serial - 404 in 0.00s", "endpoint": "/process-serial", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 0.16, "client_ip": "127.0.0.1"}
+api_request: POST /process-serial - 404 in 0.00s
+{"timestamp": "2025-08-27T17:49:04.448762", "event_type": "api_request", "message": "POST /process-progressive - 404 in 0.00s", "endpoint": "/process-progressive", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 0.26, "client_ip": "127.0.0.1"}
+api_request: POST /process-progressive - 404 in 0.00s
+{"timestamp": "2025-08-27T17:56:54.099359", "event_type": "api_request", "message": "GET /health - 200 in 0.59s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 589.28, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 0.59s
+{"timestamp": "2025-08-27T17:56:54.103397", "event_type": "api_request", "message": "POST /serials - 200 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 0.96, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 200 in 0.00s
+{"timestamp": "2025-08-27T17:56:54.106551", "event_type": "api_request", "message": "POST /serials - 422 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 422, "response_time_ms": 0.66, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 422 in 0.00s
+{"timestamp": "2025-08-27T17:56:54.110251", "event_type": "api_request", "message": "POST /serials - 200 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 0.67, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 200 in 0.00s
+{"timestamp": "2025-08-27T17:56:54.113194", "event_type": "api_request", "message": "POST /serials - 401 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 401, "response_time_ms": 0.54, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 401 in 0.00s
+{"timestamp": "2025-08-27T17:56:54.116551", "event_type": "api_request", "message": "GET /history - 200 in 0.00s", "endpoint": "/history", "method": "GET", "params": {"limit": "10"}, "status_code": 200, "response_time_ms": 1.09, "client_ip": "127.0.0.1"}
+api_request: GET /history - 200 in 0.00s
+{"timestamp": "2025-08-27T17:56:54.120281", "event_type": "api_request", "message": "GET /stats - 200 in 0.00s", "endpoint": "/stats", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.7, "client_ip": "127.0.0.1"}
+api_request: GET /stats - 200 in 0.00s
+{"timestamp": "2025-08-27T17:56:54.123055", "event_type": "api_request", "message": "GET /config - 200 in 0.00s", "endpoint": "/config", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.25, "client_ip": "127.0.0.1"}
+api_request: GET /config - 200 in 0.00s
+{"timestamp": "2025-08-27T17:56:54.125334", "event_type": "api_request", "message": "POST /scan - 404 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 0.21, "client_ip": "127.0.0.1"}
+api_request: POST /scan - 404 in 0.00s
+{"timestamp": "2025-08-27T17:56:54.128091", "event_type": "api_request", "message": "POST /process-serial - 404 in 0.00s", "endpoint": "/process-serial", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 0.21, "client_ip": "127.0.0.1"}
+api_request: POST /process-serial - 404 in 0.00s
+{"timestamp": "2025-08-27T17:56:54.131262", "event_type": "api_request", "message": "POST /process-progressive - 404 in 0.00s", "endpoint": "/process-progressive", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 0.18, "client_ip": "127.0.0.1"}
+api_request: POST /process-progressive - 404 in 0.00s
+{"timestamp": "2025-08-27T19:34:16.120013", "event_type": "api_request", "message": "GET /health - 200 in 1.07s", "endpoint": "/health", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1074.88, "client_ip": "127.0.0.1"}
+api_request: GET /health - 200 in 1.07s
+{"timestamp": "2025-08-27T19:34:16.125133", "event_type": "api_request", "message": "POST /serials - 200 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 1.24, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 200 in 0.00s
+{"timestamp": "2025-08-27T19:34:16.128212", "event_type": "api_request", "message": "POST /serials - 422 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 422, "response_time_ms": 0.75, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 422 in 0.00s
+{"timestamp": "2025-08-27T19:34:16.131286", "event_type": "api_request", "message": "POST /serials - 200 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 200, "response_time_ms": 0.87, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 200 in 0.00s
+{"timestamp": "2025-08-27T19:34:16.134374", "event_type": "api_request", "message": "POST /serials - 401 in 0.00s", "endpoint": "/serials", "method": "POST", "params": {}, "status_code": 401, "response_time_ms": 0.62, "client_ip": "127.0.0.1"}
+api_request: POST /serials - 401 in 0.00s
+{"timestamp": "2025-08-27T19:34:16.138208", "event_type": "api_request", "message": "GET /history - 200 in 0.00s", "endpoint": "/history", "method": "GET", "params": {"limit": "10"}, "status_code": 200, "response_time_ms": 1.4, "client_ip": "127.0.0.1"}
+api_request: GET /history - 200 in 0.00s
+{"timestamp": "2025-08-27T19:34:16.142117", "event_type": "api_request", "message": "GET /stats - 200 in 0.00s", "endpoint": "/stats", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.6, "client_ip": "127.0.0.1"}
+api_request: GET /stats - 200 in 0.00s
+{"timestamp": "2025-08-27T19:34:16.145141", "event_type": "api_request", "message": "GET /config - 200 in 0.00s", "endpoint": "/config", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.5, "client_ip": "127.0.0.1"}
+api_request: GET /config - 200 in 0.00s
+{"timestamp": "2025-08-27T19:34:16.148166", "event_type": "api_request", "message": "POST /scan - 404 in 0.00s", "endpoint": "/scan", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 0.25, "client_ip": "127.0.0.1"}
+api_request: POST /scan - 404 in 0.00s
+{"timestamp": "2025-08-27T19:34:16.151551", "event_type": "api_request", "message": "POST /process-serial - 404 in 0.00s", "endpoint": "/process-serial", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 0.31, "client_ip": "127.0.0.1"}
+api_request: POST /process-serial - 404 in 0.00s
+{"timestamp": "2025-08-27T19:34:16.154456", "event_type": "api_request", "message": "POST /process-progressive - 404 in 0.00s", "endpoint": "/process-progressive", "method": "POST", "params": {}, "status_code": 404, "response_time_ms": 0.21, "client_ip": "127.0.0.1"}
+api_request: POST /process-progressive - 404 in 0.00s
+{"timestamp": "2025-08-27T19:52:43.613502", "event_type": "api_request", "message": "GET /export - 200 in 0.02s", "endpoint": "/export", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 18.36, "client_ip": "127.0.0.1"}
+api_request: GET /export - 200 in 0.02s
+{"timestamp": "2025-08-27T19:52:43.624004", "event_type": "api_request", "message": "GET /export - 200 in 0.01s", "endpoint": "/export", "method": "GET", "params": {"source": "ios"}, "status_code": 200, "response_time_ms": 7.57, "client_ip": "127.0.0.1"}
+api_request: GET /export - 200 in 0.01s
+{"timestamp": "2025-08-27T19:52:43.634664", "event_type": "api_request", "message": "GET /export - 500 in 0.01s", "endpoint": "/export", "method": "GET", "params": {"date_from": "2025-08-28"}, "status_code": 500, "response_time_ms": 7.12, "client_ip": "127.0.0.1"}
+api_request: GET /export - 500 in 0.01s
+{"timestamp": "2025-08-27T19:52:43.639120", "event_type": "api_request", "message": "GET /history - 200 in 0.00s", "endpoint": "/history", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 1.13, "client_ip": "127.0.0.1"}
+api_request: GET /history - 200 in 0.00s
+{"timestamp": "2025-08-27T19:52:43.642766", "event_type": "api_request", "message": "GET /history - 200 in 0.00s", "endpoint": "/history", "method": "GET", "params": {"limit": "10", "offset": "0"}, "status_code": 200, "response_time_ms": 1.14, "client_ip": "127.0.0.1"}
+api_request: GET /history - 200 in 0.00s
+{"timestamp": "2025-08-27T19:52:43.646733", "event_type": "api_request", "message": "GET /history - 200 in 0.00s", "endpoint": "/history", "method": "GET", "params": {"source": "ios"}, "status_code": 200, "response_time_ms": 0.99, "client_ip": "127.0.0.1"}
+api_request: GET /history - 200 in 0.00s
+{"timestamp": "2025-08-27T19:52:43.650417", "event_type": "api_request", "message": "GET /history - 200 in 0.00s", "endpoint": "/history", "method": "GET", "params": {"sort_by": "confidence", "sort_order": "desc"}, "status_code": 200, "response_time_ms": 1.03, "client_ip": "127.0.0.1"}
+api_request: GET /history - 200 in 0.00s
+{"timestamp": "2025-08-27T19:52:43.654136", "event_type": "api_request", "message": "GET /history - 200 in 0.00s", "endpoint": "/history", "method": "GET", "params": {"search": "C02"}, "status_code": 200, "response_time_ms": 0.95, "client_ip": "127.0.0.1"}
+api_request: GET /history - 200 in 0.00s
+{"timestamp": "2025-08-27T19:52:43.658116", "event_type": "api_request", "message": "GET /history - 200 in 0.00s", "endpoint": "/history", "method": "GET", "params": {"sort_by": "invalid"}, "status_code": 200, "response_time_ms": 0.63, "client_ip": "127.0.0.1"}
+api_request: GET /history - 200 in 0.00s
+{"timestamp": "2025-08-27T19:52:43.669456", "event_type": "api_request", "message": "GET /export - 200 in 0.01s", "endpoint": "/export", "method": "GET", "params": {"source": "ios", "validation_status": "valid"}, "status_code": 200, "response_time_ms": 8.68, "client_ip": "127.0.0.1"}
+api_request: GET /export - 200 in 0.01s
+{"timestamp": "2025-08-27T19:52:43.673107", "event_type": "api_request", "message": "GET /history - 200 in 0.00s", "endpoint": "/history", "method": "GET", "params": {"limit": "10"}, "status_code": 200, "response_time_ms": 0.95, "client_ip": "127.0.0.1"}
+api_request: GET /history - 200 in 0.00s
+{"timestamp": "2025-08-27T19:52:43.676669", "event_type": "api_request", "message": "GET /stats - 200 in 0.00s", "endpoint": "/stats", "method": "GET", "params": {}, "status_code": 200, "response_time_ms": 0.79, "client_ip": "127.0.0.1"}
+api_request: GET /stats - 200 in 0.00s
+{"timestamp": "2025-08-27T19:52:43.680559", "event_type": "api_request", "message": "GET /export - 500 in 0.00s", "endpoint": "/export", "method": "GET", "params": {"date_from": "invalid-date"}, "status_code": 500, "response_time_ms": 0.68, "client_ip": "127.0.0.1"}
+api_request: GET /export - 500 in 0.00s
+{"timestamp": "2025-08-27T19:52:55.720610", "event_type": "api_request", "message": "GET /export - 500 in 0.00s", "endpoint": "/export", "method": "GET", "params": {"date_from": "2024-01-01"}, "status_code": 500, "response_time_ms": 0.97, "client_ip": "127.0.0.1"}
+api_request: GET /export - 500 in 0.00s
