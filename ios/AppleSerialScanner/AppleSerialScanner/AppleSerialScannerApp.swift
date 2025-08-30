@@ -4,7 +4,11 @@ import SwiftUI
 struct AppleSerialScannerApp: App {
     var body: some Scene {
         WindowGroup {
-            SerialScannerView()
+            ContentView()
         }
+        #if os(macOS)
+        .windowStyle(.hiddenTitleBar)
+        .windowResizability(.contentSize)
+        #endif
     }
 }

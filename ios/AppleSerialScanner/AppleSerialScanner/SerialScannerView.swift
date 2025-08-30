@@ -13,8 +13,13 @@ struct SerialScannerView: View {
         NavigationView {
             ZStack {
                 // Camera preview with overlay
+                #if os(iOS)
                 CameraPreviewView(scannerViewModel: scannerViewModel)
                     .ignoresSafeArea()
+                #else
+                MacCameraPreviewView(scannerViewModel: scannerViewModel)
+                    .ignoresSafeArea()
+                #endif
                 
                 // ROI overlay and guidance
                 ScannerOverlayView(scannerViewModel: scannerViewModel)
@@ -58,6 +63,16 @@ struct SerialScannerView: View {
         } message: {
             Text(scannerViewModel.resultMessage)
         }
+        .alert("Validation Required", isPresented: $scannerViewModel.showValidationAlert) {
+            Button("Submit") {
+                scannerViewModel.handleValidationConfirmation(confirmed: true)
+            }
+            Button("Cancel", role: .cancel) {
+                scannerViewModel.handleValidationConfirmation(confirmed: false)
+            }
+        } message: {
+            Text(scannerViewModel.validationAlertMessage)
+        }
         .onAppear {
             scannerViewModel.startScanning()
         }
@@ -91,6 +106,34 @@ struct CameraPreviewView: UIViewRepresentable {
         }
     }
 }
+
+#if os(macOS)
+// MARK: - macOS Camera Preview View
+struct MacCameraPreviewView: NSViewRepresentable {
+    @ObservedObject var scannerViewModel: SerialScannerViewModel
+    
+    func makeNSView(context: Context) -> NSView {
+        let view = NSView()
+        view.wantsLayer = true
+        view.layer?.backgroundColor = NSColor.black.cgColor
+        
+        // Add camera preview layer
+        if let previewLayer = scannerViewModel.previewLayer {
+            previewLayer.frame = view.bounds
+            previewLayer.videoGravity = .resizeAspectFill
+            view.layer?.addSublayer(previewLayer)
+        }
+        
+        return view
+    }
+    
+    func updateNSView(_ nsView: NSView, context: Context) {
+        if let previewLayer = scannerViewModel.previewLayer {
+            previewLayer.frame = nsView.bounds
+        }
+    }
+}
+#endif
 
 // MARK: - Scanner Overlay View
 struct ScannerOverlayView: View {
@@ -157,22 +200,6 @@ struct ScannerOverlayView: View {
                         .cornerRadius(8)
                         .padding(.bottom, 100)
                 }
-                
-                // Confidence indicator
-                if scannerViewModel.isProcessing {
-                    VStack {
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                            .scaleEffect(1.5)
-                        
-                        Text("Processing...")
-                            .foregroundColor(.white)
-                            .font(.caption)
-                    }
-                    .padding()
-                    .background(Color.black.opacity(0.7))
-                    .cornerRadius(8)
-                }
             }
         }
     }
@@ -185,28 +212,27 @@ struct CornerIndicator: View {
     }
     
     let position: Position
+    let size: CGFloat = 30
+    let thickness: CGFloat = 4
     
     var body: some View {
         Path { path in
-            let size: CGFloat = 30
-            let thickness: CGFloat = 4
-            
             switch position {
             case .topLeft:
-                path.move(to: CGPoint(x: thickness, y: 0))
-                path.addLine(to: CGPoint(x: size, y: 0))
                 path.move(to: CGPoint(x: 0, y: thickness))
                 path.addLine(to: CGPoint(x: 0, y: size))
+                path.move(to: CGPoint(x: thickness, y: 0))
+                path.addLine(to: CGPoint(x: size, y: 0))
             case .topRight:
-                path.move(to: CGPoint(x: 0, y: 0))
-                path.addLine(to: CGPoint(x: size - thickness, y: 0))
+                path.move(to: CGPoint(x: size - thickness, y: 0))
+                path.addLine(to: CGPoint(x: 0, y: 0))
                 path.move(to: CGPoint(x: size, y: thickness))
                 path.addLine(to: CGPoint(x: size, y: size))
             case .bottomLeft:
+                path.move(to: CGPoint(x: 0, y: size - thickness))
+                path.addLine(to: CGPoint(x: 0, y: 0))
                 path.move(to: CGPoint(x: thickness, y: size))
                 path.addLine(to: CGPoint(x: size, y: size))
-                path.move(to: CGPoint(x: 0, y: 0))
-                path.addLine(to: CGPoint(x: 0, y: size - thickness))
             case .bottomRight:
                 path.move(to: CGPoint(x: 0, y: size))
                 path.addLine(to: CGPoint(x: size - thickness, y: size))
@@ -227,7 +253,11 @@ struct StatusBarView: View {
         HStack {
             // Device type indicator
             HStack {
+                #if os(iOS)
                 Image(systemName: "iphone")
+                #else
+                Image(systemName: "macbook")
+                #endif
                 Text(scannerViewModel.deviceType)
             }
             .foregroundColor(.white)
@@ -284,7 +314,8 @@ struct ControlButtonsView: View {
             }
             .disabled(scannerViewModel.isProcessing)
             
-            // Flash toggle
+            #if os(iOS)
+            // Flash toggle (iOS only)
             Button(action: {
                 scannerViewModel.toggleFlash()
             }) {
@@ -295,6 +326,7 @@ struct ControlButtonsView: View {
                     .background(Color.black.opacity(0.5))
                     .clipShape(Circle())
             }
+            #endif
         }
         .padding(.bottom, 50)
     }

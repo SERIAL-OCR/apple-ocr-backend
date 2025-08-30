@@ -289,6 +289,9 @@ async def get_scan_history(
             "statistics": stats,
             "export_url": "/export"
         }
+    except HTTPException:
+        # Re-raise HTTPExceptions without wrapping them
+        raise
     except Exception as e:
         logger.error(f"Failed to fetch scan history: {e}")
         return {
@@ -426,6 +429,9 @@ def export_excel(
             media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
             filename=filename
         )
+    except HTTPException:
+        # Re-raise HTTPExceptions without wrapping them
+        raise
     except Exception as e:
         logger.error(f"Failed to export Excel: {e}")
         raise HTTPException(status_code=500, detail=f"Failed to export data: {str(e)}")

@@ -28,29 +28,29 @@ def generate_excel(file_path: str,
     # Fetch data with filters
     rows = fetch_serials()
     
-            # Apply filters if provided
-        filtered_rows = []
-        for row in rows:
-            # Unpack row data (assuming order: id, timestamp, serial, device_type, confidence, source, notes, validation_passed, confidence_acceptable)
-            if len(row) >= 9:
-                row_id, timestamp, serial, device_type_val, confidence, source_val, notes, validation_passed, confidence_acceptable = row[:9]
-                
-                # Convert timestamp to datetime if it's a string
-                if isinstance(timestamp, str):
-                    try:
-                        timestamp_dt = datetime.fromisoformat(timestamp.replace('Z', '+00:00'))
-                    except ValueError:
-                        # Skip rows with invalid timestamps
-                        continue
-                else:
-                    timestamp_dt = timestamp
-                
-                # Apply date filter
-                if date_from and timestamp_dt < date_from:
+    # Apply filters if provided
+    filtered_rows = []
+    for row in rows:
+        # Unpack row data (assuming order: id, timestamp, serial, device_type, confidence, source, notes, validation_passed, confidence_acceptable)
+        if len(row) >= 9:
+            row_id, timestamp, serial, device_type_val, confidence, source_val, notes, validation_passed, confidence_acceptable = row[:9]
+            
+            # Convert timestamp to datetime if it's a string
+            if isinstance(timestamp, str):
+                try:
+                    timestamp_dt = datetime.fromisoformat(timestamp.replace('Z', '+00:00'))
+                except ValueError:
+                    # Skip rows with invalid timestamps
                     continue
-                if date_to and timestamp_dt > date_to:
-                    continue
-                
+            else:
+                timestamp_dt = timestamp
+            
+            # Apply date filter
+            if date_from and timestamp_dt < date_from:
+                continue
+            if date_to and timestamp_dt > date_to:
+                continue
+            
             # Apply source filter
             if source and source_val != source:
                 continue
@@ -65,7 +65,7 @@ def generate_excel(file_path: str,
                     continue
                 if validation_status == "invalid" and validation_passed:
                     continue
-            
+        
             filtered_rows.append(row)
         else:
             # Handle legacy rows without new fields

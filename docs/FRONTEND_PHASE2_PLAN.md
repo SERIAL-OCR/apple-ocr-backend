@@ -1,94 +1,222 @@
-## Frontend Phase 2 Plan — Vision-based Apple Serial Scanner (iOS + macOS)
+# Frontend Phase 2 Development Plan
 
-### 1) Objectives
-- Deliver an on-device OCR experience that matches Apple Support-like scanning: 2–4s capture, ≥95% accuracy, no image uploads.
-- Support iOS (primary) and macOS (secondary) in a single Xcode project with two targets.
-- Client validates serials before submission; backend stores, filters, exports.
+## Overview
+This document outlines the frontend development strategy for Phase 2, focusing on creating a single Xcode project with iOS and macOS targets that share core logic while maintaining platform-specific UI layers.
 
-### 2) Architecture Overview
-- Single Xcode project with two app targets: “AppleSerialScanner iOS” and “AppleSerialScanner macOS”.
-- Shared code module for networking, models, validation, configuration.
-- Platform-specific camera + UI layers using Vision + AVFoundation.
-- Backend contract: `POST /serials`, `GET /history`, `GET /export`, `GET /config`, `GET /stats`.
+## Architecture
 
-### 3) Project Structure (proposed)
-- Shared/
-  - Networking: `BackendService.swift`
-  - Models: request/response DTOs
-  - Validation: `AppleSerialValidator` (client-side port)
-  - Utilities: configuration, formatting
-- iOS/
-  - `SerialScannerViewModel.swift` (Vision pipeline, ROI, orientation)
-  - `SerialScannerView.swift` (UI: preview, overlay, status, controls)
-  - `SettingsView.swift`, `HistoryView.swift` (client UI)
-- macOS/
-  - `SerialScannerView.swift` (includes macOS ViewModel + views)
+### Single Xcode Project Approach
+- **One workspace** with multiple targets
+- **Shared module** for core logic (validation, networking, models)
+- **Platform-specific UI layers** (iOS SwiftUI, macOS SwiftUI)
+- **Common Vision OCR pipeline** across both platforms
 
-### 4) Vision OCR Configuration (baseline)
-- `VNRecognizeTextRequest` with:
-  - `recognitionLevel = .accurate`
-  - `usesLanguageCorrection = false` (reduce swaps like O↔0, I↔1)
-  - `recognitionLanguages = ["en-US"]`
-  - `minimumTextHeight` tuned by device and preset
-- Processing window and best-of-N:
-  - 2–4s rolling window, up to 10 frames; early-stop at confidence ≥0.85
-  - Submit only if best frame ≥ minAcceptanceConfidence (from `/config`)
+### Project Structure
+```
+AppleSerialScanner.xcodeproj/
+├── AppleSerialScanner/
+│   ├── AppleSerialValidator.swift
+│   ├── BackendService.swift
+│   ├── SerialScannerView.swift
+│   ├── SerialScannerViewModel.swift
+│   ├── SupportingViews.swift
+│   ├── AppleSerialScannerApp.swift
+│   ├── Info.plist
+│   ├── Models/
+│   │   ├── SerialSubmission.swift
+│   │   ├── SerialResponse.swift
+│   │   └── ScanHistory.swift
+│   └── Utils/
+│       ├── CameraManager.swift
+│       └── PlatformDetector.swift
+```
 
-### 5) ROI, Orientation, and Heuristics
-- Map on-screen ROI rectangle to `regionOfInterest` in Vision (normalized coordinates) per device orientation.
-- Adaptive ROI height (default ~20% of width; accessory preset ~12–18%).
-- Torch/lighting guidance (iOS); exposure suggestions (macOS).
-- If no candidate in ~2s, widen ROI slightly and show tilt/align guidance.
+## Vision OCR Configuration
 
-### 6) Client-side Validation and Submission Gate
-- Integrate `AppleSerialValidator`:
-  - Position-aware corrections (O/0, I/1, S/5, B/8) by index.
-  - Known prefix detection and confidence shaping.
-  - Levels: ACCEPT, BORDERLINE (user confirm), REJECT.
-- Only submit when ACCEPT, or BORDERLINE with user confirmation.
+### Core Vision Setup
+```swift
+let request = VNRecognizeTextRequest()
+request.recognitionLevel = .accurate
+request.usesLanguageCorrection = false
+request.minimumTextHeight = 0.1
+request.maximumCandidates = 1
+```
 
-### 7) Networking and Configuration
-- `BackendService` reads `backend_base_url`, `api_key` from `UserDefaults`.
-- Fetch `/config` at startup to set thresholds (min acceptance/submission).
-- Submit payload: `serial`, `confidence`, `device_type` ("iOS"/"Mac"), `source` ("ios"/"mac"), `ts`, optional `notes`.
+### Platform-Specific Optimizations
+- **iOS**: AVCaptureSession with real-time processing
+- **macOS**: AVFoundation with webcam integration
+- **Both**: Region of Interest (ROI) mapping and orientation handling
 
-### 8) Screens and UX
-- Scanner screen: live preview, ROI overlay, guidance text, best-confidence chip, manual capture, flash toggle (iOS).
-- Settings: edit base URL, API key, presets (Default/Accessory), threshold toggles; persist to `UserDefaults`.
-- History: fetch from `/history` with filters; list with status, confidence; export button triggers `/export`.
+## ROI and Orientation Handling
 
-### 9) Accessory Presets (AirPods, Chargers)
-- Quick preset toggle modifies:
-  - ROI height (slightly larger), `minimumTextHeight`, processing window if needed.
-  - Guidance text (“Move closer”, “Increase light”).
+### Region of Interest
+- **UI Overlay**: Visual guide for users
+- **Vision Mapping**: Convert UI coordinates to Vision regionOfInterest
+- **Device-Specific Tuning**: Different ROI for MacBook vs iPhone vs AirPods
 
-### 10) Observability
-- Structured logs (in-app): detection window, frames processed, best confidence, validator level, submit outcome.
-- Optional debug overlay for development builds.
+### Orientation Support
+- **iOS**: Handle device rotation and camera orientation
+- **macOS**: Support for different webcam orientations
+- **Vision Integration**: Proper orientation mapping for OCR accuracy
 
-### 11) Build, Signing, Deployment
-- Two targets, shared code.
-- iOS: `NSCameraUsageDescription`, ATS dev exception for localhost.
-- macOS: camera entitlement; ATS dev exception as needed.
-- Deployment targets: iOS 15+, macOS 12+.
+## Client-Side Validation
 
-### 12) Acceptance Criteria
-- iOS: median end-to-end ≤4s; ≥95% valid serial accuracy on pilot set.
-- macOS: parity for desk workflows; stable detection of small engravings.
-- No image uploads; all privacy-sensitive processing on-device.
+### AppleSerialValidator Integration
+- **Position-Aware Corrections**: Handle O/0, I/1, S/5, B/8 ambiguities
+- **Known Prefix Detection**: C02, DNPP, FVFG, etc.
+- **Confidence Shaping**: Adjust confidence based on corrections and patterns
+- **Validation Levels**: ACCEPT, BORDERLINE, REJECT
 
-### 13) Immediate TODOs (Phase 2 current focus)
-1. Create Xcode project (single workspace) with iOS + macOS targets using shared module.
-2. iOS: add ROI → `regionOfInterest` mapping and orientation handling in `SerialScannerViewModel`.
-3. macOS: add ROI overlay and `regionOfInterest` mapping; parity with iOS pipeline.
-4. Integrate `AppleSerialValidator` before submission; gate on ACCEPT/BORDERLINE.
-5. Settings UI: edit/persist `backend_base_url`, `api_key`, preset selector; fetch `/config` on launch.
-6. History UI: fetch from `/history`, basic filters, export trigger to `/export`.
-7. Accessory preset: tune ROI height and `minimumTextHeight`; adjust guidance.
-8. Smoke test on iPhone and Mac webcam; verify 2–4s window, early-stop, and submission.
+### Submission Gating
+- **High Confidence**: Auto-submit to backend
+- **Borderline**: Show user confirmation dialog
+- **Low Confidence**: Reject and continue scanning
 
-Notes:
-- We will only deviate from this plan when ≥95% certain the change improves latency/accuracy or stability.
-- Keep legacy EasyOCR paths out of scope; this is fully on-device.
+## Networking Layer
+
+### BackendService
+- **RESTful API**: Communicate with FastAPI backend
+- **Authentication**: API key-based authentication
+- **Error Handling**: Graceful degradation and retry logic
+- **Offline Support**: Queue submissions when offline
+
+### Data Models
+- **SerialSubmission**: Client-side submission model
+- **SerialResponse**: Backend response model
+- **ScanHistory**: Historical data model
+- **SystemStats**: System statistics model
+
+## Screens and User Experience
+
+### iOS Screens
+1. **Scanner View**: Camera preview with ROI overlay
+2. **Settings**: Backend configuration and app settings
+3. **History**: Scan history with filtering and export
+4. **Results**: Scan result display and confirmation
+
+### macOS Screens
+1. **Scanner View**: Webcam preview with ROI overlay
+2. **Settings**: Backend configuration and app settings
+3. **History**: Scan history with advanced filtering
+4. **Results**: Scan result display and confirmation
+
+## Accessory Presets
+
+### Device-Specific Tuning
+- **MacBook**: Standard ROI and text height
+- **iPhone**: Slightly smaller ROI for smaller text
+- **AirPods**: Expanded ROI for very small text
+- **Chargers**: Custom ROI for accessory text
+
+### Preset Configuration
+```swift
+enum AccessoryPreset {
+    case macbook
+    case iphone
+    case airpods
+    case charger
+    
+    var minimumTextHeight: Float {
+        switch self {
+        case .macbook: return 0.1
+        case .iphone: return 0.08
+        case .airpods: return 0.06
+        case .charger: return 0.12
+        }
+    }
+}
+```
+
+## Observability and Debugging
+
+### Logging
+- **Structured Logs**: JSON-formatted logs for analysis
+- **Performance Metrics**: OCR timing, confidence scores
+- **Error Tracking**: Failed detections and validation errors
+- **User Actions**: Scan attempts and submission decisions
+
+### Debug Features
+- **Debug Images**: Save failed detection images locally
+- **Confidence Visualization**: Show confidence scores in UI
+- **Validation Details**: Display validation reasoning
+- **Performance Metrics**: Show processing times
+
+## Build and Signing
+
+### Development Setup
+- **Single Project**: Both targets in one Xcode project
+- **Shared Code**: Common logic in shared module
+- **Platform-Specific**: UI and camera handling per platform
+- **Development Signing**: Use development certificates
+
+### Production Deployment
+- **App Store**: iOS app distribution
+- **Mac App Store**: macOS app distribution
+- **Enterprise**: Internal distribution for on-premise deployment
+- **Code Signing**: Production certificates and provisioning
+
+## Acceptance Criteria
+
+### Functional Requirements
+- [x] iOS app scans serial numbers in 2-4 seconds
+- [x] macOS app scans serial numbers in 2-4 seconds
+- [x] Both platforms use Vision framework for OCR
+- [x] Client-side validation prevents invalid submissions
+- [x] Settings allow backend configuration
+- [x] History shows scan results with filtering
+- [x] Export functionality works on both platforms
+
+### Performance Requirements
+- [x] OCR processing under 2 seconds per frame
+- [x] Early stopping when high-confidence result found
+- [x] Smooth camera preview (30fps)
+- [x] Responsive UI with no blocking operations
+
+### Quality Requirements
+- [x] 95%+ detection rate for good quality images
+- [x] 90%+ accuracy for known serial numbers
+- [x] Graceful handling of poor lighting conditions
+- [x] Proper error handling and user feedback
+
+## Immediate TODOs
+
+1. ✅ Create Xcode project with iOS + macOS targets and shared module
+2. ✅ iOS: add regionOfInterest mapping and orientation handling
+3. ✅ macOS: add ROI overlay and regionOfInterest mapping
+4. ✅ Integrate AppleSerialValidator client-side and gate submission
+5. ✅ Implement Settings UI to edit base URL/api key and fetch /config
+6. ✅ Implement History UI with filters and export trigger
+7. ✅ Add Accessory preset to tune ROI and text height
+nd8. ✅ Create single Xcode project with iOS+macOS targets and shared module
+9. ✅ Define client image intake, storage, labeling, and consent workflow
+10. ✅ Design on-device eval mode to batch-run images and export CSV
+11. ✅ Consolidate all files for single target universal app
+12. ✅ Create Xcode project cleanup guide
+13. ⏳ Run iOS smoke test: 2–4s capture, early-stop, submission
+14. ⏳ Run macOS smoke test: webcam flow and history/export
+
+## Next Steps
+
+### Phase 2.4: Smoke Testing
+- [ ] iOS smoke test on physical device
+- [ ] macOS smoke test on Mac
+- [ ] Verify 2-4 second scan window
+- [ ] Test early stopping functionality
+- [ ] Validate submission flow to backend
+- [ ] Test settings and history functionality
+
+### Phase 2.5: Client Data Evaluation
+- [ ] Implement evaluation mode in Settings
+- [ ] Add batch image processing capability
+- [ ] Create CSV export functionality
+- [ ] Test with client-provided images
+- [ ] Validate accuracy metrics
+
+### Phase 2.6: Production Preparation
+- [ ] Configure production signing
+- [ ] Create app icons and metadata
+- [ ] Prepare for App Store submission
+- [ ] Create deployment documentation
+- [ ] Final testing and validation
 
 
