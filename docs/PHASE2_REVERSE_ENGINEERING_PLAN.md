@@ -284,6 +284,130 @@ Note: The following Sub‑Phases describe the optional server OCR track (lab/bac
 
 ---
 
+## 🚀 ADVANCED APPLE-LIKE FEATURES (Phase 2.5-3.2)
+
+### Phase 2.5: Advanced Surface Detection (IN PROGRESS)
+**Goal:** Auto-detect different surface types for optimal OCR settings
+
+**Apple-like Features:**
+- **Surface Classification**: Metal, plastic, glass, paper, screen detection
+- **Material-specific OCR**: Different preprocessing per surface type
+- **Adaptive Thresholds**: Surface-aware confidence thresholds
+- **Visual Feedback**: Surface type indicators in UI
+
+**Implementation:**
+- Vision-based surface classification using image features
+- Material detection algorithms (reflection patterns, texture analysis)
+- Dynamic parameter adjustment based on surface type
+- UI indicators showing detected surface type
+
+### Phase 2.6: Lighting Adaptation System
+**Goal:** Auto-adjust for various lighting conditions (Apple's advanced feature)
+
+**Apple-like Features:**
+- **Glare Detection**: Real-time glare pattern recognition
+- **Illumination Compensation**: Auto-adjust for low light, direct sunlight
+- **HDR-like Processing**: Multi-frame exposure compensation
+- **Adaptive Filters**: Dynamic contrast/brightness adjustment
+
+**Implementation:**
+- Real-time lighting condition analysis
+- Multi-frame capture for HDR-like enhancement
+- Adaptive preprocessing filters
+- Lighting condition indicators
+
+### Phase 2.7: Advanced Angle Correction
+**Goal:** Intelligent text orientation detection and correction
+
+**Apple-like Features:**
+- **3D Orientation Detection**: Detect text angle in 3D space
+- **Perspective Correction**: Auto-correct for angled surfaces
+- **Rotation Optimization**: Find optimal viewing angle
+- **Stabilization**: Reduce motion blur effects
+
+**Implementation:**
+- Vision-based text orientation analysis
+- Perspective transformation algorithms
+- Gyroscope integration for device orientation
+- Real-time angle correction feedback
+
+### Phase 2.8: Accessory Presets System
+**Goal:** Device-specific scanning profiles (Apple ecosystem integration)
+
+**Apple-like Features:**
+- **Device Recognition**: Auto-detect iPhone, iPad, MacBook, Apple Watch
+- **Accessory Integration**: Support for cases, stands, docks
+- **Size-aware ROI**: Different scan areas per device type
+- **Preset Management**: User-customizable scanning profiles
+
+**Implementation:**
+- Device type detection from serial format
+- Accessory recognition using computer vision
+- Dynamic ROI adjustment per device
+- Preset storage and management
+
+### Phase 2.9: Batch Processing Engine
+**Goal:** Process multiple serials efficiently in sequence
+
+**Apple-like Features:**
+- **Workflow Optimization**: Smart sequencing of multiple scans
+- **Progress Tracking**: Real-time batch processing status
+- **Error Recovery**: Intelligent handling of failed scans
+- **Bulk Export**: Combined results for multiple devices
+
+**Implementation:**
+- Queue management system
+- Progress visualization
+- Batch error handling
+- Combined export formats
+
+### Phase 3.0: Export Integration
+**Goal:** Native Apple ecosystem integration
+
+**Apple-like Features:**
+- **Numbers Integration**: Direct export to Apple Numbers
+- **Excel Compatibility**: Enhanced Excel formatting
+- **iCloud Sync**: Automatic backup and sync
+- **Share Sheet**: Native iOS/macOS sharing
+
+**Implementation:**
+- Apple Numbers format support
+- Enhanced Excel templates
+- iCloud integration
+- Share extension support
+
+### Phase 3.1: Advanced Analytics Dashboard
+**Goal:** Comprehensive performance and accuracy insights
+
+**Apple-like Features:**
+- **Confidence Trends**: Historical accuracy analysis
+- **Performance Metrics**: Detailed timing breakdowns
+- **Error Analysis**: Failure pattern recognition
+- **Usage Statistics**: Scanning behavior analytics
+
+**Implementation:**
+- Analytics data collection
+- Performance dashboards
+- Trend analysis
+- Predictive insights
+
+### Phase 3.2: Smart Retry Logic
+**Goal:** Intelligent retry system based on failure analysis
+
+**Apple-like Features:**
+- **Failure Pattern Recognition**: Learn from past failures
+- **Adaptive Retry**: Smart retry strategies per failure type
+- **Surface Learning**: Remember challenging surfaces
+- **Progressive Enhancement**: Improve success rate over time
+
+**Implementation:**
+- Failure pattern analysis
+- Machine learning-based retry logic
+- Surface condition memory
+- Continuous improvement algorithms
+
+---
+
 ## Timeline (Indicative 5–6 Weeks)
 
 - Week 1: 2.2 scanner (Vision) prototype; 2.3 validation; 2.4 `POST /serials`

@@ -12,6 +12,82 @@
 - [x] Production-ready backend code
 - [x] Complete backend documentation
 
+## 🚀 ADVANCED APPLE-LIKE FEATURES ROADMAP
+
+### Phase 2.5: Advanced Surface Detection 🏗️
+**Status:** Ready for Implementation
+**Impact:** +40% accuracy across surface types
+- [ ] Implement SurfaceDetector class with Vision-based analysis
+- [ ] Add material-specific OCR settings (metal/plastic/glass/screen)
+- [ ] Create adaptive thresholds per surface type
+- [ ] Add UI indicators for detected surface type
+- [ ] Test accuracy improvements on different surfaces
+
+### Phase 2.6: Lighting Adaptation System 🌟
+**Status:** Ready for Implementation
+**Impact:** +25-30% accuracy in challenging lighting
+- [ ] Implement LightingAnalyzer for real-time condition detection
+- [ ] Add glare detection and reduction algorithms
+- [ ] Create adaptive preprocessing filters
+- [ ] Add HDR-like multi-frame processing
+- [ ] Test in various lighting conditions
+
+### Phase 2.7: Advanced Angle Correction 📐
+**Status:** Ready for Implementation
+**Impact:** +35-50% accuracy on angled surfaces
+- [ ] Implement 3D orientation detection
+- [ ] Add perspective correction algorithms
+- [ ] Integrate gyroscope for device orientation
+- [ ] Create real-time angle feedback
+- [ ] Test on rotated and angled serials
+
+### Phase 2.8: Accessory Presets System 🎛️
+**Status:** Ready for Implementation
+**Impact:** +25% efficiency, +15% accuracy
+- [ ] Implement device type detection from serials
+- [ ] Create device-specific ROI settings
+- [ ] Add accessory recognition (cases, stands)
+- [ ] Build preset management UI
+- [ ] Test on different Apple device types
+
+### Phase 2.9: Batch Processing Engine 📦
+**Status:** Ready for Implementation
+**Impact:** 3x faster for multiple devices
+- [ ] Implement batch queue management
+- [ ] Add progress tracking and visualization
+- [ ] Create error recovery mechanisms
+- [ ] Build bulk export functionality
+- [ ] Test workflow optimization
+
+### Phase 3.0: Export Integration 📊
+**Status:** Ready for Implementation
+**Impact:** Native Apple ecosystem experience
+- [ ] Add Apple Numbers export support
+- [ ] Enhance Excel templates with auto-formatting
+- [ ] Implement iCloud sync integration
+- [ ] Create Share Sheet extensions
+- [ ] Test cross-app data flow
+
+### Phase 3.1: Advanced Analytics Dashboard 📈
+**Status:** Ready for Implementation
+**Impact:** Data-driven continuous improvement
+- [ ] Implement analytics data collection
+- [ ] Create performance dashboards
+- [ ] Add trend analysis and insights
+- [ ] Build predictive recommendations
+- [ ] Test analytics accuracy
+
+### Phase 3.2: Smart Retry Logic 🧠
+**Status:** Ready for Implementation
+**Impact:** +50% success on failed scans
+- [ ] Implement failure pattern recognition
+- [ ] Create adaptive retry strategies
+- [ ] Add surface condition memory
+- [ ] Build ML-based improvement algorithms
+- [ ] Test continuous learning
+
+---
+
 ## 🔄 Phase 2.4 Frontend: IN PROGRESS
 
 ### Current Priority Tasks
