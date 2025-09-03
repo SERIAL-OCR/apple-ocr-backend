@@ -1,6 +1,8 @@
 import SwiftUI
 import Vision
+#if os(iOS)
 import VisionKit
+#endif
 import AVFoundation
 import Combine
 
