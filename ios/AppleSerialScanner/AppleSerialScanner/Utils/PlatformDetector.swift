@@ -1,5 +1,7 @@
 import Foundation
+#if os(iOS)
 import UIKit
+#endif
 
 // MARK: - Platform Detection
 enum Platform {

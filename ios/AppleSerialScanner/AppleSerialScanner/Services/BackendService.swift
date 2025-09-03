@@ -25,6 +25,7 @@ class BackendService: ObservableObject {
         }
         
         let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .iso8601
         request.httpBody = try encoder.encode(submission)
         
         let (data, response) = try await session.data(for: request)
